@@ -1,40 +1,52 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Montserrat } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import { Montserrat } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/organisms/Header';
 
 const montserrat = Montserrat({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-montserrat",
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 const agencyFB = localFont({
   src: [
     {
-      path: "./fonts/agency-regular.ttf",
-      weight: "400",
+      path: './fonts/agency-regular.ttf',
+      weight: '400',
     },
     {
-      path: "./fonts/agency-bold.ttf",
-      weight: "700",
+      path: './fonts/agency-bold.ttf',
+      weight: '700',
     },
   ],
-  display: "swap",
-  variable: "--font-agencyfb",
+  display: 'swap',
+  variable: '--font-agencyfb',
 });
 
 export const metadata: Metadata = {
-  title: "MDM Structural and Civil Engineering",
+  title: 'MDM Structural and Civil Engineering',
   description:
     "MDM Engineering: London-based experts in structural design, committed to safety, innovation, and sustainable building solutions. Transforming the city's skyline since 2017.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body
+        className={`${montserrat.className} ${agencyFB.variable} mx-auto bg-background-white text-black-300`}
+      >
+        <div className="min-h-dvh w-full">
+          <Header />
+          <main className="mx-auto max-w-screen-xl">{children}</main>
+        </div>
+        <div>FOOTER</div>
+      </body>
     </html>
   );
 }
