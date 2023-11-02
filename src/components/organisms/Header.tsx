@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import LargeLogo from '../molecules/LargeLogo';
+import Link from "next/link";
+import LargeLogo from "../molecules/LargeLogo";
+import Nav from "../molecules/Nav";
 
 export default function Header() {
   return (
@@ -7,12 +8,7 @@ export default function Header() {
       <Link href="/">
         <LargeLogo />
       </Link>
-      <div className="flex gap-6 font-medium uppercase">
-        <p>services</p>
-        <p>about us</p>
-        <p>projects</p>
-        <p>contact</p>
-      </div>
+      <Nav />
     </div>
   );
 }
