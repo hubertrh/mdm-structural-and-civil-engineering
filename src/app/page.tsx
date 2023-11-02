@@ -1,3 +1,5 @@
+import Hero from "../components/organisms/Hero";
+
 export default function Home() {
-  return <div>MDM Structural and Civil Engineering</div>;
+  return <Hero />;
 }
