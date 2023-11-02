@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import { Montserrat } from 'next/font/google';
+import localFont from 'next/font/local';
+import Header from '@/src/components/organisms/Header';
 import './globals.css';
-import Header from '@/components/organisms/Header';
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -43,7 +43,7 @@ export default function RootLayout({
       >
         <div className="min-h-dvh w-full">
           <Header />
-          <main className="mx-auto max-w-screen-xl">{children}</main>
+          <main className="mx-auto max-w-screen-2xl">{children}</main>
         </div>
         <div>FOOTER</div>
       </body>
