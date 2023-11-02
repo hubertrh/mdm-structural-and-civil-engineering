@@ -43,7 +43,7 @@ export default function RootLayout({
       >
         <div className="min-h-dvh w-full">
           <Header />
-          <main className="mx-auto max-w-screen-2xl">{children}</main>
+          <main className="mx-auto max-w-screen-2xl bg-white">{children}</main>
         </div>
         <div>FOOTER</div>
       </body>
