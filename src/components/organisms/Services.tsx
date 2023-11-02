@@ -1,3 +1,4 @@
+import Cards from "../molecules/Cards";
 import SectionHeader from "../molecules/SectionHeader";
 
 export default function Services() {
@@ -9,11 +10,12 @@ export default function Services() {
   };
 
   return (
-    <div className="flex flex-col gap-20 bg-background-blue px-44 py-28">
+    <div className="flex flex-col gap-20 bg-background-blue px-48 py-28">
       <SectionHeader
         title={sectionContent.title}
         description={sectionContent.description}
       />
+      <Cards />
     </div>
   );
 }
