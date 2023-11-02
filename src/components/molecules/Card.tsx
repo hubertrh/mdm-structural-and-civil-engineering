@@ -22,7 +22,7 @@ export default function Card({ imgURL, title, description }: CardProps) {
         <p className="text-sm">{description}</p>
       </div>
       <button className="absolute bottom-0 left-1/2 flex w-48 -translate-x-1/2 items-center justify-center gap-2 px-4 py-4 opacity-100 transition-all duration-300 group-hover:opacity-100">
-        <p className="text-blue-dark">Read more</p>
+        <p className="text-blue-dark">Learn more</p>
         <Image
           src="/icons/arrow-right.svg"
           alt="Arrow right"
