@@ -1,7 +1,13 @@
+import Hero from "../components/organisms/Hero";
+import Services from "../components/organisms/Services";
+import Welcome from "../components/organisms/Welcome";
+
 export default function Home() {
   return (
-    <main>
-      <h1>MDM Structural and Civil Engineering</h1>
-    </main>
+    <>
+      <Hero />
+      <Welcome />
+      <Services />
+    </>
   );
 }

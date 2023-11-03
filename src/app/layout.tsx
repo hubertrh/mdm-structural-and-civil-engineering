@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
+import Header from "@/src/components/organisms/Header";
 import "./globals.css";
 
 const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-montserrat",
 });
 
 const agencyFB = localFont({
@@ -31,10 +31,22 @@ export const metadata: Metadata = {
     "MDM Engineering: London-based experts in structural design, committed to safety, innovation, and sustainable building solutions. Transforming the city's skyline since 2017.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body
+        className={`${montserrat.className} ${agencyFB.variable} mx-auto bg-background-white text-black-300`}
+      >
+        <div className="min-h-dvh w-full">
+          <Header />
+          <main className="mx-auto max-w-screen-2xl bg-white">{children}</main>
+        </div>
+        <div>FOOTER</div>
+      </body>
     </html>
   );
 }

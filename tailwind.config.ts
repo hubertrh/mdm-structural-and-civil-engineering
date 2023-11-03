@@ -20,8 +20,8 @@ const config: Config = {
           dark: "#5881A1",
         },
         background: {
-          white: "#FAFAFA",
-          blue: "#F2F8FC",
+          white: "#F7F7F7",
+          blue: "#F0F7FC",
           green: "#F5F7F5",
         },
         black: {
@@ -30,10 +30,16 @@ const config: Config = {
         },
         grey: "#E6E6E6",
       },
+      fontFamily: {
+        agencyfb: ["var(--font-agencyfb)"],
+      },
       height: {
         dvh: "100dvh",
       },
       minHeight: {
+        dvh: "100dvh",
+      },
+      maxHeight: {
         dvh: "100dvh",
       },
       transitionDuration: {
