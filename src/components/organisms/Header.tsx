@@ -7,31 +7,42 @@ import { useEffect } from "react";
 import LargeLogo from "../molecules/LargeLogo";
 import Nav from "../molecules/Nav";
 
+interface ScrollTriggerConfig {
+  trigger: string;
+  start: string;
+  endTrigger: string;
+  end: string;
+  scrub: boolean;
+}
+
+interface AnimationProperties {
+  scrollTrigger?: ScrollTriggerConfig;
+  [key: string]: string | ScrollTriggerConfig | undefined;
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
   useEffect(() => {
-    gsap.to(".header", {
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        endTrigger: ".hero-text",
-        end: "top top",
-        scrub: true,
-      },
-      padding: "0.8rem 2rem",
-    });
+    function animateElement<T extends AnimationProperties>(
+      selector: string,
+      animationProperties: T,
+    ): void {
+      gsap.to(selector, {
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          endTrigger: ".hero-text",
+          end: "top top",
+          scrub: true,
+        },
+        ...animationProperties,
+      });
+    }
 
-    gsap.to(".logo-text", {
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        endTrigger: ".hero-text",
-        end: "top top",
-        scrub: true,
-      },
-      fontSize: "2rem",
-    });
+    animateElement(".header", { padding: "0.8rem 2rem" });
+    animateElement(".logo-text", { fontSize: "2rem" });
+    animateElement(".nav", { fontSize: "0.8rem" });
   }, []);
 
   return (
