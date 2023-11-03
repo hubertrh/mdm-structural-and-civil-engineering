@@ -15,7 +15,7 @@ export default function Nav() {
 
   return (
     <div>
-      <nav className="flex gap-6 font-medium uppercase leading-none text-black-300">
+      <nav className="nav flex gap-6 font-medium uppercase leading-none text-black-300">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
 
@@ -23,7 +23,9 @@ export default function Nav() {
             <Link
               key={link.name}
               href={link.href}
-              className={`${isActive ? "text-green-dark" : ""}`}
+              className={`${
+                isActive ? "relative text-green-dark" : "relative"
+              }`}
             >
               {link.name}
             </Link>

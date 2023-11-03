@@ -11,4 +11,8 @@
       rgba(136, 136, 136, 0) 140.74%
     );
   }
+
+  .nav > * {
+    @apply before:absolute before:-bottom-1 before:left-1/2 before:h-[1.5px] before:w-0 before:-translate-x-1/2 before:bg-green-dark before:transition-all before:duration-300 before:ease-out before:content-[''] hover:text-green-dark hover:before:w-[110%];
+  }
 }
