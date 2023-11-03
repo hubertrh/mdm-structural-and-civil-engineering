@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Card from "./Card";
 
 export default function Cards() {
@@ -25,12 +26,13 @@ export default function Cards() {
   return (
     <div className="flex w-full items-center justify-between p-4">
       {cards.map((card, index) => (
-        <Card
-          key={index}
-          imgURL={card.imgURL}
-          title={card.title}
-          description={card.description}
-        />
+        <Link key={index} href={"#"}>
+          <Card
+            imgURL={card.imgURL}
+            title={card.title}
+            description={card.description}
+          />
+        </Link>
       ))}
     </div>
   );
