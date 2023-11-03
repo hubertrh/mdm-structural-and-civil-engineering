@@ -30,7 +30,7 @@ export default function Header() {
         end: "top top",
         scrub: true,
       },
-      fontSize: "2.5rem",
+      fontSize: "2rem",
     });
   }, []);
 
