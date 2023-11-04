@@ -1,3 +1,4 @@
+import AboutUs from "../components/organisms/AboutUs";
 import Hero from "../components/organisms/Hero";
 import Services from "../components/organisms/Services";
 import Welcome from "../components/organisms/Welcome";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Welcome />
       <Services />
+      <AboutUs />
     </>
   );
 }
