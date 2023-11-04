@@ -15,6 +15,7 @@ export default function Card({ imgURL, title, description }: CardProps) {
           src={imgURL}
           alt={title}
           fill={true}
+          sizes="25vw"
         />
       </div>
 
@@ -26,6 +27,7 @@ export default function Card({ imgURL, title, description }: CardProps) {
       <button className="absolute bottom-0 right-0 flex w-max items-center justify-center gap-2 px-6 py-4 opacity-100 transition-all duration-300 group-hover:opacity-100">
         <p className="text-blue-dark">Learn more</p>
         <Image
+          className="h-[16px] w-[16px]"
           src="/icons/arrow-right.svg"
           alt="Arrow right"
           width={16}
