@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import SmoothScroll from "@/src/components/contexts/SmoothScroll";
 import Header from "@/src/components/organisms/Header";
 import "./globals.css";
 
@@ -41,11 +42,15 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} ${agencyFB.variable} mx-auto bg-background-white text-black-300`}
       >
-        <div className="min-h-dvh w-full">
-          <Header />
-          <main className="mx-auto max-w-screen-2xl bg-white">{children}</main>
-        </div>
-        <div>FOOTER</div>
+        <SmoothScroll>
+          <div className="min-h-dvh w-full">
+            <Header />
+            <main className="mx-auto max-w-screen-2xl bg-white">
+              {children}
+            </main>
+          </div>
+          <div>FOOTER</div>
+        </SmoothScroll>
       </body>
     </html>
   );
