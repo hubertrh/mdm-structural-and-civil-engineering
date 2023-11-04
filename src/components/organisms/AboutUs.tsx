@@ -1,3 +1,4 @@
+import CTAButton from "../atoms/CTAButton";
 import SectionHeader from "../molecules/SectionHeader";
 
 export default function AboutUs() {
@@ -14,6 +15,12 @@ export default function AboutUs() {
       <SectionHeader
         title={sectionContent.title}
         description={sectionContent.description}
+      />
+      <CTAButton
+        iconURL="/icons/legacy.svg"
+        iconAlt="About us button icon"
+        text="Explore Our Legacy"
+        pageURL="#"
       />
     </div>
   );
