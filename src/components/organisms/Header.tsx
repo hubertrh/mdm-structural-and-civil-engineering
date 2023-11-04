@@ -41,12 +41,13 @@ export default function Header() {
     }
 
     animateElement(".header", { padding: "0.8rem 2rem" });
+    animateElement(".header", { background: "white" });
     animateElement(".logo-text", { fontSize: "2rem" });
     animateElement(".nav", { fontSize: "0.8rem" });
   }, []);
 
   return (
-    <header className="header fixed top-0 z-30 flex w-full items-center justify-between bg-white px-16 py-8">
+    <header className="header fixed top-0 z-30 flex w-full items-center justify-between bg-background-blue px-16 py-8 shadow">
       <Link href="/">
         <LargeLogo />
       </Link>
