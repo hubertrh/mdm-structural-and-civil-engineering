@@ -30,10 +30,8 @@ export default function Header() {
     ): void {
       gsap.to(selector, {
         scrollTrigger: {
-          trigger: ".hero",
           start: "top top",
-          endTrigger: ".hero-text",
-          end: "top top",
+          end: "+=300",
           scrub: true,
         },
         ...animationProperties,
