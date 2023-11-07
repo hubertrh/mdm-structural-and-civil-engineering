@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="text-sm sm:text-base">
       <body
         className={`${montserrat.className} ${agencyFB.variable} mx-auto bg-background-white text-black-300`}
       >
