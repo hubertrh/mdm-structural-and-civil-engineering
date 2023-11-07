@@ -37,6 +37,18 @@
     --_scale-delay: 0ms;
   }
 
+  nav a.active {
+    --_scale: 0.15;
+    --_translate: 0;
+    --_scale-delay: 0ms;
+  }
+
+  nav a.active:hover {
+    --_scale: 1;
+    --_translate: 0;
+    --_scale-delay: 0ms;
+  }
+
   .hero-gradient {
     background: linear-gradient(
       230deg,
