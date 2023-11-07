@@ -1,6 +1,6 @@
 export default function Welcome() {
   return (
-    <section className="flex flex-col gap-5 px-72 py-28 text-center text-lg leading-8">
+    <section className="mx-auto flex w-[80vw] max-w-3xl flex-col gap-5 py-28 text-center text-lg leading-8">
       <p>
         Welcome to MDM, your specialists in structural engineering for London
         and beyond. We combine fresh perspectives with qualified expertise to
