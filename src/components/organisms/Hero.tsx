@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="hero relative w-full">
       <div className="hero-gradient absolute inset-0 z-10"></div>
       <Image
-        className="max-h-dvh object-cover object-[50%_12%]"
+        className="h-dvh object-cover portrait:object-top landscape:object-[50%_12%]"
         src={heroImage}
         alt="Hero image"
         placeholder="blur"

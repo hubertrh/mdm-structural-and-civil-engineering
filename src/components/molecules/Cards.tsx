@@ -24,7 +24,7 @@ export default function Cards() {
   ];
 
   return (
-    <div className="flex w-full items-center justify-between p-4">
+    <div className="flex w-min flex-col items-center justify-between gap-10 p-4 xl:flex-row">
       {cards.map((card, index) => (
         <Link key={index} href={"#"}>
           <Card
