@@ -13,7 +13,7 @@ export default function MenuSidebar({
 }) {
   return (
     <div
-      className={`fixed right-0 top-0 grid h-dvh w-screen max-w-lg place-items-center bg-background-blue pt-12 transition-transform duration-300 ease-out ${
+      className={`fixed right-0 top-0 grid h-dvh w-screen max-w-lg place-items-center bg-background-blue pt-12 transition-transform duration-500 ease-out ${
         isHamburgerOpen ? "" : "translate-x-full"
       }`}
     >

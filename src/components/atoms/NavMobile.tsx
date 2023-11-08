@@ -19,7 +19,6 @@ export default function NavMobile({
       <motion.nav
         className="nav-mobile flex flex-col gap-1 capitalize"
         variants={containerVariants}
-        exit="open"
         animate={isHamburgerOpen ? "open" : "closed"}
       >
         {navLinks.map((link) => {
