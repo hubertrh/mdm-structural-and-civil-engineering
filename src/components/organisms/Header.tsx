@@ -38,14 +38,16 @@ export default function Header() {
       });
     }
 
-    animateElement(".header", { padding: "0.8rem 2rem" });
-    animateElement(".header", { background: "white" });
-    animateElement(".logo-text", { fontSize: "2rem" });
-    animateElement(".nav", { fontSize: "0.8rem" });
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      animateElement(".header", { padding: "0.8rem 2rem" });
+      animateElement(".header", { background: "white" });
+      animateElement(".logo-text", { fontSize: "2rem" });
+      animateElement(".nav", { fontSize: "0.8rem" });
+    }
   }, []);
 
   return (
-    <header className="header fixed top-0 z-30 flex w-full items-center justify-between bg-background-blue px-16 py-8 shadow">
+    <header className="header fixed top-0 z-30 flex w-full items-center justify-between bg-background-blue px-4 py-4 shadow md:px-8 md:py-8 lg:px-16 lg:py-8">
       <Link href="/">
         <LargeLogo />
       </Link>
