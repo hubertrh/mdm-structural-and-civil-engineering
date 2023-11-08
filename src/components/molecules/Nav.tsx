@@ -1,10 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
+import HamburgerBtn from "../atoms/HamburgerBtn";
+import NavDesktop from "./NavDesktop";
+import MenuSidebar from "./MenuSidebar";
 
 export default function Nav() {
   const pathname = usePathname();
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const navLinks = [
     { href: "/services", name: "services" },
@@ -13,23 +17,22 @@ export default function Nav() {
     { href: "/contact", name: "contact" },
   ];
 
+  const onHamburgerClick = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
   return (
     <div>
-      <nav className="nav flex font-medium uppercase leading-none text-black-300">
-        {navLinks.map((link) => {
-          const isActive = pathname === link.href;
-
-          return (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`${isActive ? "text-green-dark" : ""}`}
-            >
-              {link.name}
-            </Link>
-          );
-        })}
-      </nav>
+      <NavDesktop navLinks={navLinks} pathname={pathname} />
+      <HamburgerBtn
+        isHamburgerOpen={isHamburgerOpen}
+        onHamburgerClick={onHamburgerClick}
+      />
+      <MenuSidebar
+        navLinks={navLinks}
+        pathname={pathname}
+        isHamburgerOpen={isHamburgerOpen}
+      />
     </div>
   );
 }

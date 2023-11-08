@@ -7,7 +7,7 @@
     @apply relative overflow-hidden px-3 py-2 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-0 after:h-[1.5px] after:bg-green-dark after:content-[''] hover:text-green-dark hover:before:scale-100;
   }
 
-  nav a::after {
+  .nav a::after {
     translate: var(--_translate, 0);
     scale: var(--_scale, 0) 1;
     transition:
@@ -16,13 +16,13 @@
   }
 
   /* Previous sibling hovered */
-  nav a:hover ~ a {
+  .nav a:hover ~ a {
     --_translate: -100%;
     --_scale-delay: 200ms;
   }
 
   /* Other sibling hovered */
-  nav:hover a {
+  .nav:hover a {
     --_translate: 100%;
     --_scale-delay: 200ms;
   }
@@ -31,22 +31,26 @@
     The actually hovered <a> element
     Same specificity as previous selector, it must come after or be artificially inflated (eg. :hover:hover)
   */
-  nav a:hover {
+  .nav a:hover {
     --_scale: 1;
     --_translate: 0;
     --_scale-delay: 0ms;
   }
 
-  nav a.active {
+  .nav a.active {
     --_scale: 0.15;
     --_translate: 0;
     --_scale-delay: 0ms;
   }
 
-  nav a.active:hover {
+  .nav a.active:hover {
     --_scale: 1;
     --_translate: 0;
     --_scale-delay: 0ms;
+  }
+
+  .nav-mobile > a {
+    @apply relative py-4 transition-all duration-300 ease-out before:transition-transform before:duration-300 before:ease-out hover:translate-x-4 hover:text-green-dark hover:before:-translate-x-4;
   }
 
   .hero-gradient {
