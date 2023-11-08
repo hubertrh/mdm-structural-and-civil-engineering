@@ -23,8 +23,12 @@ export default function HamburgerBtn({
   return (
     <button
       id="hamburger-btn"
-      className={`relative z-50 mx-3 h-6 w-6 lg:hidden ${beforeClasses} ${afterClasses}`}
+      className={`z-50 mx-3 p-2 lg:hidden`}
       onClick={onHamburgerClick}
-    ></button>
+    >
+      <div
+        className={`relative z-50 h-6 w-6 ${beforeClasses} ${afterClasses}`}
+      ></div>
+    </button>
   );
 }
