@@ -4,7 +4,7 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import LargeLogo from "../molecules/LargeLogo";
+import FullLogo from "../molecules/FullLogo";
 import Nav from "../molecules/Nav";
 
 interface ScrollTriggerConfig {
@@ -49,7 +49,7 @@ export default function Header() {
   return (
     <header className="header fixed top-0 z-30 flex w-full items-center justify-between bg-background-blue px-4 py-4 shadow md:px-8 md:py-8 lg:px-16 lg:py-8">
       <Link href="/">
-        <LargeLogo />
+        <FullLogo />
       </Link>
       <Nav />
     </header>

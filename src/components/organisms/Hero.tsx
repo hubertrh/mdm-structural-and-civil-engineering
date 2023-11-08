@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroText from "../molecules/HeroText";
+import HeroText from "../atoms/HeroText";
 import heroImage from "@/public/images/hero-lg.png";
 
 export default function Hero() {

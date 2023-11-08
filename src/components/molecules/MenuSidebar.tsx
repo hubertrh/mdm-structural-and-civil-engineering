@@ -17,7 +17,11 @@ export default function MenuSidebar({
         isHamburgerOpen ? "" : "translate-x-full"
       }`}
     >
-      <NavMobile navLinks={navLinks} pathname={pathname} />
+      <NavMobile
+        navLinks={navLinks}
+        pathname={pathname}
+        isHamburgerOpen={isHamburgerOpen}
+      />
       <SidebarContact />
     </div>
   );
