@@ -1,6 +1,6 @@
 export default function Logo() {
   return (
-    <div className="relative">
+    <div className="relative w-min">
       <p className="logo-text text-4xl font-bold leading-[1.15] lg:text-[4rem]">
         MDN
       </p>

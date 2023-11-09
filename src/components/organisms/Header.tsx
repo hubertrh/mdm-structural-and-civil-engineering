@@ -41,8 +41,9 @@ export default function Header() {
     if (window.matchMedia("(min-width: 768px)").matches) {
       animateElement(".header", { padding: "0.8rem 2rem" });
       animateElement(".header", { background: "white" });
-      animateElement(".logo-text", { fontSize: "2rem" });
-      animateElement(".nav", { fontSize: "0.8rem" });
+      animateElement(".header .logo-text", { fontSize: "2rem" });
+      animateElement(".header .logo-text-small", { fontSize: "1.5rem" });
+      animateElement(".header .nav", { fontSize: "0.8rem" });
     }
   }, []);
 
