@@ -1,4 +1,4 @@
-import CTAButton from "../atoms/CTAButton";
+import PrimaryBtn from "../atoms/PrimaryBtn";
 import Cards from "../molecules/Cards";
 import SectionHeader from "../molecules/SectionHeader";
 
@@ -17,7 +17,7 @@ export default function Services() {
         description={sectionContent.description}
       />
       <Cards />
-      <CTAButton
+      <PrimaryBtn
         iconURL="/icons/services.svg"
         iconAlt="Services button icon"
         text="Explore Services"

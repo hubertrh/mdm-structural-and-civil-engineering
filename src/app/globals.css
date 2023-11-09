@@ -29,7 +29,7 @@
 
   /*
     The actually hovered <a> element
-    Same specificity as previous selector, it must come after or be artificially inflated (eg. :hover:hover)
+    Same specificity as other sibling, must come after or be artificially inflated (eg. :hover:hover)
   */
   .nav a:hover {
     --_scale: 1;
@@ -49,9 +49,11 @@
     --_scale-delay: 0ms;
   }
 
-  .nav-mobile > a {
-    @apply relative py-4 transition-all duration-300 ease-out before:transition-transform before:duration-300 before:ease-out hover:translate-x-4 hover:text-green-dark hover:before:-translate-x-4;
+  .nav-mobile > div {
+    transition: transform, padding, color;
+    @apply relative py-4 duration-300 ease-out before:transition-transform before:duration-300 before:ease-out hover:px-3 hover:text-green-dark;
   }
+  /* py-4 transition-all duration-300 ease-out before:transition-transform before:duration-300 before:ease-out hover:px-3 hover:text-green-dark; */
 
   .hero-gradient {
     background: linear-gradient(

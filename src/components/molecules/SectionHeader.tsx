@@ -1,6 +1,6 @@
 interface SectionHeaderProps {
   title: string;
-  description: string[];
+  description?: string[];
 }
 
 export default function SectionHeader({
@@ -8,9 +8,9 @@ export default function SectionHeader({
   description,
 }: SectionHeaderProps) {
   return (
-    <section className="flex w-[80vw] max-w-3xl flex-col gap-2 text-center">
+    <section className="flex w-[80vw] max-w-4xl flex-col gap-2 text-center">
       <h2 className="pb-4 text-3xl font-medium text-black-200">{title}</h2>
-      {description.map((paragraph, index) => (
+      {description?.map((paragraph, index) => (
         <p className="text-lg leading-7" key={index}>
           {paragraph}
         </p>

@@ -26,7 +26,7 @@ export default function Cards() {
   return (
     <div className="flex w-min flex-col items-center justify-between gap-10 p-4 xl:flex-row">
       {cards.map((card, index) => (
-        <Link key={index} href={"#"}>
+        <Link key={index} href={"/services"}>
           <Card
             imgURL={card.imgURL}
             title={card.title}

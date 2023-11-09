@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface CTAButtonProps {
+interface PrimaryBtnProps {
   iconURL: string;
   iconAlt: string;
   text: string;
   pageURL: string;
 }
 
-export default function CTAButton({
+export default function PrimaryBtn({
   iconURL,
   iconAlt,
   text,
   pageURL,
-}: CTAButtonProps) {
+}: PrimaryBtnProps) {
   return (
     <Link
       href={pageURL}

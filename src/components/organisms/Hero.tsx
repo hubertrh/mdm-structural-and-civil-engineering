@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroText from "../molecules/HeroText";
+import HeroText from "../atoms/HeroText";
 import heroImage from "@/public/images/hero-lg.png";
 
 export default function Hero() {
@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="hero relative w-full">
       <div className="hero-gradient absolute inset-0 z-10"></div>
       <Image
-        className="h-dvh object-cover portrait:object-top landscape:object-[50%_12%]"
+        className="h-screen object-cover portrait:object-top landscape:object-[50%_12%]"
         src={heroImage}
         alt="Hero image"
         placeholder="blur"
