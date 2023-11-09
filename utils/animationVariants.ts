@@ -1,9 +1,9 @@
 export const containerVariants = {
   open: {
-    transition: { staggerChildren: 0.06, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.05, delayChildren: 0.05 },
   },
   closed: {
-    transition: { staggerChildren: 0.06, staggerDirection: -1 },
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
 

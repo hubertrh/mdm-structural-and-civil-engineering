@@ -32,6 +32,7 @@ export default function Nav() {
         navLinks={navLinks}
         pathname={pathname}
         isHamburgerOpen={isHamburgerOpen}
+        setIsHamburgerOpen={setIsHamburgerOpen}
       />
     </div>
   );
