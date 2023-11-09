@@ -35,7 +35,7 @@ export default function FooterContact() {
           </Link>
         </div>
         <Image
-          className="mt-1 h-[16px] w-[16px] hue-rotate-60 saturate-[10]"
+          className="mt-1 h-[10px] w-[10px] hue-rotate-60 saturate-[10] sm:h-[16px] sm:w-[16px]"
           src="/icons/link-new-card.png"
           // alt="New card link icon"
           alt="TEMPORARY ICON"

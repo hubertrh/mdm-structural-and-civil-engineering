@@ -11,7 +11,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-20 px-48 py-28">
+    <div className="flex flex-col items-center justify-center gap-16 px-48 py-20 sm:gap-20 sm:py-28">
       <SectionHeader
         title={sectionContent.title}
         description={sectionContent.description}
