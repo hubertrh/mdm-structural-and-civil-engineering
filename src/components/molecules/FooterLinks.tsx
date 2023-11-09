@@ -14,15 +14,16 @@ export default function FooterLinks() {
   ];
 
   return (
-    <div className="flex flex-col items-end justify-between self-stretch">
+    <div className="flex flex-col items-end justify-end self-stretch lg:justify-between">
       <NavDesktop navLinks={navLinks} pathname={pathname} variant="footer" />
-      <div className="flex flex-col text-right leading-loose">
+      <div className="mt-8 flex text-right leading-relaxed sm:flex-col sm:leading-loose">
         <Link
           href={"/cookie-policy"}
           className="decoration-transparent transition-all duration-300 hover:text-green-dark hover:underline hover:decoration-green-dark hover:underline-offset-8"
         >
           Cookie Policy
         </Link>
+        <span className="mx-4 sm:hidden">|</span>
         <Link
           href={"/privacy-policy"}
           className="decoration-transparent transition-all duration-300 hover:text-green-dark hover:underline hover:decoration-green-dark hover:underline-offset-8"

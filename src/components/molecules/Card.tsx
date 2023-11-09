@@ -21,10 +21,12 @@ export default function Card({ imgURL, title, description }: CardProps) {
       </div>
 
       <div className="z-10 mb-8 flex flex-col justify-center gap-2 px-6 pb-5 pt-5 transition-all duration-300 sm:mb-5 sm:gap-0 sm:px-10 xl:gap-3 xl:bg-white xl:px-6 xl:pb-0 xl:group-hover:-translate-y-9">
-        <h2 className="h-12 w-11/12 text-lg font-medium leading-tight">
+        <h2 className="h-max w-10/12 text-lg font-medium leading-tight">
           {title}
         </h2>
-        <p className="text-sm leading-snug">{description}</p>
+        <p className="py-2 text-base leading-snug sm:py-1 sm:text-sm">
+          {description}
+        </p>
       </div>
 
       <SecondaryBtn text="Learn more" position="inside" />

@@ -4,7 +4,7 @@ import FooterLogo from "../molecules/FooterLogo";
 
 export default function FooterContent() {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
       <FooterLogo />
       <FooterContact />
       <FooterLinks />

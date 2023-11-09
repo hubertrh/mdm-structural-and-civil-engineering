@@ -20,11 +20,13 @@ export default function SecondaryBtn({
     return (
       <button
         className={`${
-          position === "inside" ? "bottom-0 px-6 py-4" : "top-full px-2 py-3"
+          position === "inside"
+            ? "bottom-0 px-6 py-4"
+            : "top-full px-2 py-6 sm:py-3"
         } ${buttonClassList}
       }`}
       >
-        <p className="text-blue-dark">{text}</p>
+        <p className="text-lg text-blue-dark sm:text-base">{text}</p>
         <Image
           className="h-[16px] w-[16px]"
           src="/icons/arrow-right.svg"

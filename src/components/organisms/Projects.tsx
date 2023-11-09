@@ -1,20 +1,24 @@
 import Image from "next/image";
 import SectionHeader from "../molecules/SectionHeader";
 import SecondaryBtn from "../atoms/SecondaryBtn";
+import Link from "next/link";
 
 export default function Projects() {
   const Projects = [
     {
       imgURL: "/images/project-example-1.png",
       title: "Project Example 1",
+      projectURL: "/projects/project-example-1",
     },
     {
       imgURL: "/images/project-example-2.png",
       title: "Project Example 2",
+      projectURL: "/projects/project-example-2",
     },
     {
       imgURL: "/images/project-example-3.png",
-      title: "Project Example 3",
+      title: "Project Example 3 Really Long Project Title Here",
+      projectURL: "/projects/project-example-3",
     },
   ];
 
@@ -26,16 +30,17 @@ export default function Projects() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-20 bg-background-blue py-28">
+    <div className="flex flex-col items-center justify-center gap-16 bg-background-blue pb-28 pt-20 sm:gap-20 sm:pt-28">
       <SectionHeader
         title={sectionContent.title}
         description={sectionContent.description}
       />
-      <div className="relative grid grid-cols-3 gap-4">
+      <div className="relative grid w-[80vw] max-w-4xl grid-flow-row gap-12 sm:grid-flow-col sm:gap-4">
         {Projects.map((project) => {
           return (
-            <div
-              className="relative aspect-square w-[20vw]"
+            <Link
+              href={project.projectURL}
+              className="relative mb-24 aspect-square w-full sm:mb-0"
               key={project.title}
             >
               <Image
@@ -43,9 +48,14 @@ export default function Projects() {
                 src={project.imgURL}
                 alt={project.title}
                 fill={true}
-                sizes="25vw"
+                sizes="100vw"
               />
-            </div>
+              <div className="group absolute top-[102%] grid h-20 w-full place-items-center bg-blue-dark  bg-opacity-0 transition-all duration-300 hover:bg-opacity-40 sm:inset-0 sm:h-auto sm:rounded-none">
+                <div className="home-projects-text grid h-20 w-full place-items-center rounded-lg bg-blue-dark bg-opacity-100 px-4 text-center text-white opacity-100 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:translate-y-1 sm:rounded-none sm:opacity-0">
+                  {project.title}
+                </div>
+              </div>
+            </Link>
           );
         })}
         <SecondaryBtn
