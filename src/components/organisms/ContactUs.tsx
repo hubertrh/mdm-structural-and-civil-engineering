@@ -1,5 +1,4 @@
 import PrimaryBtn from "../atoms/PrimaryBtn";
-import SectionHeader from "../molecules/SectionHeader";
 
 export default function ContactUs() {
   return (
