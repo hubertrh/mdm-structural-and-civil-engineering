@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import Header from "../components/organisms/Header";
+import Footer from "../components/organisms/Footer";
 import SmoothScroll from "@/src/components/contexts/SmoothScroll";
-import Header from "@/src/components/organisms/Header";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -49,7 +50,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
-          <div>FOOTER</div>
+          <Footer />
         </SmoothScroll>
       </body>
     </html>
