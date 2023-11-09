@@ -26,7 +26,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-20 bg-background-blue px-48 py-28">
+    <div className="flex flex-col items-center justify-center gap-20 bg-background-blue py-28">
       <SectionHeader
         title={sectionContent.title}
         description={sectionContent.description}

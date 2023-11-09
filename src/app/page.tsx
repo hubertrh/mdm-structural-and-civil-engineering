@@ -1,4 +1,5 @@
 import AboutUs from "../components/organisms/AboutUs";
+import ContactUs from "../components/organisms/ContactUs";
 import Hero from "../components/organisms/Hero";
 import Projects from "../components/organisms/Projects";
 import Services from "../components/organisms/Services";
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <AboutUs />
       <Projects />
+      <ContactUs />
     </>
   );
 }
