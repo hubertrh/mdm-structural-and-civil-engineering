@@ -1,5 +1,9 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import lottie, { AnimationItem } from "lottie-web";
+import animatedArrowRight from "@/src/assets/icons/animated-arrow-right.json";
 
 type SecondaryBtnProps = {
   text: string;
@@ -16,6 +20,32 @@ export default function SecondaryBtn({
     ? "flex w-max items-center justify-center gap-2 opacity-100 transition-all duration-300 group-hover:opacity-100"
     : "absolute right-0 flex w-max items-center justify-center gap-2 opacity-100 transition-all duration-300 group-hover:opacity-100";
 
+  const container = useRef<HTMLDivElement>(null);
+  const animationInstance = useRef<AnimationItem | null>(null);
+
+  useEffect(() => {
+    if (container.current) {
+      animationInstance.current = lottie.loadAnimation({
+        container: container.current,
+        animationData: animatedArrowRight,
+        loop: true,
+        autoplay: false,
+      });
+
+      return () => {
+        animationInstance.current?.destroy(); // Clean up the animation instance
+      };
+    }
+  }, []);
+
+  const handleMouseEnter = () => {
+    animationInstance.current?.play();
+
+    setTimeout(() => {
+      animationInstance.current?.stop();
+    }, 1000);
+  };
+
   const ButtonContent = () => {
     return (
       <button
@@ -25,15 +55,10 @@ export default function SecondaryBtn({
             : "top-full px-2 py-6 sm:py-3"
         } ${buttonClassList}
       }`}
+        onMouseEnter={handleMouseEnter}
       >
         <p className="text-lg text-blue-dark sm:text-base">{text}</p>
-        <Image
-          className="h-[16px] w-[16px]"
-          src="/icons/arrow-right.svg"
-          alt="Arrow right"
-          width={16}
-          height={16}
-        />
+        <div ref={container} className="relative h-[20px] w-[20px]" />
       </button>
     );
   };
