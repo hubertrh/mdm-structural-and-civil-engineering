@@ -1,5 +1,5 @@
-import NavMobile from "../atoms/NavMobile";
-import SidebarContact from "../atoms/SidebarContact";
+import NavMobile from "./NavMobile";
+import SidebarContact from "./SidebarContact";
 import { NavLinks } from "@/types/NavLinks";
 
 export default function MenuSidebar({

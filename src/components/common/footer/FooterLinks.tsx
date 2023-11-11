@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import NavDesktop from "./NavDesktop";
+import NavDesktop from "../NavDesktop";
 
 export default function FooterLinks() {
   const pathname = usePathname();

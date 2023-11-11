@@ -1,7 +1,7 @@
 import Image from "next/image";
-import SectionHeader from "../molecules/SectionHeader";
-import SecondaryBtn from "../atoms/SecondaryBtn";
 import Link from "next/link";
+import SectionHeader from "../../common/SectionHeader";
+import SecondaryBtn from "../../common/SecondaryBtn";
 
 export default function Projects() {
   const Projects = [
@@ -48,7 +48,7 @@ export default function Projects() {
                 src={project.imgURL}
                 alt={project.title}
                 fill={true}
-                sizes="100vw"
+                sizes="100dvw"
               />
               <div className="group absolute top-[102%] grid h-20 w-full place-items-center bg-blue-dark  bg-opacity-0 transition-all duration-300 hover:bg-opacity-40 sm:inset-0 sm:h-auto sm:rounded-none">
                 <div className="home-projects-text grid h-20 w-full place-items-center rounded-lg bg-blue-dark bg-opacity-100 px-4 text-center text-white opacity-100 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:translate-y-1 sm:rounded-none sm:opacity-0">

@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { useEffect } from "react";
-import FullLogo from "../molecules/FullLogo";
-import Nav from "../molecules/Nav";
+import FullLogo from "../FullLogo";
+import Nav from "./Nav";
 
 interface ScrollTriggerConfig {
   trigger: string;
