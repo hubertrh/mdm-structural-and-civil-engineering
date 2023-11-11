@@ -12,10 +12,10 @@ export default function NavDesktop({
 }) {
   return (
     <nav
-      className={`nav hidden font-medium uppercase leading-none text-black-300 lg:flex lg:text-base ${
+      className={`nav hidden font-medium uppercase leading-none text-black-300 lg:flex ${
         variant === "header"
           ? "text-xs"
-          : "text-normal -translate-y-2 translate-x-3"
+          : "-translate-y-2 translate-x-3 text-sm"
       }`}
     >
       {navLinks.map((link) => {
