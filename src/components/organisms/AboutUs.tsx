@@ -1,4 +1,5 @@
 import PrimaryBtn from "../atoms/PrimaryBtn";
+import GuidingPillars from "../molecules/GuidingPillars";
 import SectionHeader from "../molecules/SectionHeader";
 
 export default function AboutUs() {
@@ -16,6 +17,7 @@ export default function AboutUs() {
         title={sectionContent.title}
         description={sectionContent.description}
       />
+      <GuidingPillars />
       <PrimaryBtn
         iconURL="/icons/legacy.svg"
         iconAlt="About us button icon"
