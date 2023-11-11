@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import lottie, { AnimationItem } from "lottie-web";
+import { AnimationControlContext } from "../contexts/AnimationControlContext";
 import animatedArrowRight from "@/src/assets/icons/animated-arrow-right.json";
 
 type SecondaryBtnProps = {
@@ -22,6 +23,7 @@ export default function SecondaryBtn({
 
   const container = useRef<HTMLDivElement>(null);
   const animationInstance = useRef<AnimationItem | null>(null);
+  const animationControl = useContext(AnimationControlContext);
 
   useEffect(() => {
     if (container.current) {
@@ -32,11 +34,13 @@ export default function SecondaryBtn({
         autoplay: false,
       });
 
+      animationControl.startAnimation = () => handleMouseEnter();
+
       return () => {
         animationInstance.current?.destroy(); // Clean up the animation instance
       };
     }
-  }, []);
+  }, [animationControl]);
 
   const handleMouseEnter = () => {
     animationInstance.current?.play();
