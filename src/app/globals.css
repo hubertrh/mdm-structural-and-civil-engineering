@@ -53,7 +53,14 @@
     transition: transform, padding, color;
     @apply relative py-4 duration-300 ease-out before:transition-transform before:duration-300 before:ease-out hover:px-3 hover:text-green-dark;
   }
-  /* py-4 transition-all duration-300 ease-out before:transition-transform before:duration-300 before:ease-out hover:px-3 hover:text-green-dark; */
+
+  .hero-text h2 {
+    text-shadow: -3px 3px 0px #597355;
+  }
+
+  .hero-text h3 {
+    text-shadow: -2px 2px 0px #597355;
+  }
 
   .hero-gradient {
     background: linear-gradient(
@@ -62,9 +69,5 @@
       rgba(136, 136, 136, 0) 101.04%,
       rgba(136, 136, 136, 0) 140.74%
     );
-  }
-
-  .home-projects-text {
-    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
   }
 }
