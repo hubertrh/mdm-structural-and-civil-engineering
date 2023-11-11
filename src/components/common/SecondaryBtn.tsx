@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useContext, useEffect, useRef } from "react";
 import lottie, { AnimationItem } from "lottie-web";
 import { AnimationControlContext } from "../contexts/AnimationControlContext";
-import animatedArrowRight from "@/src/assets/icons/animated-arrow-right.json";
+import animatedArrowRight from "@/assets/icons/animated-arrow-right.json";
 
 type SecondaryBtnProps = {
   text: string;

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
-import Header from "../components/common/header/Header";
-import Footer from "../components/common/footer/Footer";
-import SmoothScroll from "@/src/components/contexts/SmoothScrollContext";
+import SmoothScroll from "@/components/contexts/SmoothScrollContext";
+import Footer from "@/components/common/footer/Footer";
+import Header from "@/components/common/header/Header";
 import "./globals.css";
 
 const montserrat = Montserrat({
