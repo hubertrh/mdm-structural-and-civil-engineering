@@ -1,9 +1,9 @@
-import AboutUs from "../components/organisms/AboutUs";
-import ContactUs from "../components/organisms/ContactUs";
-import Hero from "../components/organisms/Hero";
-import Projects from "../components/organisms/Projects";
-import Services from "../components/organisms/Services";
-import Welcome from "../components/organisms/Welcome";
+import AboutUs from "../components/home/about/AboutUs";
+import ContactUs from "../components/home/contact/ContactUs";
+import Hero from "../components/home/hero/Hero";
+import Projects from "../components/home/projects/Projects";
+import Services from "../components/home/services/Services";
+import Welcome from "../components/home/welcome/Welcome";
 
 export default function Home() {
   return (

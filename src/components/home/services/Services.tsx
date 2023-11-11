@@ -1,6 +1,6 @@
-import PrimaryBtn from "../atoms/PrimaryBtn";
-import Cards from "../molecules/Cards";
-import SectionHeader from "../molecules/SectionHeader";
+import PrimaryBtn from "../../common/PrimaryBtn";
+import SectionHeader from "../../common/SectionHeader";
+import Cards from "./Cards";
 
 export default function Services() {
   const sectionContent = {

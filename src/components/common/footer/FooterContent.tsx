@@ -1,6 +1,6 @@
-import FooterContact from "../molecules/FooterContact";
-import FooterLinks from "../molecules/FooterLinks";
-import FooterLogo from "../molecules/FooterLogo";
+import FooterContact from "./FooterContact";
+import FooterLinks from "./FooterLinks";
+import FooterLogo from "./FooterLogo";
 
 export default function FooterContent() {
   return (

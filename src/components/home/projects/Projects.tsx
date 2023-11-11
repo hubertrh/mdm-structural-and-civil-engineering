@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import SectionHeader from "../molecules/SectionHeader";
-import SecondaryBtn from "../atoms/SecondaryBtn";
+import SectionHeader from "../../common/SectionHeader";
+import SecondaryBtn from "../../common/SecondaryBtn";
 
 export default function Projects() {
   const Projects = [

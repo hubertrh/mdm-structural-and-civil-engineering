@@ -1,4 +1,4 @@
-import PrimaryBtn from "../atoms/PrimaryBtn";
+import PrimaryBtn from "../../common/PrimaryBtn";
 
 export default function ContactUs() {
   return (

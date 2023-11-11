@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SecondaryBtn from "../atoms/SecondaryBtn";
+import SecondaryBtn from "../../common/SecondaryBtn";
 
 interface CardProps {
   imgURL: string;

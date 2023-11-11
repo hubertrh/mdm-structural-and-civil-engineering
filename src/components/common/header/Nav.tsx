@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import HamburgerBtn from "../atoms/HamburgerBtn";
-import NavDesktop from "./NavDesktop";
+import NavDesktop from "../NavDesktop";
 import MenuSidebar from "./MenuSidebar";
+import HamburgerBtn from "./HamburgerBtn";
 
 export default function Nav() {
   const pathname = usePathname();
