@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "../components/organisms/Header";
 import Footer from "../components/organisms/Footer";
 import SmoothScroll from "@/src/components/contexts/SmoothScroll";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
