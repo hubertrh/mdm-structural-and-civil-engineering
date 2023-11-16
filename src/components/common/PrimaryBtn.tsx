@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface PrimaryBtnProps {
+type PrimaryBtnProps = {
   iconURL: string;
   iconAlt: string;
   text: string;
   pageURL: string;
-}
+};
 
 export default function PrimaryBtn({
   iconURL,
