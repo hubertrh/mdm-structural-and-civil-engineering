@@ -1,6 +1,6 @@
-import PrimaryBtn from "../../common/PrimaryBtn";
-import SectionHeader from "../../common/SectionHeader";
 import GuidingPillars from "./GuidingPillars";
+import PrimaryBtn from "@/components/common/PrimaryBtn";
+import SectionHeader from "@/components/common/SectionHeader";
 
 export default function AboutUs() {
   const sectionContent = {
