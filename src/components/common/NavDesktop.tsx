@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NavLinks } from "@/types/NavLinks";
+import { NavLinks } from "@/types/NavLinks.type";
 
 export default function NavDesktop({
   navLinks,
