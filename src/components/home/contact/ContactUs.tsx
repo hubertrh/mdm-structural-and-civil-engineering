@@ -1,4 +1,5 @@
 import PrimaryBtn from "../../common/PrimaryBtn";
+import ContactIcon from "@/assets/icons/animated-contact.min.json";
 
 export default function ContactUs() {
   return (
@@ -7,7 +8,7 @@ export default function ContactUs() {
         Interested&nbsp;in&nbsp;making&nbsp;your&nbsp;vision a&nbsp;reality?
       </h2>
       <PrimaryBtn
-        iconURL="/icons/contact.svg"
+        icon={ContactIcon}
         iconAlt="Contact button icon"
         text="Let's talk"
         pageURL="/contact-us"

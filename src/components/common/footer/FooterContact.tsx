@@ -1,7 +1,16 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import { useRef } from "react";
+import LottieIcon from "../LottieIcon";
+import { AnimationControlContext } from "@/components/contexts/AnimationControlContext";
+import NewCardIcon from "@/assets/icons/animated-new-card.min.json";
 
 export default function FooterContact() {
+  const animationControlRef = useRef({
+    startAnimation: () => {},
+  });
+
   return (
     <div className="flex flex-col gap-3">
       <p className="mb-1 font-medium">CONTACT US</p>
@@ -19,30 +28,30 @@ export default function FooterContact() {
           +44 07817 085585
         </a>
       </div>
-      <div className="flex gap-2">
-        <div className="group flex flex-col">
-          <Link
-            className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
-            href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
+      <AnimationControlContext.Provider value={animationControlRef.current}>
+        <div className="flex gap-2">
+          <div
+            className="group flex flex-col"
+            onMouseEnter={() => animationControlRef.current.startAnimation()}
           >
-            MDM&nbsp;Structural&nbsp;and&nbsp;Civil&nbsp;Engineering&nbsp;Ltd
-          </Link>
-          <Link
-            className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
-            href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
-          >
-            4&nbsp;Quilter&nbsp;Street,&nbsp;London,&nbsp;SE18&nbsp;1JG
-          </Link>
+            <Link
+              className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
+              href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
+            >
+              MDM&nbsp;Structural&nbsp;and&nbsp;Civil&nbsp;Engineering&nbsp;Ltd
+            </Link>
+            <Link
+              className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
+              href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
+            >
+              4&nbsp;Quilter&nbsp;Street,&nbsp;London,&nbsp;SE18&nbsp;1JG
+            </Link>
+          </div>
+          <div className="mt-1">
+            <LottieIcon icon={NewCardIcon} duration={1000} sizeInRem={1} />
+          </div>
         </div>
-        <Image
-          className="mt-1 h-[10px] w-[10px] hue-rotate-60 saturate-[10] sm:h-[16px] sm:w-[16px]"
-          src="/icons/link-new-card.png"
-          // alt="New card link icon"
-          alt="TEMPORARY ICON"
-          width={16}
-          height={16}
-        />
-      </div>
+      </AnimationControlContext.Provider>
     </div>
   );
 }

@@ -5,11 +5,11 @@ import { useRef } from "react";
 import SecondaryBtn from "../../common/SecondaryBtn";
 import { AnimationControlContext } from "../../contexts/AnimationControlContext";
 
-interface CardProps {
+type CardProps = {
   imgURL: string;
   title: string;
   description: string;
-}
+};
 
 export default function Card({ imgURL, title, description }: CardProps) {
   const animationControlRef = useRef({

@@ -3,9 +3,9 @@
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
 
-interface SmoothScrollProps {
+type SmoothScrollProps = {
   children: React.ReactNode;
-}
+};
 
 export default function SmoothScroll({
   children,

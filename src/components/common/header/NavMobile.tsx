@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { NavLinks } from "@/types/NavLinks";
+import { NavLinks } from "@/types/NavLinks.type";
 import { containerVariants, itemVariants } from "@/utils/animationVariants";
 
 export default function NavMobile({

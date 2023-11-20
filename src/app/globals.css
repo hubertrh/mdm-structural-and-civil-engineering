@@ -56,10 +56,18 @@
 
   .hero-text h2 {
     text-shadow: -3px 3px 0px #597355;
+
+    @media (max-width: 640px) {
+      text-shadow: -2px 2px 0px #597355;
+    }
   }
 
   .hero-text h3 {
     text-shadow: -2px 2px 0px #597355;
+
+    @media (max-width: 640px) {
+      text-shadow: -1px 1px 0px #597355;
+    }
   }
 
   .hero-gradient {

@@ -7,18 +7,18 @@ import { useEffect } from "react";
 import FullLogo from "../FullLogo";
 import Nav from "./Nav";
 
-interface ScrollTriggerConfig {
+type ScrollTriggerConfig = {
   trigger: string;
   start: string;
   endTrigger: string;
   end: string;
   scrub: boolean;
-}
+};
 
-interface AnimationProperties {
+type AnimationProperties = {
   scrollTrigger?: ScrollTriggerConfig;
   [key: string]: string | ScrollTriggerConfig | undefined;
-}
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
