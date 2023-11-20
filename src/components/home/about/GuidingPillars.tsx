@@ -8,16 +8,22 @@ const sectionContent = {
     title: "Safety",
     description:
       "Our unwavering commitment to safety is non-negotiable. Because a structure is only as strong as the trust people place in it.",
+    icon: safetyIcon,
+    duration: 900,
   },
   integrity: {
     title: "Integrity",
     description:
       "We build more than structures; we build relationships. Long-lasting partnerships are our true north.",
+    icon: integrityIcon,
+    duration: 850,
   },
   innovativeDesign: {
     title: "Innovative Design",
     description:
       "Innovation is in our DNA. We see each project as a canvas for sustainable and aesthetic creativity.",
+    icon: innovativeDesignIcon,
+    duration: 850,
   },
 };
 
@@ -26,24 +32,18 @@ export default function GuidingPillars() {
     <div className="flex flex-col gap-9">
       <h3 className="text-center text-lg sm:text-2xl">Our Guiding Pillars</h3>
       <div className="flex w-min flex-col items-center justify-between p-4 xl:flex-row">
-        <GuidingPillar
-          title={sectionContent.safety.title}
-          description={sectionContent.safety.description}
-          icon={safetyIcon}
-          duration={900}
-        />
-        <GuidingPillar
-          title={sectionContent.integrity.title}
-          description={sectionContent.integrity.description}
-          icon={integrityIcon}
-          duration={850}
-        />
-        <GuidingPillar
-          title={sectionContent.innovativeDesign.title}
-          description={sectionContent.innovativeDesign.description}
-          icon={innovativeDesignIcon}
-          duration={850}
-        />
+        {Object.entries(sectionContent).map(
+          ([key, { title, description, icon, duration }], index) => (
+            <GuidingPillar
+              key={key}
+              title={title}
+              description={description}
+              icon={icon}
+              duration={duration}
+              index={index}
+            />
+          ),
+        )}
       </div>
     </div>
   );
