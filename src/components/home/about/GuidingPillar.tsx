@@ -9,12 +9,14 @@ type GuidingPillarProps = {
   title: string;
   description: string;
   icon: LottieIconJson;
+  duration: number;
 };
 
 export default function GuidingPillar({
   title,
   description,
   icon,
+  duration,
 }: GuidingPillarProps) {
   const animationControlRef = useRef({
     startAnimation: () => {},
@@ -23,7 +25,7 @@ export default function GuidingPillar({
   return (
     <AnimationControlContext.Provider value={animationControlRef.current}>
       <div className="group relative flex w-[80vw] max-w-[50rem] flex-col items-center justify-center rounded-lg bg-white transition-all duration-300 ease-out sm:flex-row sm:even:flex-row-reverse xl:w-80 xl:flex-col xl:even:flex-col">
-        <LottieIcon icon={icon} duration={1000} sizeInRem={10} />
+        <LottieIcon icon={icon} duration={duration} sizeInRem={10} />
         <div
           className="z-10 mb-8 flex flex-col justify-center gap-2 px-6 pb-5 pt-5 text-center transition-all duration-300 sm:mb-5 sm:gap-0 sm:px-10 xl:gap-3 xl:bg-white xl:px-6 xl:pb-0"
           onMouseEnter={() => animationControlRef.current.startAnimation()}

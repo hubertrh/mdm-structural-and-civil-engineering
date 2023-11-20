@@ -30,16 +30,19 @@ export default function GuidingPillars() {
           title={sectionContent.safety.title}
           description={sectionContent.safety.description}
           icon={safetyIcon}
+          duration={900}
         />
         <GuidingPillar
           title={sectionContent.integrity.title}
           description={sectionContent.integrity.description}
           icon={integrityIcon}
+          duration={850}
         />
         <GuidingPillar
           title={sectionContent.innovativeDesign.title}
           description={sectionContent.innovativeDesign.description}
           icon={innovativeDesignIcon}
+          duration={850}
         />
       </div>
     </div>
