@@ -14,7 +14,7 @@ export default function NavDesktop({
     <nav
       className={`nav hidden font-medium uppercase leading-none text-black-300 lg:flex ${
         variant === "header"
-          ? "text-xs"
+          ? "text-base"
           : "-translate-y-2 translate-x-3 text-sm"
       }`}
     >
