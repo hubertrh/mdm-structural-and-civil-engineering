@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useContext, useEffect, useRef } from "react";
 import lottie, { AnimationItem } from "lottie-web";
 import { AnimationControlContext } from "../contexts/AnimationControlContext";
-import animatedArrowRight from "@/assets/icons/animated-arrow-right.json";
+import animatedRightArrow from "@/assets/icons/animated-right-arrow.min.json";
 
 type SecondaryBtnProps = {
   text: string;
@@ -29,7 +29,7 @@ export default function SecondaryBtn({
     if (container.current) {
       animationInstance.current = lottie.loadAnimation({
         container: container.current,
-        animationData: animatedArrowRight,
+        animationData: animatedRightArrow,
         loop: true,
         autoplay: false,
       });
