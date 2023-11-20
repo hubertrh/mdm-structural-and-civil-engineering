@@ -1,6 +1,7 @@
 import GuidingPillars from "./GuidingPillars";
 import PrimaryBtn from "@/components/common/PrimaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
+import LegacyIcon from "@/assets/icons/animated-legacy.min.json";
 
 export default function AboutUs() {
   const sectionContent = {
@@ -19,7 +20,7 @@ export default function AboutUs() {
       />
       <GuidingPillars />
       <PrimaryBtn
-        iconURL="/icons/legacy.svg"
+        icon={LegacyIcon}
         iconAlt="About us button icon"
         text="Explore Our Legacy"
         pageURL="#"

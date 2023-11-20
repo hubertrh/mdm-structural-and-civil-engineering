@@ -1,6 +1,7 @@
 import PrimaryBtn from "../../common/PrimaryBtn";
 import SectionHeader from "../../common/SectionHeader";
 import Cards from "./Cards";
+import ServicesIcon from "@/assets/icons/animated-services.min.json";
 
 export default function Services() {
   const sectionContent = {
@@ -18,7 +19,7 @@ export default function Services() {
       />
       <Cards />
       <PrimaryBtn
-        iconURL="/icons/services.svg"
+        icon={ServicesIcon}
         iconAlt="Services button icon"
         text="Explore Services"
         pageURL="#"
