@@ -34,18 +34,18 @@ export default function FooterContact() {
             className="group flex flex-col"
             onMouseEnter={() => animationControlRef.current.startAnimation()}
           >
-            <Link
+            <a
               className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
               href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
             >
               MDM&nbsp;Structural&nbsp;and&nbsp;Civil&nbsp;Engineering&nbsp;Ltd
-            </Link>
-            <Link
+            </a>
+            <a
               className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
               href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
             >
               4&nbsp;Quilter&nbsp;Street,&nbsp;London,&nbsp;SE18&nbsp;1JG
-            </Link>
+            </a>
           </div>
           <div className="mt-1">
             <LottieIcon icon={NewCardIcon} duration={1000} sizeInRem={1} />
