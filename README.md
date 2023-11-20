@@ -15,9 +15,9 @@ This repository is the source code for MDM Structural and Civil Engineering's we
 
 ## Design Ethos
 
-The website's design is intentionally straightforward, adhering to specific guidelines provided by MDM, including color schemes and font choices, ensuring brand consistency. The user interface is crafted for clarity and ease of use, providing an intuitive experience while maintaining a professional aesthetic that mirrors MDM's industry reputation.
+The website's design is intentionally straightforward, **adhering to specific guidelines provided by MDM**, including color schemes and font choices, ensuring brand consistency. The user interface is crafted for clarity and ease of use, providing an intuitive experience while maintaining a professional aesthetic that mirrors MDM's industry reputation.
 
-## Technical Stack
+## Tech Stack
 
 - **Next.js & TypeScript:** Chosen for its robustness and type safety in web application development.
 - **Tailwind CSS:** Allows for custom design implementation while following the strict design guidelines provided by MDM.
