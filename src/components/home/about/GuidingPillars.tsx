@@ -1,4 +1,7 @@
 import GuidingPillar from "./GuidingPillar";
+import safetyIcon from "@/assets/icons/animated-safety.min.json";
+import integrityIcon from "@/assets/icons/animated-integrity.min.json";
+import innovativeDesignIcon from "@/assets/icons/animated-innovative-design.min.json";
 
 const sectionContent = {
   safety: {
@@ -22,18 +25,21 @@ export default function GuidingPillars() {
   return (
     <div className="flex flex-col gap-9">
       <h3 className="text-center text-lg sm:text-2xl">Our Guiding Pillars</h3>
-      <div className="flex items-start self-stretch">
+      <div className="flex w-min flex-col items-center justify-between p-4 xl:flex-row">
         <GuidingPillar
           title={sectionContent.safety.title}
           description={sectionContent.safety.description}
+          icon={safetyIcon}
         />
         <GuidingPillar
           title={sectionContent.integrity.title}
           description={sectionContent.integrity.description}
+          icon={integrityIcon}
         />
         <GuidingPillar
           title={sectionContent.innovativeDesign.title}
           description={sectionContent.innovativeDesign.description}
+          icon={innovativeDesignIcon}
         />
       </div>
     </div>
