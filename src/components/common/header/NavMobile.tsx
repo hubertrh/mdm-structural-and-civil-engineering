@@ -3,15 +3,19 @@ import { motion } from "framer-motion";
 import { NavLinks } from "@/types/NavLinks.type";
 import { containerVariants, itemVariants } from "@/utils/animationVariants";
 
+type NavMobileProps = {
+  navLinks: NavLinks;
+  pathname: string;
+  isHamburgerOpen: boolean;
+  closeMenu: () => void;
+};
+
 export default function NavMobile({
   navLinks,
   pathname,
   isHamburgerOpen,
-}: {
-  navLinks: NavLinks;
-  pathname: string;
-  isHamburgerOpen: boolean;
-}) {
+  closeMenu,
+}: NavMobileProps) {
   return (
     <div className="flex w-[70%] flex-col gap-6 text-2xl">
       <p className="text-sm uppercase text-gray-500">Navigation</p>
@@ -29,6 +33,7 @@ export default function NavMobile({
               key={link.name}
               variants={itemVariants}
               custom={isActive}
+              onClick={closeMenu}
               className={`${
                 isActive
                   ? "before:absolute before:left-0 before:top-1/2 before:h-1/2 before:w-[2px] before:-translate-x-3 before:-translate-y-1/2 before:bg-green-light before:content-[''] hover:text-green-dark hover:before:translate-x-0"
