@@ -37,6 +37,7 @@ export default function MenuSidebar({
           navLinks={navLinks}
           pathname={pathname}
           isHamburgerOpen={isHamburgerOpen}
+          closeMenu={closeMenu}
         />
         <SidebarContact />
       </div>

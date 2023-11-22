@@ -16,11 +16,11 @@ const montserrat = Montserrat({
 const agencyFB = localFont({
   src: [
     {
-      path: "./fonts/agency-regular.ttf",
+      path: "../assets/fonts/agency-regular.ttf",
       weight: "400",
     },
     {
-      path: "./fonts/agency-bold.ttf",
+      path: "../assets/fonts/agency-bold.ttf",
       weight: "700",
     },
   ],
@@ -47,7 +47,7 @@ export default function RootLayout({
         <SmoothScroll>
           <div className="min-h-dvh w-full">
             <Header />
-            <main className="mx-auto max-w-screen-2xl bg-white">
+            <main className="mx-auto min-h-dvh w-full max-w-screen-2xl bg-white">
               {children}
             </main>
           </div>
