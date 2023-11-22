@@ -1,7 +1,7 @@
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ContactDetailsLink from "@/components/contact/ContactDetailsLink";
-import { AnimationControlContext } from "@/components/contexts/AnimationControlContext";
+import Mapbox from "@/components/contact/Mapbox";
 
 const sectionContent = {
   title: "Connect With Us",
@@ -9,6 +9,14 @@ const sectionContent = {
     "Your vision deserves the expert touch — let's discuss how we can make it a reality",
   ],
 };
+
+let mapboxToken: string;
+
+if (typeof process.env.MAPBOX_ACCESS_TOKEN === "string") {
+  mapboxToken = process.env.MAPBOX_ACCESS_TOKEN;
+} else {
+  console.error("MAPBOX_ACCESS_TOKEN is not set");
+}
 
 export default function page() {
   return (
@@ -25,15 +33,7 @@ export default function page() {
             <ContactDetailsLink variant="email" />
             <ContactDetailsLink variant="address" />
           </div>
-          </div>
-          <div className="ml-auto h-[500px] w-[500px] scale-75 overflow-hidden rounded-full">
-            <iframe
-              className="scale-[1.10] rounded-full"
-              src="https://snazzymaps.com/embed/547322"
-              width="100%"
-              height="100%"
-            />
-          </div>
+          <Mapbox token={mapboxToken} />
         </div>
       </div>
     </>
