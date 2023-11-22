@@ -36,13 +36,13 @@ export default function FooterContact() {
           >
             <a
               className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
-              href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
+              href="https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"
             >
               MDM&nbsp;Structural&nbsp;and&nbsp;Civil&nbsp;Engineering&nbsp;Ltd
             </a>
             <a
               className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
-              href={"https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"}
+              href="https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"
             >
               4&nbsp;Quilter&nbsp;Street,&nbsp;London,&nbsp;SE18&nbsp;1JG
             </a>

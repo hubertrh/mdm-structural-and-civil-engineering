@@ -10,7 +10,7 @@ type MapboxProps = {
 };
 
 export default function Mapbox({ token }: MapboxProps) {
-  const lenis = useContext(LenisContext); // Use the context
+  const lenis = useContext(LenisContext); // To allow disabling of Lenis
 
   mapboxgl.accessToken = token;
 
@@ -29,7 +29,7 @@ export default function Mapbox({ token }: MapboxProps) {
       .setLngLat([0.0942132, 51.4860491])
       .addTo(map);
 
-    // Function to prevent page scroll when over the map
+    // Function to prevent page scroll when hovering over the map
     const container = document.getElementById("mapbox-container");
     if (!container) return;
 
