@@ -1,4 +1,3 @@
-import LottieIcon from "@/components/common/LottieIcon";
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ContactDetailsLink from "@/components/contact/ContactDetailsLink";
@@ -15,18 +14,17 @@ export default function page() {
   return (
     <>
       <SubHero variant="contact" />;
-      <div className="flex flex-col items-center justify-center gap-16 px-48 py-20 sm:gap-8 sm:py-28">
+      <div className="flex w-full flex-col items-center justify-center gap-16 px-16 py-20 sm:gap-20 sm:py-28 md:px-48">
         <SectionHeader
           title={sectionContent.title}
           description={sectionContent.description}
         />
-        <div className="flex justify-between">
-          <div className="grid h-[500px] w-[500px] place-items-center">
-            <div className="flex flex-col justify-center gap-8">
-              <ContactDetailsLink variant="phone" />
-              <ContactDetailsLink variant="email" />
-              <ContactDetailsLink variant="address" />
-            </div>
+        <div className="flex flex-col items-center justify-center gap-16 md:flex-row lg:gap-40">
+          <div className="grid gap-8">
+            <ContactDetailsLink variant="phone" />
+            <ContactDetailsLink variant="email" />
+            <ContactDetailsLink variant="address" />
+          </div>
           </div>
           <div className="ml-auto h-[500px] w-[500px] scale-75 overflow-hidden rounded-full">
             <iframe

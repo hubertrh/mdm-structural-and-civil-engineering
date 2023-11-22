@@ -56,7 +56,7 @@ export default function ContactDetailsLink({
     <AnimationControlContext.Provider value={animationControlRef.current}>
       <a
         href={variantData.href}
-        className="flex items-center gap-4 transition-all duration-300 hover:text-green-dark"
+        className="flex items-center gap-6 transition-all duration-300 hover:text-green-dark"
         onMouseEnter={() => animationControlRef.current.startAnimation()}
       >
         <LottieIcon
@@ -66,7 +66,9 @@ export default function ContactDetailsLink({
         />
         <div className="flex flex-col gap-2">
           {variantData.contents.map((content, index) => (
-            <p key={index}>{content}</p>
+            <p className="leading-snug lg:text-lg" key={index}>
+              {content}
+            </p>
           ))}
         </div>
       </a>
