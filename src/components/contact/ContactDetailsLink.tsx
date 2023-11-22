@@ -25,7 +25,7 @@ const linkData = {
     contents: ["info@mdmengineers.com"],
   },
   address: {
-    href: "https://maps.example.com",
+    href: "https://maps.app.goo.gl/znVy7jwCRkzEbVVo9",
     icon: AddressIcon,
     duration: 1000,
     contents: [
