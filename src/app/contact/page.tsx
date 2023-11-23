@@ -21,8 +21,8 @@ if (typeof process.env.MAPBOX_ACCESS_TOKEN === "string") {
 export default function page() {
   return (
     <>
-      <SubHero variant="contact" />;
-      <div className="flex w-full flex-col items-center justify-center gap-16 px-16 py-20 sm:gap-20 sm:py-28 md:px-48">
+      <SubHero variant="contact" />
+      <div className="flex w-full flex-col items-center justify-center gap-20 py-16 sm:gap-28 sm:py-28">
         <SectionHeader
           title={sectionContent.title}
           description={sectionContent.description}

@@ -19,12 +19,7 @@ export default function AboutUs() {
         description={sectionContent.description}
       />
       <GuidingPillars />
-      <PrimaryBtn
-        icon={LegacyIcon}
-        iconAlt="About us button icon"
-        text="Explore Our Legacy"
-        pageURL="#"
-      />
+      <PrimaryBtn icon={LegacyIcon} text="Explore Our Legacy" pageURL="#" />
     </div>
   );
 }
