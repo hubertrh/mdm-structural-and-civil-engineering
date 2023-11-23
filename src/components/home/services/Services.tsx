@@ -18,12 +18,7 @@ export default function Services() {
         description={sectionContent.description}
       />
       <Cards />
-      <PrimaryBtn
-        icon={ServicesIcon}
-        iconAlt="Services button icon"
-        text="Explore Services"
-        pageURL="#"
-      />
+      <PrimaryBtn icon={ServicesIcon} text="Explore Services" pageURL="#" />
     </div>
   );
 }
