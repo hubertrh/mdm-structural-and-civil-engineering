@@ -45,6 +45,9 @@ const config: Config = {
       transitionDuration: {
         250: "250ms",
       },
+      screens: {
+        xs: "360px",
+      },
     },
   },
   future: {
