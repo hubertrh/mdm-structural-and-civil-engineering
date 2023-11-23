@@ -64,7 +64,7 @@
   .hero-text h2 {
     text-shadow: -3px 3px 0px #597355;
 
-    @media (max-width: 640px) {
+    @media (max-width: 639px) {
       text-shadow: -2px 2px 0px #597355;
     }
   }
@@ -72,8 +72,38 @@
   .hero-text h3 {
     text-shadow: -2px 2px 0px #597355;
 
-    @media (max-width: 640px) {
+    @media (max-width: 639px) {
       text-shadow: -1px 1px 0px #597355;
+    }
+  }
+
+  .subhero h1 {
+    @media (max-width: 639px) {
+      text-shadow:
+        4px 4px 32px #00233e,
+        -4px 4px 32px #00233e,
+        4px -4px 32px #00233e,
+        -4px -4px 32px #00233e,
+        4px 0px 32px #00233e,
+        -4px 0px 32px #00233e,
+        0px 4px 32px #00233e,
+        0px -4px 32px #00233e,
+        4px 4px 32px #00233e,
+        -4px 4px 32px #00233e,
+        4px -4px 32px #00233e,
+        -4px -4px 32px #00233e,
+        4px 0px 32px #00233e,
+        -4px 0px 32px #00233e,
+        0px 4px 32px #00233e,
+        0px -4px 32px #00233e,
+        4px 4px 32px #00233e,
+        -4px 4px 32px #00233e,
+        4px -4px 32px #00233e,
+        -4px -4px 32px #00233e,
+        4px 0px 32px #00233e,
+        -4px 0px 32px #00233e,
+        0px 4px 32px #00233e,
+        0px -4px 32px #00233e;
     }
   }
 

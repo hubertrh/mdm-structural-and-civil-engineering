@@ -7,7 +7,7 @@ type SubHero = {
 
 export default function SubHero({ variant }: SubHero) {
   return (
-    <div className="relative mt-[4.6rem] grid h-fit w-full place-items-center sm:mt-[4.6rem] md:mt-[6.6rem] lg:mt-[8.6rem]">
+    <div className="subhero relative mt-[4.6rem] grid h-fit w-full place-items-center overflow-hidden sm:mt-[4.6rem] md:mt-[6.6rem] lg:mt-[8.6rem]">
       <h1 className="absolute inset-0 grid place-items-center text-4xl text-white">
         {variant}
       </h1>
