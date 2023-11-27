@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import SectionHeader from "../../common/SectionHeader";
-import SecondaryBtn from "../../common/SecondaryBtn";
+import SecondaryBtn from "@/components/common/SecondaryBtn";
+import SectionHeader from "@/components/common/SectionHeader";
 
 export default function Projects() {
+  const sectionContent = {
+    title: "Our Projects",
+    description: [
+      "We take pride in our diverse range of projects that stand as testaments to our commitment to safety, innovation, and excellence.",
+    ],
+  };
+
   const Projects = [
     {
       imgURL: "/images/project-example-1.png",
@@ -21,13 +28,6 @@ export default function Projects() {
       projectURL: "/projects/project-example-3",
     },
   ];
-
-  const sectionContent = {
-    title: "Our Projects",
-    description: [
-      "We take pride in our diverse range of projects that stand as testaments to our commitment to safety, innovation, and excellence.",
-    ],
-  };
 
   return (
     <div className="flex flex-col items-center justify-center gap-16 bg-background-blue pb-28 pt-20 sm:gap-20 sm:pt-28">
@@ -48,7 +48,7 @@ export default function Projects() {
                 src={project.imgURL}
                 alt={project.title}
                 fill={true}
-                sizes="100dvw"
+                sizes="100vw"
               />
               <div className="group absolute top-[102%] grid h-20 w-full place-items-center bg-blue-dark bg-opacity-0 transition-all duration-300 hover:bg-opacity-40 sm:inset-0 sm:h-auto">
                 <div className="home-projects-text grid h-20 w-full place-items-center bg-blue-dark bg-opacity-100 px-4 text-center text-white opacity-100 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:translate-y-1 sm:opacity-0">
