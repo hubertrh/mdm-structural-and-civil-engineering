@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SubHero from "@/components/common/SubHero";
+import ProjectThumbnail from "@/components/common/ProjectThumbnail";
 
 const Projects = [
   {
@@ -43,9 +44,14 @@ export default function page() {
           return (
             <Link
               href={project.projectURL}
-              className="h-96 w-96 bg-gray-200"
+              className="relative h-96 w-96 bg-gray-200"
               key={project.title}
-            ></Link>
+            >
+              <ProjectThumbnail
+                imgURL={project.imgURL}
+                projectTitle={project.title}
+              />
+            </Link>
           );
         })}
       </div>

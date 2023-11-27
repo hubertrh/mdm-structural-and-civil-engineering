@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import SecondaryBtn from "@/components/common/SecondaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
+import ProjectThumbnail from "@/components/common/ProjectThumbnail";
 
 export default function Projects() {
   const sectionContent = {
@@ -43,18 +43,10 @@ export default function Projects() {
               className="relative mb-24 aspect-square w-full sm:mb-0"
               key={project.title}
             >
-              <Image
-                className="object-cover"
-                src={project.imgURL}
-                alt={project.title}
-                fill={true}
-                sizes="100vw"
+              <ProjectThumbnail
+                imgURL={project.imgURL}
+                projectTitle={project.title}
               />
-              <div className="group absolute top-[102%] grid h-20 w-full place-items-center bg-blue-dark bg-opacity-0 transition-all duration-300 hover:bg-opacity-40 sm:inset-0 sm:h-auto">
-                <div className="home-projects-text grid h-20 w-full place-items-center bg-blue-dark bg-opacity-100 px-4 text-center text-white opacity-100 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:translate-y-1 sm:opacity-0">
-                  {project.title}
-                </div>
-              </div>
             </Link>
           );
         })}
