@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeroText from "./HeroText";
-import heroImage from "/public/images/hero-lg.png";
+import heroImage from "/public/images/hero.png";
 
 export default function Hero() {
   return (
