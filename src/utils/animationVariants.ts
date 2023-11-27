@@ -19,10 +19,10 @@ export const itemVariants = {
 };
 
 export const slideUp = {
-  initial: { y: "100%" },
   open: (wordIndex: number) => ({
     y: 0,
-    transition: { duration: 0.4, delay: wordIndex * 0.02 },
+    opacity: "100%",
+    transition: { duration: 0.3, delay: wordIndex * 0.015 + 0.1 },
   }),
-  closed: { y: "100%" },
+  closed: { y: "10%", opacity: "0%" },
 };

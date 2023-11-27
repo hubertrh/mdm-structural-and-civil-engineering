@@ -40,7 +40,7 @@ export default function SectionHeader({
           {paragraph.split(" ").map((word, wordIndex) => (
             <span className="relative overflow-hidden" key={wordIndex}>
               <motion.span
-                className="block"
+                className="block opacity-0"
                 custom={wordIndex}
                 variants={slideUp}
                 initial="initial"
