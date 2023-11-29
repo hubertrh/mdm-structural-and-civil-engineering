@@ -39,12 +39,12 @@ export default function page() {
   return (
     <>
       <SubHero variant="projects" />
-      <div className="mx-auto flex max-w-[51rem] flex-wrap justify-center gap-12 py-24">
+      <div className="mx-auto flex max-w-[51rem] flex-col flex-wrap items-center justify-center gap-32 py-24 md:flex-row md:gap-12">
         {Projects.map((project) => {
           return (
             <Link
               href={project.projectURL}
-              className="relative h-96 w-96 bg-gray-200"
+              className="relative aspect-square w-80 max-w-[90vw] bg-gray-200 lg:w-96"
               key={project.title}
             >
               <ProjectThumbnail

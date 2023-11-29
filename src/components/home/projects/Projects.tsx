@@ -35,12 +35,12 @@ export default function Projects() {
         title={sectionContent.title}
         description={sectionContent.description}
       />
-      <div className="relative grid w-[80vw] max-w-4xl grid-flow-row gap-12 sm:grid-flow-col sm:gap-4">
+      <div className="relative grid w-[80vw] max-w-4xl grid-flow-row gap-12 md:grid-flow-col md:gap-4">
         {Projects.map((project) => {
           return (
             <Link
               href={project.projectURL}
-              className="relative mb-24 aspect-square w-full sm:mb-0"
+              className="relative mb-24 aspect-square w-full md:mb-0"
               key={project.title}
             >
               <ProjectThumbnail
