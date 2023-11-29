@@ -22,9 +22,12 @@ export default function SectionHeader({
       >
         {title}
       </h2>
-      {description?.map((paragraph, index) => (
-        <p className="text-base leading-7" key={index}>
-          {paragraph}
+      {description?.map((_, index) => (
+        <p
+          className="flex flex-wrap justify-center gap-x-1 text-base leading-7"
+          key={index}
+        >
+          {description}
         </p>
       ))}
     </section>
