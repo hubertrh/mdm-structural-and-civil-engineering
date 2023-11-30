@@ -26,3 +26,15 @@ export const slideUp = {
   }),
   closed: { y: "10%", opacity: "0%" },
 };
+
+export const scaleTransition = {
+  initial: { scale: 0 },
+  open: {
+    scale: 1.25,
+    transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] },
+  },
+  closed: {
+    scale: 0,
+    transition: { duration: 0.3, ease: [0.32, 0, 0.67, 0] },
+  },
+};

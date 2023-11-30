@@ -8,8 +8,7 @@
     color: white;
   }
 
-  h2,
-  h3 {
+  * {
     text-wrap: balance;
   }
 }
@@ -119,5 +118,11 @@
       rgba(136, 136, 136, 0) 101.04%,
       rgba(136, 136, 136, 0) 140.74%
     );
+  }
+
+  .grid-domains {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    gap: 1rem;
   }
 }

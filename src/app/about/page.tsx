@@ -32,7 +32,7 @@ export default function page() {
           <SectionHeader
             title={sectionOutro.title}
             description={sectionOutro.description}
-            variant="light"
+            weight="light"
           />
           <PrimaryBtn icon={ContactIcon} text="Let's talk" pageURL="/contact" />
         </div>

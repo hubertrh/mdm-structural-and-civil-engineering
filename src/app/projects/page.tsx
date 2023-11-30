@@ -2,7 +2,7 @@ import Link from "next/link";
 import SubHero from "@/components/common/SubHero";
 import ProjectThumbnail from "@/components/common/ProjectThumbnail";
 
-const Projects = [
+const projects = [
   {
     imgURL: "/images/project-example-1.png",
     title: "Project Example 1",
@@ -40,7 +40,7 @@ export default function page() {
     <>
       <SubHero variant="projects" />
       <div className="mx-auto flex max-w-[51rem] flex-col flex-wrap items-center justify-center gap-32 py-24 md:flex-row md:gap-12">
-        {Projects.map((project) => {
+        {projects.map((project) => {
           return (
             <Link
               href={project.projectURL}

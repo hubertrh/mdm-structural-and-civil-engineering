@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
+import ProjectDomains from "@/components/services/ProjectDomains";
 
 const sectionContent = {
   title: "Dive into our comprehensive offerings",
@@ -16,7 +17,9 @@ export default function page() {
         <SectionHeader
           title={sectionContent.title}
           description={sectionContent.description}
+          textAlign="center"
         />
+        <ProjectDomains />
       </div>
     </>
   );

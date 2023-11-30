@@ -1,13 +1,29 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
   "rules": {
-    "import/order": "warn",
+    "import/order": "error",
     "prettier/prettier": [
       "error",
       {
         "singleQuote": false,
         "jsxSingleQuote": false
       }
+    ],
+    "tailwindcss/no-custom-classname": [
+      "warn",
+      {
+        "whitelist": [
+          "header",
+          "home-projects-text",
+          "logo-text",
+          "logo-text-small"
+        ]
+      }
     ]
-  }
+  },
+  "plugins": ["tailwindcss"]
 }

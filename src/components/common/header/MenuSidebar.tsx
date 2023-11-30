@@ -21,7 +21,7 @@ export default function MenuSidebar({
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-blue-dark bg-opacity-80 brightness-75 transition-opacity duration-300 ease-out ${
+        className={`fixed inset-0 bg-blue-dark/80 brightness-75 transition-opacity duration-300 ease-out ${
           isHamburgerOpen ? "" : "pointer-events-none opacity-0"
         }`}
         onClick={closeMenu}

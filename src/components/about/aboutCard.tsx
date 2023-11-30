@@ -63,7 +63,7 @@ export default function AboutCard({
       >
         <LottieIcon icon={icon} duration={duration} sizeInRem={10} />
         <div
-          className="z-10 mb-8 flex flex-col justify-center gap-2 pb-5 pt-5 text-center transition-all duration-300 sm:mb-0 sm:max-w-[80%] sm:gap-0 sm:px-10"
+          className="z-10 mb-8 flex flex-col justify-center gap-2 py-5 text-center transition-all duration-300 sm:mb-0 sm:max-w-[80%] sm:gap-0 sm:px-10"
           onMouseEnter={() => animationControlRef.current.startAnimation()}
         >
           <h2 className="mb-3 h-max text-lg font-medium leading-tight">
