@@ -42,7 +42,7 @@ export default function ProjectDomains() {
         return (
           <div
             key={index}
-            className={`grid-domains relative border-gray-300 py-5 ${
+            className={`grid-domains relative border-gray-400 py-5 ${
               index !== domains.length - 1 ? "border-b" : ""
             }`}
             onMouseEnter={() => setModal({ active: true, index: index })}
