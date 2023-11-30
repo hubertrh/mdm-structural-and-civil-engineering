@@ -57,8 +57,7 @@ export default function SecondaryBtn({
           position === "inside"
             ? "bottom-0 px-6 py-4"
             : "top-full px-2 py-6 sm:py-3"
-        } ${buttonClassList}
-      }`}
+        } ${buttonClassList}`}
         onMouseEnter={handleMouseEnter}
       >
         <p className="text-lg text-blue-dark sm:text-base">{text}</p>
@@ -74,8 +73,7 @@ export default function SecondaryBtn({
         position === "inside"
           ? "absolute bottom-0 right-0"
           : "absolute right-0 top-full"
-      }
-  }`}
+      }`}
     >
       <ButtonContent />
     </Link>

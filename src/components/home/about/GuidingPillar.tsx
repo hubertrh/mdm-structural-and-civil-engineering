@@ -67,7 +67,7 @@ export default function GuidingPillar({
       >
         <LottieIcon icon={icon} duration={duration} sizeInRem={10} />
         <div
-          className="z-10 mb-8 flex flex-col justify-center gap-2 px-6 pb-5 pt-5 text-center transition-all duration-300 sm:mb-5 sm:max-w-[80%] sm:gap-0 sm:px-10 xl:max-w-full xl:gap-3 xl:bg-white xl:px-6 xl:pb-0"
+          className="z-10 mb-8 flex flex-col justify-center gap-2 px-6 py-5 text-center transition-all duration-300 sm:mb-5 sm:max-w-[80%] sm:gap-0 sm:px-10 xl:max-w-full xl:gap-3 xl:bg-white xl:px-6 xl:pb-0"
           onMouseEnter={() => animationControlRef.current.startAnimation()}
         >
           <h2 className="h-max text-lg font-medium leading-tight">{title}</h2>

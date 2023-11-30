@@ -72,10 +72,10 @@ export default function ProjectDomains() {
         initial="initial"
         animate={modal.active ? "open" : "closed"}
         style={{ translate: `0 ${modal.index * 100}%` }}
-        className="translate-all duration-400 pointer-events-none absolute right-0 top-0 hidden aspect-square h-[20%] -translate-x-8 flex-col overflow-hidden ease-out md:flex"
+        className="pointer-events-none absolute right-0 top-0 hidden aspect-square h-[20%] -translate-x-8 flex-col overflow-hidden duration-400"
       >
         <div
-          className="duration-400 aspect-square w-full transition-all ease-out"
+          className="aspect-square w-full transition-all duration-400 ease-out"
           style={{ translate: `0 ${modal.index * -20}%` }}
         >
           {domains.map((domain, index) => {
