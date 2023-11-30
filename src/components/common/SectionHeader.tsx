@@ -1,20 +1,27 @@
 type SectionHeaderProps = {
   title: string;
   description?: string[];
-  variant?: "light";
+  weight?: "light";
+  textAlign?: "center";
 };
 
 export default function SectionHeader({
   title,
   description,
-  variant,
+  weight,
+  textAlign,
 }: SectionHeaderProps) {
   return (
-    <section className="flex w-[80vw] max-w-4xl flex-col gap-2 text-justify sm:text-center">
+    <section
+      className={`flex w-[80vw] max-w-4xl flex-col gap-2 sm:text-center ${
+        textAlign === "center" ? "text-center" : "text-justify"
+      }
+    `}
+    >
       <h2
         className={`pb-4 text-center text-black-200
       ${
-        variant === "light"
+        weight === "light"
           ? "text-lg font-normal sm:text-2xl"
           : "text-xl font-medium sm:text-3xl"
       }

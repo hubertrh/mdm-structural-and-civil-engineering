@@ -26,6 +26,7 @@ export default function page() {
         <SectionHeader
           title={sectionContent.title}
           description={sectionContent.description}
+          textAlign="center"
         />
         <div className="flex flex-col items-center justify-center gap-16 md:flex-row lg:gap-40">
           <div className="grid gap-8">

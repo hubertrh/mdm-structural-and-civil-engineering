@@ -16,6 +16,7 @@ export default function page() {
         <SectionHeader
           title={sectionContent.title}
           description={sectionContent.description}
+          textAlign="center"
         />
       </div>
     </>
