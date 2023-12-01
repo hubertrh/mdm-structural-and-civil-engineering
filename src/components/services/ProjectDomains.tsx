@@ -58,8 +58,7 @@ export default function ProjectDomains() {
                 alt={domain.title}
                 fill
                 priority
-                // TODO: Check after implementing responsive design
-                sizes="(max-width: 768px) 100vw, 30vw"
+                sizes="40vw"
                 // TODO: Add blur after implementing Sanity CMS
                 // placeholder="blur"
               />
@@ -87,8 +86,7 @@ export default function ProjectDomains() {
                   alt={domain.title}
                   fill
                   priority
-                  // TODO: Check after implementing responsive design
-                  sizes="(max-width: 768px) 100vw, 30vw"
+                  sizes="40vw"
                   // TODO: Add blur after implementing Sanity CMS
                   // placeholder="blur"
                 />
