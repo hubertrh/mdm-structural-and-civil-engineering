@@ -1,7 +1,9 @@
 import SlideUpH2 from "@/components/common/SlideUpH2";
 
-const headingText =
-  "Specialising in structural design and assessment, we make safety and innovation our business";
+const headingText = [
+  "Specialising in structural design and assessment,",
+  "we make safety and innovation our business",
+];
 
 export default function HeroText() {
   return (

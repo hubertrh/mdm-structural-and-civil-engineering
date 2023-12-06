@@ -5,42 +5,62 @@ import { useRef } from "react";
 import { slideUp } from "@/utils/animationVariants";
 
 type SlideUpH2Props = {
-  headingText: String;
+  headingText: string | string[];
+};
+
+// Component to animate each word
+const AnimatedWord = ({
+  word,
+  index,
+  isInView,
+}: {
+  word: string;
+  index: number;
+  isInView: boolean;
+}) => {
+  return (
+    <span className="relative overflow-hidden" key={index}>
+      <motion.span
+        className="block opacity-0"
+        custom={index}
+        variants={slideUp}
+        initial="initial"
+        animate={isInView ? "open" : "closed"}
+      >
+        {word}
+      </motion.span>
+    </span>
+  );
 };
 
 export default function SlideUpH2({ headingText }: SlideUpH2Props) {
   const container = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(container, { once: true });
 
-  // Split the heading text into words and add a <br> after each comma
-  const words = headingText
-    .split(/, /)
-    .flatMap((segment, index, array) =>
-      index < array.length - 1
-        ? [segment + ",", <br key={"br" + index} />]
-        : [segment],
-    );
+  // Function to render animated line of text
+  const renderAnimatedLine = (line: string, lineIndex: number) => {
+    return line
+      .split(" ")
+      .map((word, wordIndex) => (
+        <AnimatedWord
+          word={word}
+          index={wordIndex}
+          isInView={isInView}
+          key={`${lineIndex}-${wordIndex}`}
+        />
+      ));
+  };
+
+  // Ensuring headingText is always an array
+  const textLines = Array.isArray(headingText) ? headingText : [headingText];
 
   return (
-    <h2 className="flex flex-col justify-end gap-x-1" ref={container}>
-      {words.map((wordOrBreak, wordIndex) =>
-        //
-        // If it's a string, wrap it in a span and animate it, otherwise it's a <br>
-        //
-        typeof wordOrBreak === "string" ? (
-          <span className="relative overflow-hidden" key={wordIndex}>
-            <motion.span
-              className="block opacity-0"
-              custom={wordIndex}
-              variants={slideUp}
-              initial="initial"
-              animate={isInView ? "open" : "closed"}
-            >
-              {wordOrBreak}
-            </motion.span>
-          </span>
-        ) : null,
-      )}
+    <h2 className="flex flex-col gap-y-1" ref={container}>
+      {textLines.map((line, lineIndex) => (
+        <span className="flex flex-wrap justify-end gap-x-1" key={lineIndex}>
+          {renderAnimatedLine(line, lineIndex)}
+        </span>
+      ))}
     </h2>
   );
 }
