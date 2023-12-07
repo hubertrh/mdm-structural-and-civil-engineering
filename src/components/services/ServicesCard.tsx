@@ -30,10 +30,10 @@ export default function ServicesCard({
         </div>
         <div className="mb-2 flex h-auto flex-col justify-center gap-4 p-6">
           <p className="text-2xl">{title}</p>
-          <p>{summary}</p>
+          <p className="leading-relaxed">{summary}</p>
         </div>
       </div>
-      <div className="grid w-full place-items-center gap-3 px-6 py-8 text-justify text-sm text-black-300 md:h-full md:px-14 md:py-6">
+      <div className="flex w-full flex-col items-center justify-center gap-4 border-b border-blue px-6 py-8 text-justify leading-relaxed text-black-300 md:h-full md:px-10 md:py-8 md:text-center">
         {description.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
