@@ -37,51 +37,27 @@ export default function ProjectDomains() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <section className="relative flex w-[85vw] max-w-4xl flex-col">
-      {domains.map((domain, index) => {
-        return (
-          <div
-            key={index}
-            className={`grid-domains relative border-gray-400 py-5 ${
-              index !== domains.length - 1 ? "border-b" : ""
-            }`}
-            onMouseEnter={() => setModal({ active: true, index: index })}
-            onMouseLeave={() => setModal({ active: false, index: index })}
-          >
-            <div className="flex-col justify-center gap-4 py-5 text-xs sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
-              <p className="text-2xl">{domain.title}</p>
-              <p className="h-auto sm:h-[2rem]">{domain.description}</p>
-            </div>
-            <div className="relative my-auto aspect-square w-full md:hidden">
-              <Image
-                src={domain.src}
-                alt={domain.title}
-                fill
-                priority
-                sizes="40vw"
-                // TODO: Add blur after implementing Sanity CMS
-                // placeholder="blur"
-              />
-            </div>
-          </div>
-        );
-      })}
-      <motion.div
-        variants={scaleUp}
-        initial="initial"
-        animate={modal.active ? "open" : "closed"}
-        style={{ translate: `0 ${modal.index * 100}%` }}
-        className="pointer-events-none absolute right-0 top-0 hidden aspect-square h-[20%] -translate-x-8 flex-col overflow-hidden shadow-xl duration-400 ease-out md:flex"
-      >
-        <div
-          className="aspect-square w-full transition-all duration-400 ease-out"
-          style={{ translate: `0 ${modal.index * -20}%` }}
-        >
-          {domains.map((domain, index) => {
-            return (
-              <div key={index} className="relative aspect-square w-full">
+    <section className="grid place-items-center gap-16">
+      <h2 className="mt-12 text-xl sm:text-3xl">
+        Project Domains We Excel by:
+      </h2>
+      <div className="relative flex w-[85vw] max-w-4xl flex-col">
+        {domains.map((domain, index) => {
+          return (
+            <div
+              key={index}
+              className={`grid-domains relative border-gray-400 py-5 ${
+                index !== domains.length - 1 ? "border-b" : ""
+              }`}
+              onMouseEnter={() => setModal({ active: true, index: index })}
+              onMouseLeave={() => setModal({ active: false, index: index })}
+            >
+              <div className="flex-col justify-center gap-4 py-5 text-xs sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
+                <p className="text-2xl">{domain.title}</p>
+                <p className="h-auto sm:h-[2rem]">{domain.description}</p>
+              </div>
+              <div className="relative my-auto aspect-square w-full md:hidden">
                 <Image
-                  className="w-full"
                   src={domain.src}
                   alt={domain.title}
                   fill
@@ -91,10 +67,39 @@ export default function ProjectDomains() {
                   // placeholder="blur"
                 />
               </div>
-            );
-          })}
-        </div>
-      </motion.div>
+            </div>
+          );
+        })}
+        <motion.div
+          variants={scaleUp}
+          initial="initial"
+          animate={modal.active ? "open" : "closed"}
+          style={{ translate: `0 ${modal.index * 100}%` }}
+          className="pointer-events-none absolute right-0 top-0 hidden aspect-square h-[20%] -translate-x-8 flex-col overflow-hidden shadow-xl duration-400 ease-out md:flex"
+        >
+          <div
+            className="aspect-square w-full transition-all duration-400 ease-out"
+            style={{ translate: `0 ${modal.index * -20}%` }}
+          >
+            {domains.map((domain, index) => {
+              return (
+                <div key={index} className="relative aspect-square w-full">
+                  <Image
+                    className="w-full"
+                    src={domain.src}
+                    alt={domain.title}
+                    fill
+                    priority
+                    sizes="40vw"
+                    // TODO: Add blur after implementing Sanity CMS
+                    // placeholder="blur"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
