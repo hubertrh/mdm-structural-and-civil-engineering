@@ -14,8 +14,8 @@ export default function ServicesCard({
   imgURL,
 }: ServicesCardProps) {
   return (
-    <div className="flex w-full max-w-3xl flex-col justify-between rounded-lg bg-background-blue/70 sm:w-[30rem] md:mx-4 md:w-[45rem] md:scale-[85%] lg:scale-90">
-      <div className="grid-services-cards relative w-full rounded-lg bg-background-blue shadow-lg md:shadow-xl">
+    <div className="flex w-full max-w-3xl flex-col justify-between rounded-t-lg bg-background-blue/50 sm:w-[30rem] md:mx-4 md:w-[45rem] md:scale-[85%] lg:scale-90">
+      <div className="grid-services-cards relative w-full rounded-lg border border-blue bg-white/70">
         <div className="relative aspect-square h-full max-w-full">
           <Image
             className="w-full rounded-lg object-cover"
