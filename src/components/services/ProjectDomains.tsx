@@ -37,9 +37,9 @@ export default function ProjectDomains() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <section className="grid place-items-center gap-16">
-      <h2 className="mt-12 text-xl sm:text-3xl">
-        Project Domains We Excel by:
+    <section className="grid place-items-center gap-8">
+      <h2 className="max-w-[80vw] text-center text-2xl sm:text-[1.6rem] md:w-full md:px-10">
+        <span>Project&nbsp;Domains</span> <span>We&nbsp;Excel&nbsp;by</span>
       </h2>
       <div className="relative flex w-[85vw] max-w-4xl flex-col">
         {domains.map((domain, index) => {
@@ -52,7 +52,7 @@ export default function ProjectDomains() {
               onMouseEnter={() => setModal({ active: true, index: index })}
               onMouseLeave={() => setModal({ active: false, index: index })}
             >
-              <div className="flex-col justify-center gap-4 py-5 text-xs sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
+              <div className="flex flex-col justify-center gap-2 py-5 text-sm sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
                 <p className="text-2xl">{domain.title}</p>
                 <p className="h-auto sm:h-[2rem]">{domain.description}</p>
               </div>

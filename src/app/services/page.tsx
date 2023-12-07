@@ -14,7 +14,7 @@ export default function page() {
   return (
     <>
       <SubHero variant="services" />
-      <div className="flex w-full flex-col items-center justify-center gap-20 py-20 sm:gap-28 sm:py-28">
+      <div className="flex w-full flex-col items-center justify-center gap-28 py-20 sm:gap-28 sm:py-28">
         <SectionHeader
           title={sectionContent.title}
           description={sectionContent.description}
