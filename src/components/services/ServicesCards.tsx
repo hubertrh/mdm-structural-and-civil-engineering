@@ -89,12 +89,12 @@ export default function ServicesCards() {
           </>
         ) : null}
       </div>
-      <div className="absolute -bottom-4 left-1/2 z-10 hidden -translate-x-1/2 gap-3 md:flex">
+      <div className="absolute -bottom-4 left-1/2 z-10 hidden -translate-x-1/2 gap-4 md:flex">
         {services.map((_, index) => {
           return (
             <div
               key={index}
-              className={`grid h-5 w-5 cursor-pointer place-items-center rounded-full transition-all duration-400 ${
+              className={`grid h-3 w-5 cursor-pointer place-items-center transition-all duration-400 ${
                 position * -1 + 1 === index
                   ? "outline outline-green"
                   : "outline outline-transparent"
@@ -103,7 +103,7 @@ export default function ServicesCards() {
                 setPosition((index - 1) * -1);
               }}
             >
-              <span className="h-[10px] w-[10px] rounded-full bg-green-dark" />
+              <span className="h-1 w-3 bg-green-dark" />
             </div>
           );
         })}
