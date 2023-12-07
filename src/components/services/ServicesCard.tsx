@@ -14,8 +14,8 @@ export default function ServicesCard({
   imgURL,
 }: ServicesCardProps) {
   return (
-    <div className="mx-4 flex h-[30rem] w-[45rem] max-w-3xl scale-[85%] flex-col justify-between rounded-lg bg-background-blue/80 lg:scale-90">
-      <div className="grid-services-cards relative w-full rounded-lg bg-background-blue shadow-xl">
+    <div className="flex w-full max-w-3xl flex-col justify-between rounded-lg bg-background-blue/70 sm:w-[30rem] md:mx-4 md:w-[45rem] md:scale-[85%] lg:scale-90">
+      <div className="grid-services-cards relative w-full rounded-lg bg-background-blue shadow-lg md:shadow-xl">
         <div className="relative aspect-square h-full max-w-full">
           <Image
             className="w-full rounded-lg object-cover"
@@ -33,7 +33,7 @@ export default function ServicesCard({
           <p>{summary}</p>
         </div>
       </div>
-      <div className="grid h-full w-full place-items-center px-14 py-6 text-justify text-sm text-black-300">
+      <div className="grid w-full place-items-center gap-3 px-6 py-8 text-justify text-sm text-black-300 md:h-full md:px-14 md:py-6">
         {description.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}

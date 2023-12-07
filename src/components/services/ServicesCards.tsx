@@ -46,9 +46,9 @@ export default function ServicesCards() {
     position !== 1 ? setPosition(position + 1) : null;
 
   return (
-    <section className="relative flex w-[90vw] max-w-6xl items-center justify-center overflow-x-clip">
+    <section className="relative flex w-[80vw] max-w-6xl items-center justify-center overflow-x-clip md:w-[90vw]">
       <div
-        className="flex w-max transition-all duration-300 ease-out"
+        className="translate-reset flex w-max flex-col gap-12 transition-all duration-300 ease-out md:flex-row"
         style={{ translate: `${position * 33.33}%` }}
       >
         {services.map((service, index) => {
@@ -64,7 +64,7 @@ export default function ServicesCards() {
         })}
       </div>
       <div
-        className="absolute left-0 top-0 grid h-full w-[8%] place-items-center bg-gradient-to-l from-transparent to-white lg:w-[15%]"
+        className="absolute left-0 top-0 hidden h-full w-[8%] place-items-center bg-gradient-to-l from-transparent to-white md:grid lg:w-[15%]"
         onClick={prevPosition}
       >
         {position < 1 ? (
@@ -77,7 +77,7 @@ export default function ServicesCards() {
         ) : null}
       </div>
       <div
-        className="absolute right-0 top-0 grid h-full w-[8%] place-items-center bg-gradient-to-r from-transparent to-white lg:w-[15%]"
+        className="absolute right-0 top-0 hidden h-full w-[8%] place-items-center bg-gradient-to-r from-transparent to-white md:grid lg:w-[15%]"
         onClick={nextPosition}
       >
         {position > -1 ? (
@@ -89,7 +89,7 @@ export default function ServicesCards() {
           </>
         ) : null}
       </div>
-      <div className="absolute -bottom-10 left-1/2 z-10 flex -translate-x-1/2 gap-3">
+      <div className="absolute -bottom-4 left-1/2 z-10 hidden -translate-x-1/2 gap-3 md:flex">
         {services.map((_, index) => {
           return (
             <div
