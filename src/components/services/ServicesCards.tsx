@@ -48,7 +48,7 @@ export default function ServicesCards() {
   return (
     <section className="relative flex w-[80vw] max-w-6xl items-center justify-center overflow-x-clip md:w-[90vw]">
       <div
-        className="translate-reset flex w-max flex-col gap-12 transition-all duration-300 ease-out md:flex-row"
+          className="translate-reset flex w-max flex-col gap-20 transition-all duration-500 ease-in-out-quint md:flex-row md:gap-0"
         style={{ translate: `${position * 33.33}%` }}
       >
         {services.map((service, index) => {
@@ -94,7 +94,7 @@ export default function ServicesCards() {
           return (
             <div
               key={index}
-              className={`grid h-3 w-5 cursor-pointer place-items-center transition-all duration-400 ${
+                className={`grid h-3 w-5 cursor-pointer place-items-center transition-all duration-500 ease-in-out-quint ${
                 position * -1 + 1 === index
                   ? "outline outline-green"
                   : "outline outline-transparent"
