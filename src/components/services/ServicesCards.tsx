@@ -11,8 +11,8 @@ const services = [
     summary:
       "Whether you're building a new, renovating, or extending, our expert touch ensures your structures stand tall, meeting and exceeding all safety and performance benchmarks.",
     description: [
-      "Customised Architectural Synergy: At MDM, each project is an opportunity to harmonise the client's vision with our engineering innovation. We excel in creating unique structural designs that resonate with London's diverse architectural landscape, from quaint Notting Hill residences to soaring Canary Wharf skyscrapers.",
-      "Precision-Driven Analysis: Leveraging cutting-edge technology and London's rich engineering heritage, our team conducts meticulous structural analyses. We ensure that each design not only meets but surpasses the stringent safety and performance standards of the UK's building regulations.",
+      "Tailored Structural Solutions: We specialize in custom structural designs for a variety of London's architectural styles, ensuring both aesthetic appeal and functional strength.",
+      "Rigorous Analysis for Compliance: Our team employs advanced technology to perform detailed structural analyses, ensuring every design complies with UK building standards for safety and efficiency.",
     ],
     imgURL: "/images/services/structural-design-analysis.png",
   },
@@ -21,8 +21,8 @@ const services = [
     summary:
       "Beyond mere observation, our in-depth inspections unearth potential structural concerns. We not only pinpoint issues but also guide you through repair and reinforcement solutions.",
     description: [
-      "Beyond Surface-Level Inspection: London's rich tapestry of old and new structures demands more than just a cursory glance. Our in-depth inspections delve into the very bones of buildings, from Victorian townhouses to modern glass-and-steel constructions, identifying both overt and latent structural challenges.",
-      "Heritage Preservation Meets Modern Engineering: Specialising in the delicate balance of modernising while preserving London's historical buildings, we offer tailored solutions that respect the past while securing the future.",
+      "Comprehensive Building Inspections: We thoroughly inspect buildings, from historic to modern, identifying structural issues to ensure safety and durability.",
+      "Heritage and Modernity: Expertly balancing historical preservation with modern engineering, we upgrade London's heritage buildings for future resilience.",
     ],
     imgURL: "/images/services/structural-assessments-inspections.png",
   },
@@ -31,8 +31,8 @@ const services = [
     summary:
       "Bring your vision to life with confidence. Our vigilant on-site supervision ensures your project mirrors its blueprints, adhering rigorously to the approved design and specifications.",
     description: [
-      "Ensuring London's Skyline Integrity: Our on-site supervision is the guardian of your project's fidelity to its blueprint. We navigate the complexities of London's urban construction landscape, ensuring that every rivet and beam reflects the approved design.",
-      "Collaborative Approach with Local Insight: With our deep understanding of London's construction ecosystem, we seamlessly integrate with contractors and local authorities. Our proactive problem-solving ensures that projects not only progress smoothly but also contribute positively to the community fabric.",
+      "Guarding Project Integrity: Our vigilant on-site supervision ensures your project strictly adheres to its blueprint, navigating London's urban construction challenges effectively.",
+      "Collaborative and Efficient: We work closely with contractors and authorities, applying our local construction knowledge for smooth project execution and community enhancement.",
     ],
     imgURL: "/images/services/construction-supervision-monitoring.png",
   },
