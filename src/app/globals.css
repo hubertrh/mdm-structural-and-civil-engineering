@@ -125,4 +125,10 @@
     grid-template-columns: 6fr 4fr;
     gap: 1rem;
   }
+
+  .grid-services-cards {
+    display: grid;
+    grid-template-columns: 6fr 11fr;
+    gap: 1rem;
+  }
 }
