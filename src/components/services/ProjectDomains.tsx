@@ -3,33 +3,33 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { scaleTransition } from "@/utils/animationVariants";
+import { scaleUp } from "@/utils/animationVariants";
 
 const domains = [
   {
     title: "Residential Edifices",
     description: "From cozy homes to sprawling estates",
-    src: "/images/services/residential.png",
+    src: "/images/services/domains/residential.png",
   },
   {
     title: "Commercial Spaces",
     description: "Crafting structural marvels for business endeavors",
-    src: "/images/services/commercial.png",
+    src: "/images/services/domains/commercial.png",
   },
   {
     title: "Industrial Facilities",
     description: "Engineering robustness at scale",
-    src: "/images/services/industrial.png",
+    src: "/images/services/domains/industrial.png",
   },
   {
     title: "Infrastructure Initiatives",
     description: "Building the backbone of modern life",
-    src: "/images/services/infrastructure.png",
+    src: "/images/services/domains/infrastructure.png",
   },
   {
     title: "Historic Preservation",
     description: "Honoring the past, fortifying for the future",
-    src: "/images/services/historic.png",
+    src: "/images/services/domains/historic.png",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function ProjectDomains() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <div className="relative flex w-[85vw] max-w-4xl flex-col">
+    <section className="relative flex w-[85vw] max-w-4xl flex-col">
       {domains.map((domain, index) => {
         return (
           <div
@@ -67,7 +67,7 @@ export default function ProjectDomains() {
         );
       })}
       <motion.div
-        variants={scaleTransition}
+        variants={scaleUp}
         initial="initial"
         animate={modal.active ? "open" : "closed"}
         style={{ translate: `0 ${modal.index * 100}%` }}
@@ -79,7 +79,7 @@ export default function ProjectDomains() {
         >
           {domains.map((domain, index) => {
             return (
-              <div key={index} className="relative z-20 aspect-square w-full">
+              <div key={index} className="relative aspect-square w-full">
                 <Image
                   className="w-full"
                   src={domain.src}
@@ -95,6 +95,6 @@ export default function ProjectDomains() {
           })}
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }
