@@ -46,7 +46,7 @@ export default function ServicesCards() {
     position !== 1 ? setPosition(position + 1) : null;
 
   return (
-    <section className="grid place-items-center gap-14">
+    <section className="grid place-items-center gap-14 md:gap-6">
       <h2 className="max-w-[80vw] text-center text-2xl sm:text-[1.6rem]">
         <span>Our&nbsp;Role&nbsp;in&nbsp;Building</span>{" "}
         <span>Resilient&nbsp;Structures</span>
