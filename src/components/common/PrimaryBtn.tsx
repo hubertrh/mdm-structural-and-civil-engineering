@@ -21,7 +21,7 @@ export default function PrimaryBtn({ icon, text, pageURL }: PrimaryBtnProps) {
     <AnimationControlContext.Provider value={animationControlRef.current}>
       <Link
         href={pageURL}
-        className="flex w-max items-center justify-center gap-5 rounded-md bg-green px-6 py-4 text-xl capitalize text-white transition-all duration-200 hover:bg-green-dark hover:shadow sm:px-8 sm:text-lg"
+        className="flex w-max items-center justify-center gap-5 rounded-md bg-green px-6 py-3 text-xl capitalize text-white transition-all duration-200 hover:bg-green-dark hover:shadow sm:px-8 sm:text-lg"
         onMouseEnter={() => animationControlRef.current.startAnimation()}
       >
         <LottieIcon icon={icon} duration={1000} sizeInRem={2} />

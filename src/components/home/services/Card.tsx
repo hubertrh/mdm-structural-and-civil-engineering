@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import SecondaryBtn from "../../common/SecondaryBtn";
-import { AnimationControlContext } from "../../contexts/AnimationControlContext";
+import SecondaryBtn from "@/components/common/SecondaryBtn";
+import { AnimationControlContext } from "@/components/contexts/AnimationControlContext";
 
 type CardProps = {
   imgURL: string;

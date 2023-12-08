@@ -1,7 +1,9 @@
 import SlideUpH2 from "@/components/common/SlideUpH2";
 
-const headingText =
-  "Specialising in structural design and assessment, we make safety and innovation our business";
+const headingText = [
+  "Specialising in structural design and assessment,",
+  "we make safety and innovation our business",
+];
 
 export default function HeroText() {
   return (
@@ -10,7 +12,7 @@ export default function HeroText() {
         Transform your vision into reality
       </h3>
       <div className="text-xl xs:text-2xl">
-        <SlideUpH2 headingText={headingText} />
+        <SlideUpH2 headingText={headingText} justify="end" />
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ export default function Welcome() {
         structures.
       </p>
       <div className="mx-auto mt-10 text-2xl sm:mt-8">
-        <SlideUpH2 headingText={headingText} />
+        <SlideUpH2 headingText={headingText} justify="center" />
       </div>
     </section>
   );

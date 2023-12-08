@@ -49,6 +49,9 @@ const config: Config = {
       screens: {
         xs: "360px",
       },
+      transitionTimingFunction: {
+        "in-out-quint": "cubic-bezier(0.83, 0, 0.17, 1)",
+      },
     },
   },
   future: {

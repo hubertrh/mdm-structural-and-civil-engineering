@@ -122,7 +122,23 @@
 
   .grid-domains {
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 7fr 4fr;
     gap: 1rem;
+  }
+
+  @media (max-width: 767px) {
+    .translate-reset {
+      translate: none !important;
+    }
+  }
+
+  .grid-services-cards {
+    display: grid;
+    grid-template-columns: 6fr 11fr;
+    gap: 1rem;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
