@@ -12,7 +12,7 @@ export default function HeroText() {
         Transform your vision into reality
       </h3>
       <div className="text-xl xs:text-2xl">
-        <SlideUpH2 headingText={headingText} />
+        <SlideUpH2 headingText={headingText} justify="end" />
       </div>
     </div>
   );

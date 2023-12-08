@@ -6,6 +6,7 @@ import { slideUp } from "@/utils/animationVariants";
 
 type SlideUpH2Props = {
   headingText: string | string[];
+  justify: "center" | "end";
 };
 
 // Component to animate each word
@@ -33,7 +34,7 @@ const AnimatedWord = ({
   );
 };
 
-export default function SlideUpH2({ headingText }: SlideUpH2Props) {
+export default function SlideUpH2({ headingText, justify }: SlideUpH2Props) {
   const container = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(container, { once: true });
 
@@ -54,10 +55,17 @@ export default function SlideUpH2({ headingText }: SlideUpH2Props) {
   // Ensuring headingText is always an array
   const textLines = Array.isArray(headingText) ? headingText : [headingText];
 
+  // Apply justify class based on the justify prop
+  const justifyClass = justify === "end" ? "justify-end" : "justify-center";
+
   return (
     <h2 className="flex flex-col gap-y-1" ref={container}>
       {textLines.map((line, lineIndex) => (
-        <span className="flex flex-wrap justify-end gap-x-1" key={lineIndex}>
+        // <span className="flex flex-wrap justify-center gap-x-1" key={lineIndex}>
+        <span
+          key={lineIndex}
+          className={`flex flex-wrap gap-x-1 ${justifyClass}`}
+        >
           {renderAnimatedLine(line, lineIndex)}
         </span>
       ))}
