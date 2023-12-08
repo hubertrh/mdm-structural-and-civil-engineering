@@ -37,11 +37,11 @@ export default function ProjectDomains() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <section className="grid place-items-center gap-8">
-      <h2 className="max-w-[80vw] text-center text-2xl sm:text-[1.6rem] md:w-full md:px-10">
+    <section className="grid w-[85vw] max-w-4xl place-items-center gap-8">
+      <h2 className="w-full text-center text-2xl sm:text-[1.6rem] md:px-10 md:text-left">
         <span>Project&nbsp;Domains</span> <span>We&nbsp;Excel&nbsp;by</span>
       </h2>
-      <div className="relative flex w-[85vw] max-w-4xl flex-col">
+      <div className="relative flex w-full flex-col">
         {domains.map((domain, index) => {
           return (
             <div
