@@ -2,16 +2,13 @@
 
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useContext, useEffect } from "react";
-import LenisContext from "../contexts/LenisContext";
+import { useEffect } from "react";
 
 type MapboxProps = {
   token: string;
 };
 
 export default function Mapbox({ token }: MapboxProps) {
-  const lenis = useContext(LenisContext); // To allow disabling of Lenis
-
   mapboxgl.accessToken = token;
 
   useEffect(() => {
@@ -28,23 +25,7 @@ export default function Mapbox({ token }: MapboxProps) {
     })
       .setLngLat([0.0942132, 51.4860491])
       .addTo(map);
-
-    // Function to prevent page scroll when hovering over the map
-    const container = document.getElementById("mapbox-container");
-    if (!container) return;
-
-    const disableLenis = () => lenis && lenis.stop();
-    const enableLenis = () => lenis && lenis.start();
-
-    container.addEventListener("mouseenter", disableLenis);
-    container.addEventListener("mouseleave", enableLenis);
-
-    // Cleanup
-    return () => {
-      container.removeEventListener("mouseenter", disableLenis);
-      container.removeEventListener("mouseleave", enableLenis);
-    };
-  }, [lenis]);
+  }, []);
 
   return (
     <div

@@ -3,7 +3,6 @@ import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
-import SmoothScroll from "@/components/contexts/SmoothScrollContext";
 import Footer from "@/components/common/footer/Footer";
 import Header from "@/components/common/header/Header";
 import "./globals.css";
@@ -50,15 +49,13 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} ${agencyFB.variable} mx-auto bg-background-white text-black-300`}
       >
-        <SmoothScroll>
-          <div className="min-h-dvh w-full">
-            <Header />
-            <main className="mx-auto min-h-dvh w-full max-w-screen-2xl bg-white">
-              {children}
-            </main>
-          </div>
-          <Footer />
-        </SmoothScroll>
+        <div className="min-h-dvh w-full">
+          <Header />
+          <main className="mx-auto min-h-dvh w-full max-w-screen-2xl bg-white">
+            {children}
+          </main>
+        </div>
+        <Footer />
         <Analytics />
       </body>
     </html>
