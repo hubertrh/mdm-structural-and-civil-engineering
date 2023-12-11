@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import SmoothScroll from "@/components/contexts/SmoothScrollContext";
 import Footer from "@/components/common/footer/Footer";
 import Header from "@/components/common/header/Header";
@@ -41,6 +42,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="text-sm sm:text-base">
+      <head>
+        <Script
+          src={`https://cdn-cookieyes.com/client_data/1ae7b2fef22d4cdd90ff9cc8/script.js`}
+        />
+      </head>
       <body
         className={`${montserrat.className} ${agencyFB.variable} mx-auto bg-background-white text-black-300`}
       >
