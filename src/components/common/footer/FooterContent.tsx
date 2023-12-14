@@ -1,12 +1,17 @@
 import FooterContact from "./FooterContact";
 import FooterLinks from "./FooterLinks";
 import FooterLogo from "./FooterLogo";
+import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
 
-export default function FooterContent() {
+type FooterContentProps = {
+  companyDetails: companyDetails;
+};
+
+export default function FooterContent({ companyDetails }: FooterContentProps) {
   return (
     <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
       <FooterLogo />
-      <FooterContact />
+      <FooterContact companyDetails={companyDetails} />
       <FooterLinks />
     </div>
   );

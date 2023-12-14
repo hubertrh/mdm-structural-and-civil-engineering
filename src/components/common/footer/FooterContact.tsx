@@ -1,12 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { useRef } from "react";
 import LottieIcon from "../LottieIcon";
 import { AnimationControlContext } from "@/components/contexts/AnimationControlContext";
 import NewCardIcon from "@/assets/icons/animated-new-card.min.json";
+import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
 
-export default function FooterContact() {
+type footerContactProps = {
+  companyDetails: companyDetails;
+};
+
+export default function FooterContact({ companyDetails }: footerContactProps) {
   const animationControlRef = useRef({
     startAnimation: () => {},
   });
@@ -17,15 +21,15 @@ export default function FooterContact() {
       <div className="flex flex-col leading-loose">
         <a
           className="underline underline-offset-4 transition-all duration-300 hover:text-green-dark hover:underline-offset-8"
-          href="mailto:info@mdmengineers.com"
+          href={`mailto:${companyDetails.email}`}
         >
-          info@mdmengineers.com
+          {companyDetails.email}
         </a>
         <a
           className="underline underline-offset-4 transition-all duration-300 hover:text-green-dark hover:underline-offset-8"
-          href="tel:+4407817085585"
+          href={`${companyDetails.phone.replace(/\s/g, "")}`}
         >
-          +44 07817 085585
+          {companyDetails.phone}
         </a>
       </div>
       <AnimationControlContext.Provider value={animationControlRef.current}>
@@ -36,15 +40,15 @@ export default function FooterContact() {
           >
             <a
               className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
-              href="https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"
+              href={companyDetails.googleMapsLink}
             >
-              MDM&nbsp;Structural&nbsp;and&nbsp;Civil&nbsp;Engineering&nbsp;Ltd
+              {`${companyDetails.name.replace(/ /g, "\u00A0")}\u00A0Ltd.`}
             </a>
             <a
               className="decoration-transparent transition-all duration-300 group-hover:text-green-dark group-hover:underline group-hover:decoration-green-dark group-hover:underline-offset-4"
-              href="https://maps.app.goo.gl/znVy7jwCRkzEbVVo9"
+              href={companyDetails.googleMapsLink}
             >
-              4&nbsp;Quilter&nbsp;Street,&nbsp;London,&nbsp;SE18&nbsp;1JG
+              {companyDetails.address.replace(/ /g, "\u00A0")}
             </a>
           </div>
           <div className="mt-1">
