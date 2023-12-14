@@ -4,41 +4,13 @@ import { useState } from "react";
 import LottieIcon from "../common/LottieIcon";
 import ServicesCard from "./ServicesCard";
 import SliderNavIcon from "@/assets/icons/animated-button-right-arrow-green-dark.json";
+import { ServicesCards } from "@/types/sanityGetters/servicesPage.type";
 
-const services = [
-  {
-    title: "Structural Design & Analysis",
-    summary:
-      "Whether you're building a new, renovating, or extending, our expert touch ensures your structures stand tall, meeting and exceeding all safety and performance benchmarks.",
-    description: [
-      "Tailored Structural Solutions: We specialize in custom structural designs for a variety of London's architectural styles, ensuring both aesthetic appeal and functional strength.",
-      "Rigorous Analysis for Compliance: Our team employs advanced technology to perform detailed structural analyses, ensuring every design complies with UK building standards for safety and efficiency.",
-    ],
-    imgURL: "/images/services/structural-design-analysis.png",
-  },
-  {
-    title: "Structural Assessments & Inspections",
-    summary:
-      "Beyond mere observation, our in-depth inspections unearth potential structural concerns. We not only pinpoint issues but also guide you through repair and reinforcement solutions.",
-    description: [
-      "Comprehensive Building Inspections: We thoroughly inspect buildings, from historic to modern, identifying structural issues to ensure safety and durability.",
-      "Heritage and Modernity: Expertly balancing historical preservation with modern engineering, we upgrade London's heritage buildings for future resilience.",
-    ],
-    imgURL: "/images/services/structural-assessments-inspections.png",
-  },
-  {
-    title: "Construction Supervision & Monitoring",
-    summary:
-      "Bring your vision to life with confidence. Our vigilant on-site supervision ensures your project mirrors its blueprints, adhering rigorously to the approved design and specifications.",
-    description: [
-      "Guarding Project Integrity: Our vigilant on-site supervision ensures your project strictly adheres to its blueprint, navigating London's urban construction challenges effectively.",
-      "Collaborative and Efficient: We work closely with contractors and authorities, applying our local construction knowledge for smooth project execution and community enhancement.",
-    ],
-    imgURL: "/images/services/construction-supervision-monitoring.png",
-  },
-];
+type ServicesCardsProps = {
+  cards: ServicesCards;
+};
 
-export default function ServicesCards() {
+export default function ServicesCards({ cards }: ServicesCardsProps) {
   const [position, setPosition] = useState(1);
   const nextPosition = () =>
     position !== -1 ? setPosition(position - 1) : null;
@@ -56,14 +28,15 @@ export default function ServicesCards() {
           className="translate-reset flex w-max flex-col gap-20 transition-all duration-500 ease-in-out-quint md:flex-row md:gap-0"
           style={{ translate: `${position * 33.33}%` }}
         >
-          {services.map((service, index) => {
+          {cards.map((service, index) => {
             return (
               <ServicesCard
                 key={index}
                 title={service.title}
-                summary={service.summary}
-                description={service.description}
-                imgURL={service.imgURL}
+                shortDescription={service.shortDescription}
+                description={service.paragraphs}
+                imgURL={service.image.url}
+                blurDataURL={service.image.metadata.lqip}
               />
             );
           })}
@@ -103,7 +76,7 @@ export default function ServicesCards() {
           ) : null}
         </div>
         <div className="absolute -bottom-4 left-1/2 z-10 hidden -translate-x-1/2 gap-4 md:flex">
-          {services.map((_, index) => {
+          {cards.map((_, index) => {
             return (
               <div
                 key={index}
