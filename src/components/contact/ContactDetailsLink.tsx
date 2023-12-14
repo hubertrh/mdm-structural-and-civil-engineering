@@ -6,46 +6,49 @@ import { AnimationControlContext } from "../contexts/AnimationControlContext";
 import PhoneIcon from "@/assets/icons/animated-phone.min.json";
 import EmailIcon from "@/assets/icons/animated-email.min.json";
 import AddressIcon from "@/assets/icons/animated-address.min.json";
+import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
 
 type ContactDetailsLinkProps = {
   variant: "phone" | "email" | "address";
-};
-
-const linkData = {
-  phone: {
-    href: "tel:+447817085585",
-    icon: PhoneIcon,
-    duration: 1000,
-    contents: ["+44 07817 085585"],
-  },
-  email: {
-    href: "mailto:info@mdmengineers.com",
-    icon: EmailIcon,
-    duration: 1000,
-    contents: ["info@mdmengineers.com"],
-  },
-  address: {
-    href: "https://maps.app.goo.gl/znVy7jwCRkzEbVVo9",
-    icon: AddressIcon,
-    duration: 1000,
-    contents: [
-      <>
-        MDM Structural
-        <br />
-        and Civil Engineering Ltd
-      </>,
-      <>
-        4 Quilter Street
-        <br />
-        London SE18 1JG
-      </>,
-    ],
-  },
+  companyDetails: companyDetails;
 };
 
 export default function ContactDetailsLink({
   variant,
+  companyDetails,
 }: ContactDetailsLinkProps) {
+  const linkData = {
+    phone: {
+      href: `tel:${companyDetails.phone.replace(/\s/g, "")}`,
+      icon: PhoneIcon,
+      duration: 1000,
+      contents: [`${companyDetails.phone}`],
+    },
+    email: {
+      href: `mailto:${companyDetails.email}`,
+      icon: EmailIcon,
+      duration: 1000,
+      contents: [`${companyDetails.email}`],
+    },
+    address: {
+      href: `${companyDetails.googleMapsLink}`,
+      icon: AddressIcon,
+      duration: 1000,
+      contents: [
+        <>
+          {companyDetails.nameNarrow.firstLine}
+          <br />
+          {companyDetails.nameNarrow.secondLine}
+        </>,
+        <>
+          {companyDetails.addressNarrow.firstLine}
+          <br />
+          {companyDetails.addressNarrow.secondLine}
+        </>,
+      ],
+    },
+  };
+
   const animationControlRef = useRef({
     startAnimation: () => {},
   });
