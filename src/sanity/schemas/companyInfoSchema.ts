@@ -40,7 +40,12 @@ const companyInfoSchema = {
       name: "phone",
       title: "Phone",
       type: "string",
-      validation: (Rule: Rule) => Rule.required(),
+      validation: (Rule: Rule) =>
+        Rule.required()
+          .regex(/^\+44\s0\d{4}\s\d{6}$/, {
+            name: "UK phone number",
+          })
+          .error("Phone number must be in the format: +44 0xxxx xxxxxx"),
     },
     {
       name: "address",
