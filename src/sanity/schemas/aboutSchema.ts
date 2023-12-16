@@ -6,11 +6,25 @@ const aboutSchema = {
   type: "document",
   fields: [
     {
-      name: "paragraphs",
-      title: "Main Paragraphs",
-      type: "array",
-      of: [{ type: "paragraphObject" }],
-      validation: (Rule: Rule) => Rule.required().min(1).max(3),
+          name: "paragraphs",
+          title: "Description (paragraphs)",
+          type: "array",
+          of: [
+            {
+              type: "text",
+              rows: 5,
+              validation: (Rule: Rule) =>
+                Rule.regex(/[\r\n]/, {
+                  name: "new line",
+                  invert: true,
+                }).error(
+                  "Text cannot contain new lines. Please create a new paragraph instead.",
+                ),
+            },
+          ],
+          validation: (Rule: Rule) => Rule.required().min(1).max(3),
+        },
+      ],
     },
     {
       name: "team",
@@ -75,9 +89,21 @@ const aboutSchema = {
         },
         {
           name: "paragraphs",
-          title: "Paragraphs",
+          title: "Description (paragraphs)",
           type: "array",
-          of: [{ type: "text" }],
+          of: [
+            {
+              type: "text",
+              rows: 5,
+              validation: (Rule: Rule) =>
+                Rule.regex(/[\r\n]/, {
+                  name: "new line",
+                  invert: true,
+                }).error(
+                  "Text cannot contain new lines. Please create a new paragraph instead.",
+                ),
+            },
+          ],
           validation: (Rule: Rule) => Rule.required().min(1).max(3),
         },
       ],

@@ -13,9 +13,7 @@ export async function getContactPage(): Promise<ContactPage> {
   const query = groq`
     *[_type == "contactPage"][0] {
       header,
-      paragraphs[] {
-        text
-      }
+      paragraphs,
     }
   `;
 
@@ -48,9 +46,7 @@ export async function getServicesPageInfo(): Promise<ServicesPageInfo> {
   const query = groq`
     *[_type == "servicesPage"][0] {
       header,
-      paragraphs[] {
-        text
-      }
+      paragraphs,
     }
   `;
 

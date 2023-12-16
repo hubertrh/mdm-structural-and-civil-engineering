@@ -1,9 +1,8 @@
 import { ImageAsset } from "sanity";
-import { ParagraphObject } from "./paragraphObjectSchema.type";
 
 export type ServicesPageInfo = {
   header: string;
-  paragraphs: ParagraphObject[];
+  paragraphs: string[];
 };
 
 export type ServicesCards = {
@@ -16,4 +15,4 @@ export type ServicesCards = {
       lqip: ImageAsset["metadata"]["lqip"];
     };
   };
-}[];
+};

@@ -1,8 +1,6 @@
-import { ParagraphObject } from "@/types/sanityGetters/paragraphObjectSchema.type";
-
 type SectionHeaderProps = {
   title: string;
-  description: ParagraphObject[];
+  description: string[];
   weight?: "light";
   textAlign?: "center";
 };
@@ -32,7 +30,7 @@ export default function SectionHeader({
           className="flex flex-wrap justify-center gap-x-1 text-base leading-7"
           key={index}
         >
-          {paragraph.text}
+          {paragraph}
         </p>
       ))}
     </section>
