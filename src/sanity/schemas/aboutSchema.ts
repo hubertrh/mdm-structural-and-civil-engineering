@@ -6,6 +6,17 @@ const aboutSchema = {
   type: "document",
   fields: [
     {
+      name: "intro",
+      title: "Intro Section",
+      type: "object",
+      fields: [
+        {
+          name: "header",
+          title: "Header",
+          type: "string",
+          validation: (Rule: Rule) => Rule.required(),
+        },
+        {
           name: "paragraphs",
           title: "Description (paragraphs)",
           type: "array",
@@ -35,11 +46,14 @@ const aboutSchema = {
           name: "title",
           title: "Title",
           type: "string",
+          validation: (Rule: Rule) => Rule.required(),
         },
         {
           name: "description",
           title: "Description",
           type: "text",
+          rows: 5,
+          validation: (Rule: Rule) => Rule.required(),
         },
       ],
     },
@@ -52,11 +66,14 @@ const aboutSchema = {
           name: "title",
           title: "Title",
           type: "string",
+          validation: (Rule: Rule) => Rule.required(),
         },
         {
           name: "description",
           title: "Description",
           type: "text",
+          rows: 5,
+          validation: (Rule: Rule) => Rule.required(),
         },
       ],
     },
@@ -69,11 +86,14 @@ const aboutSchema = {
           name: "title",
           title: "Title",
           type: "string",
+          validation: (Rule: Rule) => Rule.required(),
         },
         {
           name: "description",
           title: "Description",
           type: "text",
+          rows: 5,
+          validation: (Rule: Rule) => Rule.required(),
         },
       ],
     },
@@ -86,6 +106,7 @@ const aboutSchema = {
           name: "header",
           title: "Header",
           type: "string",
+          validation: (Rule: Rule) => Rule.required(),
         },
         {
           name: "paragraphs",
