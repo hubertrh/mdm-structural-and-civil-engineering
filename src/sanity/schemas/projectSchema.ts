@@ -1,39 +1,49 @@
+import { Rule } from "sanity";
+
 const projectSchema = {
   name: "project",
-  title: "Project",
+  title: "Projects",
   type: "document",
   fields: [
     {
       name: "name",
       title: "Name",
       type: "string",
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: "location",
       title: "Location",
       type: "string",
-      description: "e.g., London",
+      description: "e.g., London, UK",
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: "completionDate",
       title: "Completion Date",
       type: "date",
+      description:
+        "Select any day from the picker — only the month and year will be displayed",
       options: {
-        dateFormat: "YYYY-MM-DD",
+        dateFormat: "MM/YYYY",
         calendarTodayLabel: "Today",
       },
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: "description",
-      title: "Description",
+      title: "Description (paragraphs)",
       type: "array",
-      of: [{ type: "text" }],
+      of: [{ type: "text", rows: 7 }],
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: "images",
       title: "Images",
       type: "array",
+      description: "The first image will serve as the thumbnail",
       of: [{ type: "image", options: { hotspot: true } }],
+      validation: (Rule: Rule) => Rule.required(),
     },
   ],
 };

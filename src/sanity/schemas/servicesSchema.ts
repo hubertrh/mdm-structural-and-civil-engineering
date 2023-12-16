@@ -9,6 +9,7 @@ const servicesSchema = {
       name: "header",
       title: "Header",
       type: "string",
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: "paragraphs",
@@ -41,6 +42,7 @@ const servicesSchema = {
               name: "title",
               title: "Title",
               type: "string",
+              validation: (Rule: Rule) => Rule.required(),
             },
             {
               name: "shortDescription",
@@ -48,16 +50,16 @@ const servicesSchema = {
               type: "text",
               rows: 5,
               validation: (Rule: Rule) =>
-                Rule.regex(/[\r\n]/, {
-                  name: "new line",
-                  invert: true,
-                }).error(
-                  "Text cannot contain new lines. Please create a new paragraph instead.",
-                ),
+                Rule.required()
+                  .regex(/[\r\n]/, {
+                    name: "new line",
+                    invert: true,
+                  })
+                  .error("Text cannot contain new lines."),
             },
             {
               name: "paragraphs",
-              title: "Paragraphs",
+              title: "Description (paragraphs)",
               type: "array",
               of: [
                 {
@@ -72,6 +74,7 @@ const servicesSchema = {
               name: "image",
               title: "Image",
               type: "image",
+              validation: (Rule: Rule) => Rule.required(),
             },
           ],
         },
@@ -90,16 +93,19 @@ const servicesSchema = {
               name: "name",
               title: "Name",
               type: "string",
+              validation: (Rule: Rule) => Rule.required(),
             },
             {
               name: "shortDescription",
               title: "Short Description",
               type: "string",
+              validation: (Rule: Rule) => Rule.required(),
             },
             {
               name: "image",
               title: "Image",
               type: "image",
+              validation: (Rule: Rule) => Rule.required(),
             },
           ],
         },
