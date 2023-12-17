@@ -8,6 +8,7 @@ import {
 import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
 import { AboutPage } from "@/types/sanityGetters/aboutPage.type";
 import { AboutCards } from "@/types/sanityGetters/aboutCards.type";
+import { HomepageHeroText } from "@/types/sanityGetters/homepageHeroText.type";
 
 const sanityClient = createClient(clientConfig);
 
@@ -38,6 +39,17 @@ export async function getCompanyDetails(): Promise<companyDetails> {
         secondLine,
       },
       googleMapsLink
+    }
+  `;
+
+  return sanityClient.fetch(query);
+}
+
+export async function getHomepageHeroText(): Promise<HomepageHeroText> {
+  const query = groq`
+    *[_type == "homePage"][0] {
+      "header1": hero.header1,
+      "header2": [hero.header2.firstLine, hero.header2.secondLine]
     }
   `;
 
