@@ -12,17 +12,6 @@ import { HomepageHeroText } from "@/types/sanityGetters/homepageHeroText.type";
 
 const sanityClient = createClient(clientConfig);
 
-export async function getContactPage(): Promise<ContactPage> {
-  const query = groq`
-    *[_type == "contactPage"][0] {
-      header,
-      paragraphs,
-    }
-  `;
-
-  return sanityClient.fetch(query);
-}
-
 export async function getCompanyDetails(): Promise<companyDetails> {
   const query = groq`
     *[_type == "companyInfo"][0] {
@@ -117,6 +106,17 @@ export async function getAboutCards(): Promise<AboutCards> {
       description
     },
   }
+  `;
+
+  return sanityClient.fetch(query);
+}
+
+export async function getContactPage(): Promise<ContactPage> {
+  const query = groq`
+    *[_type == "contactPage"][0] {
+      header,
+      paragraphs,
+    }
   `;
 
   return sanityClient.fetch(query);
