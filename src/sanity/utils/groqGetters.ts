@@ -10,6 +10,7 @@ import { AboutPage } from "@/types/sanityGetters/aboutPage.type";
 import { AboutCards } from "@/types/sanityGetters/aboutCards.type";
 import { HomepageHeroText } from "@/types/sanityGetters/homepageHeroText.type";
 import { HomepageWelcomeText } from "@/types/sanityGetters/homepageWelcomeText.type";
+import { HomepageAboutText } from "@/types/sanityGetters/homepageAboutText.type";
 
 const sanityClient = createClient(clientConfig);
 
@@ -51,6 +52,17 @@ export async function getHomepageWelcomeText(): Promise<HomepageWelcomeText> {
     *[_type == "homePage"][0] {
       "paragraphs": welcome.paragraphs,
       "slogan": welcome.slogan
+    }
+  `;
+
+  return sanityClient.fetch(query);
+}
+
+export async function getHomepageAboutText(): Promise<HomepageAboutText> {
+  const query = groq`
+    *[_type == "homePage"][0] {
+      "header": about.header,
+      "paragraphs": about.paragraphs
     }
   `;
 
