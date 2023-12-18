@@ -9,6 +9,7 @@ import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
 import { AboutPage } from "@/types/sanityGetters/aboutPage.type";
 import { AboutCards } from "@/types/sanityGetters/aboutCards.type";
 import { HomepageHeroText } from "@/types/sanityGetters/homepageHeroText.type";
+import { HomepageWelcomeText } from "@/types/sanityGetters/homepageWelcomeText.type";
 
 const sanityClient = createClient(clientConfig);
 
@@ -45,6 +46,16 @@ export async function getHomepageHeroText(): Promise<HomepageHeroText> {
   return sanityClient.fetch(query);
 }
 
+export async function getHomepageWelcomeText(): Promise<HomepageWelcomeText> {
+  const query = groq`
+    *[_type == "homePage"][0] {
+      "paragraphs": welcome.paragraphs,
+      "slogan": welcome.slogan
+    }
+  `;
+
+  return sanityClient.fetch(query);
+}
 export async function getServicesPageInfo(): Promise<ServicesPageInfo> {
   const query = groq`
     *[_type == "servicesPage"][0] {
