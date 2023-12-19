@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is the source code for MDM Structural and Civil Engineering's website. It's designed to serve as the online representation of their commitment to pioneering structural and civil engineering projects across London, highlighting their role in enhancing the city's infrastructure since 2017.
+This repository is the source code for MDM Structural and Civil Engineering's website. It's designed to serve as the online representation of their work in structural and civil engineering projects in London, highlighting their role in enhancing the city's infrastructure since 2017.
 
 ## Site Composition
 
@@ -10,8 +10,8 @@ This repository is the source code for MDM Structural and Civil Engineering's we
 - **Detailed Subpages:**
   - **Services:** In-depth information on the engineering services offered.
   - **About Us:** The history, mission, and vision of MDM.
-  - **Projects:** A display of MDM's prestigious projects.
-  - **Contact:** Easy access to MDM's contact information and inquiry form.
+  - **Projects:** A display of MDM's projects.
+  - **Contact:** Easy access to MDM's contact information.
 
 ## Design Ethos
 
@@ -19,10 +19,12 @@ The website's design is intentionally straightforward, **adhering to specific gu
 
 ## Tech Stack
 
-- **Next.js & TypeScript:** Chosen for its robustness and type safety in web application development.
+- **Next.js 14 & TypeScript:** Chosen for its robustness and type safety in web application development.
 - **Tailwind CSS:** Allows for custom design implementation while following the strict design guidelines provided by MDM.
 - **Subtle Animations:** Light animations and interactive elements, powered by GSAP and Framer Motion, are included to engage users without distraction.
-- **Content Management:** Sanity CMS will be integrated to enable easy content updates and management.
+- **Content Management:** Integrated Sanity CMS enabling easy content updates and management.
+- **Mapbox GL:** Implemented to provide interactive and customizable maps, enhancing the visualization of company's location.
+- **CookieYes:** A GDPR-compliant cookie consent solution, ensuring the website meets legal requirements in the UK for user consent management and privacy protection.
 
 ## Development Setup
 
@@ -80,4 +82,4 @@ This project is designed for a specific client and is not open for direct public
 
 ## Proprietary Content
 
-The content of this repository is confidential and intended solely for MDM Structural and Civil Engineering. Unauthorized copying, distribution, or use is strictly prohibited.
+The content of this repository is intended solely for MDM Structural and Civil Engineering. Unauthorized copying, distribution, or usage for commercial purposes is strictly prohibited.
