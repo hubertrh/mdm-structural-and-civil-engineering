@@ -1,5 +1,5 @@
 import SlideUpH2 from "@/components/common/SlideUpH2";
-import { getHomepageHeroText } from "@/sanity/utils/groqGetters";
+import { getHomepageHeroText } from "@/sanity/groqGetters/pages/home";
 
 export default async function HeroText() {
   const headingText = await getHomepageHeroText();

@@ -1,5 +1,5 @@
 import SlideUpH2 from "@/components/common/SlideUpH2";
-import { getHomepageWelcomeText } from "@/sanity/utils/groqGetters";
+import { getHomepageWelcomeText } from "@/sanity/groqGetters/pages/home";
 
 export default async function Welcome() {
   const welcomeText = await getHomepageWelcomeText();

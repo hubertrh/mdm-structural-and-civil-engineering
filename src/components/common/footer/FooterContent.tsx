@@ -1,7 +1,7 @@
 import FooterContact from "./FooterContact";
 import FooterLinks from "./FooterLinks";
 import FooterLogo from "./FooterLogo";
-import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
+import { companyDetails } from "@/types/groqGetters/companyDetails.type";
 
 type FooterContentProps = {
   companyDetails: companyDetails;

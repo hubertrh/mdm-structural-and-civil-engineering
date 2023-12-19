@@ -1,6 +1,6 @@
 import ContactIcon from "@/assets/icons/animated-contact.min.json";
 import PrimaryBtn from "@/components/common/PrimaryBtn";
-import { getHomepageContactHeader } from "@/sanity/utils/groqGetters";
+import { getHomepageContactHeader } from "@/sanity/groqGetters/pages/home";
 
 export default async function ContactUs() {
   const sectionContent = await getHomepageContactHeader();

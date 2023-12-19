@@ -1,5 +1,5 @@
 import FooterContent from "./FooterContent";
-import { getCompanyDetails } from "@/sanity/utils/groqGetters";
+import { getCompanyDetails } from "@/sanity/groqGetters/getCompanyDetails";
 
 export default async function Footer() {
   const companyDetails = await getCompanyDetails();

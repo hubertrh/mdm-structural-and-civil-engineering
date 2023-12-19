@@ -3,7 +3,7 @@ import PrimaryBtn from "@/components/common/PrimaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ContactIcon from "@/assets/icons/animated-contact.min.json";
-import { getAboutPage } from "@/sanity/utils/groqGetters";
+import { getAboutPage } from "@/sanity/groqGetters/pages/about";
 
 export default async function page() {
   const sectionContent = await getAboutPage();

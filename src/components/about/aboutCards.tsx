@@ -2,7 +2,7 @@ import AboutCard from "./aboutCard";
 import teamIcon from "@/assets/icons/animated-team.min.json";
 import visionIcon from "@/assets/icons/animated-vision.min.json";
 import trackRecordIcon from "@/assets/icons/animated-track-record.min.json";
-import { getAboutCards } from "@/sanity/utils/groqGetters";
+import { getAboutCards } from "@/sanity/groqGetters/pages/about";
 
 export default async function aboutCards() {
   const cardsContent = await getAboutCards();

@@ -3,9 +3,9 @@ import SubHero from "@/components/common/SubHero";
 import ProjectDomains from "@/components/services/ProjectDomains";
 import ServicesCards from "@/components/services/ServicesCards";
 import {
-  getServicesCards,
   getServicesPageInfo,
-} from "@/sanity/utils/groqGetters";
+  getServicesCards,
+} from "@/sanity/groqGetters/pages/services";
 
 export default async function page() {
   const sectionContent = await getServicesPageInfo();

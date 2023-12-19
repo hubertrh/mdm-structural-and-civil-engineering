@@ -6,7 +6,7 @@ import { AnimationControlContext } from "../contexts/AnimationControlContext";
 import PhoneIcon from "@/assets/icons/animated-phone.min.json";
 import EmailIcon from "@/assets/icons/animated-email.min.json";
 import AddressIcon from "@/assets/icons/animated-address.min.json";
-import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
+import { companyDetails } from "@/types/groqGetters/companyDetails.type";
 
 type ContactDetailsLinkProps = {
   variant: "phone" | "email" | "address";

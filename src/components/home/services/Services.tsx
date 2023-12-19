@@ -2,7 +2,7 @@ import Cards from "./Cards";
 import PrimaryBtn from "@/components/common/PrimaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
 import ServicesIcon from "@/assets/icons/animated-services.min.json";
-import { getServicesPageInfo } from "@/sanity/utils/groqGetters";
+import { getServicesPageInfo } from "@/sanity/groqGetters/pages/services";
 
 export default async function Services() {
   const sectionContent = await getServicesPageInfo();

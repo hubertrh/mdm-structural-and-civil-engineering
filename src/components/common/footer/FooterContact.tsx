@@ -4,7 +4,7 @@ import { useRef } from "react";
 import LottieIcon from "../LottieIcon";
 import { AnimationControlContext } from "@/components/contexts/AnimationControlContext";
 import NewCardIcon from "@/assets/icons/animated-new-card.min.json";
-import { companyDetails } from "@/types/sanityGetters/companyDetails.type";
+import { companyDetails } from "@/types/groqGetters/companyDetails.type";
 
 type footerContactProps = {
   companyDetails: companyDetails;

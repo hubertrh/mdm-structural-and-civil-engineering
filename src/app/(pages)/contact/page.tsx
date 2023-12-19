@@ -2,7 +2,8 @@ import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ContactDetailsLink from "@/components/contact/ContactDetailsLink";
 import Mapbox from "@/components/contact/Mapbox";
-import { getCompanyDetails, getContactPage } from "@/sanity/utils/groqGetters";
+import { getCompanyDetails } from "@/sanity/groqGetters/getCompanyDetails";
+import { getContactPage } from "@/sanity/groqGetters/pages/contact";
 
 let mapboxToken: string;
 

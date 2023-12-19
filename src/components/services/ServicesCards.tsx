@@ -4,7 +4,7 @@ import { useState } from "react";
 import LottieIcon from "../common/LottieIcon";
 import ServicesCard from "./ServicesCard";
 import SliderNavIcon from "@/assets/icons/animated-button-right-arrow-green-dark.json";
-import { ServicesCards } from "@/types/sanityGetters/servicesPage.type";
+import { ServicesCards } from "@/types/groqGetters/servicesPage.type";
 
 type ServicesCardsProps = {
   cards: ServicesCards;

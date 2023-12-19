@@ -2,7 +2,7 @@ import GuidingPillars from "./GuidingPillars";
 import PrimaryBtn from "@/components/common/PrimaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
 import LegacyIcon from "@/assets/icons/animated-legacy.min.json";
-import { getHomepageAboutText } from "@/sanity/utils/groqGetters";
+import { getHomepageAboutText } from "@/sanity/groqGetters/pages/home";
 
 export default async function AboutUs() {
   const sectionContent = await getHomepageAboutText();
