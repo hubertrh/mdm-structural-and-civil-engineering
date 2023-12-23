@@ -2,10 +2,10 @@ import Cards from "./Cards";
 import PrimaryBtn from "@/components/common/PrimaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
 import ServicesIcon from "@/assets/icons/animated-services.min.json";
-import { getServicesPageInfo } from "@/sanity/groqGetters/pages/services";
+import { getHomepageServicesText } from "@/sanity/groqGetters/pages/home";
 
 export default async function Services() {
-  const sectionContent = await getServicesPageInfo();
+  const sectionContent = await getHomepageServicesText();
 
   return (
     <div className="flex flex-col items-center justify-center gap-12 bg-background-blue py-20 sm:gap-20 sm:py-28">
