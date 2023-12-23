@@ -1,10 +1,10 @@
 import FooterContact from "./FooterContact";
 import FooterLinks from "./FooterLinks";
 import FooterLogo from "./FooterLogo";
-import { companyDetails } from "@/types/groqGetters/companyDetails.type";
+import { CompanyDetails } from "@/types/groqGetters/companyDetails.type";
 
 type FooterContentProps = {
-  companyDetails: companyDetails;
+  companyDetails: CompanyDetails;
 };
 
 export default function FooterContent({ companyDetails }: FooterContentProps) {
