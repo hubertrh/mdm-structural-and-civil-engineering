@@ -1,4 +1,4 @@
-export type companyDetails = {
+export type CompanyDetails = {
   name: string;
   nameNarrow: {
     firstLine: string;
