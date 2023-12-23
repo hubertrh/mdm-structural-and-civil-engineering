@@ -4,6 +4,8 @@ import { HomepageAboutText } from "@/types/groqGetters/homepageAboutText.type";
 import { HomepageContactHeader } from "@/types/groqGetters/homepageContactHeader.type";
 import { HomepageHeroText } from "@/types/groqGetters/homepageHeroText.type";
 import { HomepageWelcomeText } from "@/types/groqGetters/homepageWelcomeText.type";
+import { HomepageServicesText } from "@/types/groqGetters/homepageServicesText.type";
+import { HomepageServicesCards } from "@/types/groqGetters/homepageServicesCards.type";
 
 const sanityClient = createClient(clientConfig);
 
@@ -23,8 +25,29 @@ export async function getHomepageWelcomeText(): Promise<HomepageWelcomeText> {
     *[_type == "homePage"][0] {
       "paragraphs": welcome.paragraphs,
       "slogan": welcome.slogan
+export async function getHomepageServicesText(): Promise<HomepageServicesText> {
+  const query = groq`
+    *[_type == "homePage"][0].services {
+      header,
+      paragraphs
     }
   `;
+
+  return sanityClient.fetch(query);
+}
+
+export async function getHomepageServicesCards(): Promise<HomepageServicesCards> {
+  const query = groq`
+  *[_type == "homePage"][0].services.services[] {
+    title,
+    description,
+    "image": image.asset->{
+      url,
+      metadata {
+        lqip
+      }
+    }
+  }`;
 
   return sanityClient.fetch(query);
 }

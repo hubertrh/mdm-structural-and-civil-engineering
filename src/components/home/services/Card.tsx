@@ -7,11 +7,17 @@ import { AnimationControlContext } from "@/components/contexts/AnimationControlC
 
 type CardProps = {
   imgURL: string;
+  blurDataURL?: string;
   title: string;
   description: string;
 };
 
-export default function Card({ imgURL, title, description }: CardProps) {
+export default function Card({
+  imgURL,
+  blurDataURL,
+  title,
+  description,
+}: CardProps) {
   const animationControlRef = useRef({
     startAnimation: () => {},
   });
@@ -29,6 +35,8 @@ export default function Card({ imgURL, title, description }: CardProps) {
             alt={title}
             fill={true}
             sizes="25vw"
+            placeholder="blur"
+            blurDataURL={blurDataURL}
           />
         </div>
 
