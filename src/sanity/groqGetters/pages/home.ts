@@ -11,9 +11,9 @@ const sanityClient = createClient(clientConfig);
 
 export async function getHomepageHeroText(): Promise<HomepageHeroText> {
   const query = groq`
-    *[_type == "homePage"][0] {
-      "header1": hero.header1,
-      "header2": [hero.header2.firstLine, hero.header2.secondLine]
+    *[_type == "homePage"][0].hero {
+      header1,
+      "header2": [header2.firstLine, header2.secondLine]
     }
   `;
 
@@ -22,9 +22,15 @@ export async function getHomepageHeroText(): Promise<HomepageHeroText> {
 
 export async function getHomepageWelcomeText(): Promise<HomepageWelcomeText> {
   const query = groq`
-    *[_type == "homePage"][0] {
-      "paragraphs": welcome.paragraphs,
-      "slogan": welcome.slogan
+    *[_type == "homePage"][0].welcome {
+      paragraphs,
+      slogan
+    }
+  `;
+
+  return sanityClient.fetch(query);
+}
+
 export async function getHomepageServicesText(): Promise<HomepageServicesText> {
   const query = groq`
     *[_type == "homePage"][0].services {
@@ -54,9 +60,9 @@ export async function getHomepageServicesCards(): Promise<HomepageServicesCards>
 
 export async function getHomepageAboutText(): Promise<HomepageAboutText> {
   const query = groq`
-    *[_type == "homePage"][0] {
-      "header": about.header,
-      "paragraphs": about.paragraphs
+    *[_type == "homePage"][0].about {
+      header,
+      paragraphs
     }
   `;
 
@@ -65,8 +71,8 @@ export async function getHomepageAboutText(): Promise<HomepageAboutText> {
 
 export async function getHomepageContactHeader(): Promise<HomepageContactHeader> {
   const query = groq`
-    *[_type == "homePage"][0] {
-      "header": contact.header,
+    *[_type == "homePage"][0].contact {
+      header,
     }
   `;
 
