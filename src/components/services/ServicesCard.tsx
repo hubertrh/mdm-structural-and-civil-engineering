@@ -16,8 +16,8 @@ export default function ServicesCard({
   blurDataURL,
 }: ServicesCardProps) {
   return (
-    <div className="flex w-full max-w-3xl flex-col justify-between rounded-t-lg bg-background-blue/50 sm:w-[30rem] md:mx-4 md:w-[45rem] md:scale-[85%] lg:scale-90">
-      <div className="grid-services-cards relative w-full rounded-lg border-[1.18px] border-blue bg-white/70">
+    <div className="flex w-full max-w-3xl flex-col justify-between rounded-tl-lg bg-background-blue/50 sm:w-[30rem] md:mx-4 md:w-[45rem] md:scale-[85%] lg:scale-90">
+      <div className="grid-services-cards relative w-full rounded-lg rounded-r-none border-y-[1.5px] border-blue bg-white/70">
         <div className="relative aspect-square h-full max-w-full">
           <Image
             className="w-full rounded-lg object-cover"
