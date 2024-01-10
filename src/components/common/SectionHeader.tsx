@@ -1,6 +1,6 @@
 type SectionHeaderProps = {
   title: string;
-  description: string[];
+  description?: string[];
   weight?: "light";
   textAlign?: "center";
 };
@@ -25,7 +25,7 @@ export default function SectionHeader({
       >
         {title}
       </h2>
-      {description.map((paragraph, index) => (
+      {description?.map((paragraph, index) => (
         <p
           className="flex flex-wrap justify-center gap-x-1 text-base leading-7"
           key={index}
