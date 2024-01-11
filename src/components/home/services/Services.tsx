@@ -1,21 +1,17 @@
-import PrimaryBtn from "../../common/PrimaryBtn";
-import SectionHeader from "../../common/SectionHeader";
 import Cards from "./Cards";
+import PrimaryBtn from "@/components/common/PrimaryBtn";
+import SectionHeader from "@/components/common/SectionHeader";
 import ServicesIcon from "@/assets/icons/animated-services.min.json";
+import { getHomepageServicesText } from "@/sanity/groqGetters/pages/home";
 
-export default function Services() {
-  const sectionContent = {
-    title: "Our Comprehensive Services",
-    description: [
-      "Dive into our range of tailored solutions designed to meet and exceed your structural engineering needs.",
-    ],
-  };
+export default async function Services() {
+  const sectionContent = await getHomepageServicesText();
 
   return (
     <div className="flex flex-col items-center justify-center gap-12 bg-background-blue py-20 sm:gap-20 sm:py-28">
       <SectionHeader
-        title={sectionContent.title}
-        description={sectionContent.description}
+        title={sectionContent.header}
+        description={sectionContent.paragraphs}
       />
       <Cards />
       <PrimaryBtn

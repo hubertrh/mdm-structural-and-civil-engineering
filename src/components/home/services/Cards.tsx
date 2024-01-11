@@ -1,34 +1,17 @@
 import Link from "next/link";
 import Card from "./Card";
+import { getHomepageServicesCards } from "@/sanity/groqGetters/pages/home";
 
-export default function Cards() {
-  const cards = [
-    {
-      imgURL: "/images/card-1.png",
-      title: "Structural\u00A0Design &\u00A0Analysis",
-      description:
-        "Crafting structures that stand tall, meeting all safety and performance benchmarks. Ideal for new builds, renovations, and extensions.",
-    },
-    {
-      imgURL: "/images/card-2.png",
-      title: "Structural\u00A0Assessments &\u00A0Inspections",
-      description:
-        "Go beyond surface-level observations. Our in-depth inspections identify potential structural concerns and provide actionable solutions.",
-    },
-    {
-      imgURL: "/images/card-3.png",
-      title: "Construction\u00A0Supervision &\u00A0Monitoring",
-      description:
-        "Bring your blueprints to life with meticulous on-site supervision, ensuring your project adheres to approved design and specifications.",
-    },
-  ];
+export default async function Cards() {
+  const cards = await getHomepageServicesCards();
 
   return (
     <div className="flex w-min flex-col items-center justify-between gap-10 p-4 xl:flex-row">
       {cards.map((card, index) => (
         <Link key={index} href={"/services"}>
           <Card
-            imgURL={card.imgURL}
+            imgURL={card.image.url}
+            blurDataURL={card.image.metadata.lqip}
             title={card.title}
             description={card.description}
           />

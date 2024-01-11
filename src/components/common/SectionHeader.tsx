@@ -25,12 +25,12 @@ export default function SectionHeader({
       >
         {title}
       </h2>
-      {description?.map((_, index) => (
+      {description?.map((paragraph, index) => (
         <p
           className="flex flex-wrap justify-center gap-x-1 text-base leading-7"
           key={index}
         >
-          {description}
+          {paragraph}
         </p>
       ))}
     </section>

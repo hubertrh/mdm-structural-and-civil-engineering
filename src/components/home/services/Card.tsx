@@ -7,11 +7,17 @@ import { AnimationControlContext } from "@/components/contexts/AnimationControlC
 
 type CardProps = {
   imgURL: string;
+  blurDataURL?: string;
   title: string;
   description: string;
 };
 
-export default function Card({ imgURL, title, description }: CardProps) {
+export default function Card({
+  imgURL,
+  blurDataURL,
+  title,
+  description,
+}: CardProps) {
   const animationControlRef = useRef({
     startAnimation: () => {},
   });
@@ -29,11 +35,13 @@ export default function Card({ imgURL, title, description }: CardProps) {
             alt={title}
             fill={true}
             sizes="25vw"
+            placeholder="blur"
+            blurDataURL={blurDataURL}
           />
         </div>
 
         <div className="z-10 mb-8 flex flex-col justify-center gap-2 px-6 py-5 transition-all duration-300 sm:mb-5 sm:gap-0 sm:px-10 xl:gap-3 xl:bg-white xl:px-6 xl:pb-0 xl:group-hover:-translate-y-9">
-          <h2 className="h-max w-10/12 text-lg font-medium leading-tight">
+          <h2 className="h-max w-11/12 text-lg font-medium leading-tight md:h-11">
             {title}
           </h2>
           <p className="py-2 text-base leading-snug sm:py-1 sm:text-sm">
