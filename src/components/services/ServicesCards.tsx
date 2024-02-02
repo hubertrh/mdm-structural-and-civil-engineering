@@ -25,7 +25,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
       </h2>
       <div className="relative flex w-[85vw] max-w-6xl items-center justify-center overflow-x-clip md:w-[90vw]">
         <div
-          className="translate-reset flex w-max flex-col gap-20 transition-all duration-500 ease-in-out-quint md:flex-row md:gap-0"
+          className="translate-reset flex w-max flex-col gap-20 transition-all duration-500 ease-out md:flex-row md:gap-0"
           style={{ translate: `${position * 33.33}%` }}
         >
           {cards.map((service, index) => {
@@ -80,7 +80,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
             return (
               <div
                 key={index}
-                className={`grid h-3 w-5 cursor-pointer place-items-center transition-all duration-500 ease-in-out-quint ${
+                className={`grid h-3 w-5 cursor-pointer place-items-center transition-all duration-500 ease-out ${
                   position * -1 + 1 === index
                     ? "outline outline-green"
                     : "outline outline-transparent"
@@ -89,7 +89,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
                   setPosition((index - 1) * -1);
                 }}
               >
-                <span className="h-1 w-3 bg-green-dark" />
+                <span className="h-1/4 w-2 bg-green-dark" />
               </div>
             );
           })}
