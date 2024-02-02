@@ -141,4 +141,21 @@
       grid-template-columns: 1fr;
     }
   }
+
+  .grid-projects {
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    gap: 1rem;
+  }
+
+  .grid-project {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+
+    @media (max-width: 767px) {
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+  }
 }

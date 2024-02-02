@@ -21,7 +21,9 @@
           "home-projects-text",
           "logo-text",
           "logo-text-small",
-          "grid-services-cards"
+          "grid-services-cards",
+          "grid-projects",
+          "grid-project"
         ]
       }
     ]
