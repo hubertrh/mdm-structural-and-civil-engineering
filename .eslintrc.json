@@ -23,7 +23,8 @@
           "logo-text-small",
           "grid-services-cards",
           "grid-projects",
-          "grid-project"
+          "grid-project",
+          "animate-pulse-fast"
         ]
       }
     ]

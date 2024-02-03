@@ -4,9 +4,9 @@ import { Project } from "@/types/groqGetters/project.type";
 
 const sanityClient = createClient(clientConfig);
 
-export async function getFirstPageProjects(): Promise<Project[]> {
+export async function getInitialProjects(): Promise<Project[]> {
   const query = groq`
-  *[_type == "project"] | order(_id) [0...20] {
+  *[_type == "project"] | order(completionDate, name, _id) [0...10] {
     _id,
     name,
     "slug": slug.current,
@@ -25,9 +25,20 @@ export async function getFirstPageProjects(): Promise<Project[]> {
   return sanityClient.fetch(query);
 }
 
-export async function getNextPageProjects(lastId: string): Promise<Project[]> {
+export async function getMoreProjects(
+  lastCompletionDate: string,
+  lastName: string,
+  lastId: string,
+): Promise<Project[]> {
   const query = groq`
-  *[_type == "project" && _id > $lastId] | order(_id) [0...20] {
+  *[_type == "project" && (
+    completionDate > $lastCompletionDate ||
+      completionDate == $lastCompletionDate && (
+        name > $lastName ||
+        name == $lastName && _id > $lastId
+      )
+    )]
+    | order(completionDate, name, _id) [0...5] {
     _id,
     name,
     "slug": slug.current,
@@ -40,10 +51,10 @@ export async function getNextPageProjects(lastId: string): Promise<Project[]> {
       metadata {
         lqip
       }
-    }
+    },
   }`;
 
-  return sanityClient.fetch(query, { lastId });
+  return sanityClient.fetch(query, { lastCompletionDate, lastName, lastId });
 }
 
 export async function getProject(slug: string): Promise<Project> {
