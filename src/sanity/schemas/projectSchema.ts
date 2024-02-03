@@ -12,6 +12,21 @@ const projectSchema = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "name" },
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: "category",
+      title: "Category",
+      description: "Select the project category",
+      type: "reference",
+      to: [{ type: "category" }],
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "location",
       title: "Location",
       type: "string",
