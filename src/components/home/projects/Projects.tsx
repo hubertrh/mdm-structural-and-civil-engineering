@@ -2,50 +2,33 @@ import Link from "next/link";
 import SecondaryBtn from "@/components/common/SecondaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
 import ProjectThumbnail from "@/components/common/ProjectThumbnail";
+import {
+  getHomepageProjects,
+  getHomepageProjectsText,
+} from "@/sanity/groqGetters/pages/home";
 
-export default function Projects() {
-  const sectionContent = {
-    title: "Our Projects",
-    description: [
-      "We take pride in our diverse range of projects that stand as testaments to our commitment to safety, innovation, and excellence.",
-    ],
-  };
-
-  const Projects = [
-    {
-      imgURL: "/images/project-example-1.png",
-      title: "Project Example 1",
-      projectURL: "/projects/project-example-1",
-    },
-    {
-      imgURL: "/images/project-example-2.png",
-      title: "Project Example 2",
-      projectURL: "/projects/project-example-2",
-    },
-    {
-      imgURL: "/images/project-example-3.png",
-      title: "Project Example 3 Really Long Project Title Here",
-      projectURL: "/projects/project-example-3",
-    },
-  ];
+export default async function Projects() {
+  const sectionContent = await getHomepageProjectsText();
+  const projects = await getHomepageProjects();
 
   return (
     <div className="flex flex-col items-center justify-center gap-16 bg-background-blue pb-28 pt-20 sm:gap-20 sm:pt-28">
       <SectionHeader
-        title={sectionContent.title}
-        description={sectionContent.description}
+        title={sectionContent.header}
+        description={sectionContent.paragraphs}
       />
       <div className="relative grid w-[80vw] max-w-4xl grid-flow-row gap-12 md:grid-flow-col md:gap-4">
-        {Projects.map((project) => {
+        {projects.map((project) => {
           return (
             <Link
-              href={project.projectURL}
+              href={`/projects/${project.slug}`}
               className="relative mb-24 aspect-square w-full md:mb-0"
-              key={project.title}
+              key={project.slug}
             >
               <ProjectThumbnail
-                imgURL={project.imgURL}
-                projectTitle={project.title}
+                imgURL={project.image.url}
+                imgLQIP={project.image.metadata.lqip}
+                projectTitle={project.name}
               />
             </Link>
           );
