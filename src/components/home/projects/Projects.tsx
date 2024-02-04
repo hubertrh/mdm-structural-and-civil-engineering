@@ -2,14 +2,11 @@ import Link from "next/link";
 import SecondaryBtn from "@/components/common/SecondaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
 import ProjectThumbnail from "@/components/common/ProjectThumbnail";
+import { getHomepageProjectsText } from "@/sanity/groqGetters/pages/home";
 
-export default function Projects() {
-  const sectionContent = {
-    title: "Our Projects",
-    description: [
-      "We take pride in our diverse range of projects that stand as testaments to our commitment to safety, innovation, and excellence.",
-    ],
-  };
+export default async function Projects() {
+  const sectionContent = await getHomepageProjectsText();
+
 
   const Projects = [
     {
@@ -32,8 +29,8 @@ export default function Projects() {
   return (
     <div className="flex flex-col items-center justify-center gap-16 bg-background-blue pb-28 pt-20 sm:gap-20 sm:pt-28">
       <SectionHeader
-        title={sectionContent.title}
-        description={sectionContent.description}
+        title={sectionContent.header}
+        description={sectionContent.paragraphs}
       />
       <div className="relative grid w-[80vw] max-w-4xl grid-flow-row gap-12 md:grid-flow-col md:gap-4">
         {Projects.map((project) => {
