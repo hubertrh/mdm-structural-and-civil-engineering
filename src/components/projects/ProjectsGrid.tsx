@@ -31,22 +31,25 @@ export default function ProjectsGrid() {
 
   // Render ProjectsGrid or Skeleton based on loading state
   return (
-    <div className="mx-auto w-[85vw] max-w-4xl py-24">
+    <div className="mx-auto w-[85vw] max-w-4xl py-4 md:w-[90vw] md:py-24">
       {isLoading && <ProjectsGridSkeleton />}
 
       {!isLoading && (
         <div className="flex flex-col">
           {projects.map((project, index) => {
             const parsedDate = new Date(project.completionDate);
-            const formattedDate = parsedDate.toLocaleDateString("en-GB", {
-              month: "long",
-              year: "numeric",
-            });
+            const formattedDate = parsedDate
+              .toLocaleDateString("en-GB", {
+                month: "long",
+                year: "numeric",
+              })
+              .replace(/ /g, "\u00A0");
+            const formattedLocation = project.location.replace(/ /g, "\u00A0");
 
             return (
               <Link
                 href={`/projects/${project.slug}`}
-                className={`grid-projects group relative border-gray-400 p-6 ${
+                className={`grid-projects group relative border-gray-400 py-12 md:p-6 ${
                   index !== projects.length - 1 || isMoreLoading
                     ? "border-b"
                     : ""
@@ -64,9 +67,11 @@ export default function ProjectsGrid() {
                     blurDataURL={project.images[0].metadata.lqip}
                   />
                 </div>
-                <div className="flex flex-col justify-center gap-2 py-5 text-sm sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
-                  <p className="text-2xl">{project.name}</p>
-                  <p className="h-auto text-gray-500 sm:h-[2rem]">{`${project.location}\u2002|\u2002${formattedDate}\u2002|\u2002${project.category}`}</p>
+                <div className="flex flex-col justify-center gap-2 text-sm sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
+                  <p className="text-xl xs:text-[1.4rem] md:text-2xl">
+                    {project.name}
+                  </p>
+                  <p className="h-auto text-gray-500 sm:h-[2rem]">{`${formattedLocation}\u2002|\u2002${project.category}\u2002|\u2002${formattedDate}`}</p>
                 </div>
               </Link>
             );
