@@ -6,7 +6,7 @@ const sanityClient = createClient(clientConfig);
 
 export async function getInitialProjects(): Promise<Project[]> {
   const query = groq`
-  *[_type == "project"] | order(completionDate, name, _id) [0...10] {
+  *[_type == "project"] | order(completionDate desc, name, _id) [0...10] {
     _id,
     name,
     "slug": slug.current,
@@ -32,13 +32,13 @@ export async function getMoreProjects(
 ): Promise<Project[]> {
   const query = groq`
   *[_type == "project" && (
-    completionDate > $lastCompletionDate ||
+    completionDate < $lastCompletionDate ||
       completionDate == $lastCompletionDate && (
         name > $lastName ||
         name == $lastName && _id > $lastId
       )
     )]
-    | order(completionDate, name, _id) [0...5] {
+    | order(completionDate desc, name, _id) [0...5] {
     _id,
     name,
     "slug": slug.current,
