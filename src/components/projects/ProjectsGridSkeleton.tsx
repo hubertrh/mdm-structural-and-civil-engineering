@@ -4,7 +4,7 @@ export default function ProjectsGridSkeleton() {
       {/* 2 placeholders */}
       {Array.from({ length: 2 }).map((_, index) => (
         <div
-          className={`grid-projects relative border-gray-400 p-6 ${
+          className={`grid-projects relative border-gray-400 py-12 md:p-6 ${
             index !== 1 ? "border-b" : ""
           }`}
           key={index}
