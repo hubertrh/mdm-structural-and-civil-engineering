@@ -17,8 +17,11 @@ export default async function Project({ params }: ProjectProps) {
   });
 
   return (
-    <section className="mx-auto flex w-[85vw] max-w-3xl flex-col gap-4 py-28 md:py-44">
-      <Link className="-ml-2 w-fit p-2 text-gray-500" href="/projects">
+    <section className="mx-auto flex w-[85vw] max-w-3xl flex-col gap-4 py-24 md:py-36 lg:py-44">
+      <Link
+        className="-ml-2 w-fit px-2 py-3 text-gray-500 md:py-2"
+        href="/projects"
+      >
         <p>&larr;&ensp;Projects</p>
       </Link>
       <div className="flex w-full flex-col gap-12">
@@ -36,27 +39,25 @@ export default async function Project({ params }: ProjectProps) {
             />
           </div>
           <div>
-            <h1 className="pb-3 text-xl text-black-200 sm:text-3xl md:pb-6">
-              {project.name}
-            </h1>
+            <h1 className="pb-6 text-3xl text-black-200">{project.name}</h1>
             <div className="flex flex-col gap-3">
               <div>
-                <p className="text-sm text-gray-500">Location</p>
-                <p className="md:text-lg">{project.location}</p>
+                <p className="text-gray-500 md:text-sm">Location</p>
+                <p className="text-xl md:text-lg">{project.location}</p>
               </div>
               <div>
-                <p className="text-sm text-gray-500">Date of completion</p>
-                <p className="md:text-lg">{formattedDate}</p>
+                <p className="text-gray-500 md:text-sm">Date of completion</p>
+                <p className="text-xl md:text-lg">{formattedDate}</p>
               </div>
               <div>
-                <p className="text-sm text-gray-500">Category</p>
-                <p className="md:text-lg">{project.category}</p>
+                <p className="text-gray-500 md:text-sm">Category</p>
+                <p className="text-xl md:text-lg">{project.category}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-3">
-          <p className="text-gray-500 md:mb-2">Project Overview</p>
+          <p className="text-lg text-gray-500 md:mb-2">Project Overview</p>
           {project.description.map((paragraph, index) => (
             <p className="text-justify text-base leading-7" key={index}>
               {paragraph}
