@@ -66,9 +66,13 @@ export default async function Project({ params }: ProjectProps) {
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {project.images.map((image, index) => (
-            <div className="relative aspect-square" key={index}>
+            <div
+              className={`relative aspect-video w-full md:!aspect-square`}
+              style={{ aspectRatio: `${image.metadata.aspectRatio}/1` }}
+              key={index}
+            >
               <Image
-                className="w-full object-cover"
+                className="w-full object-contain md:object-cover"
                 src={image.url}
                 alt={`${project.name} — image ${index + 1}`}
                 fill

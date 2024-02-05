@@ -70,7 +70,8 @@ export async function getProject(slug: string): Promise<Project> {
     "images": images[].asset->{
       url,
       metadata {
-        lqip
+        lqip,
+        "aspectRatio": dimensions.aspectRatio
       }
     }
   }`;
