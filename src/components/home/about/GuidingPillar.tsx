@@ -26,14 +26,14 @@ export default function GuidingPillar({
   });
 
   useEffect(() => {
-    const currentPillar = pillarRef.current; // Capture the current value of the ref
+    const currentPillar = pillarRef.current;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const screenWidth = window.innerWidth;
-            const delay = screenWidth > 1280 ? 400 * index : 0; // Apply delay only for wider screens
+            const delay = screenWidth > 1280 ? 400 * index : 0; // Apply delay only for horizontal layout
 
             setTimeout(() => {
               animationControlRef.current.startAnimation();
