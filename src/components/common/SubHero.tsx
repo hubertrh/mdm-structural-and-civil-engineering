@@ -2,7 +2,13 @@ import Image from "next/image";
 import heroSubImage from "/public/images/hero-sub.png";
 
 type SubHero = {
-  variant: "services" | "about us" | "projects" | "contact";
+  variant:
+    | "services"
+    | "about us"
+    | "projects"
+    | "contact"
+    | "cookie policy"
+    | "privacy policy";
 };
 
 export default function SubHero({ variant }: SubHero) {
