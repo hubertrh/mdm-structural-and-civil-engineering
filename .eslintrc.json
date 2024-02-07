@@ -24,7 +24,11 @@
           "grid-services-cards",
           "grid-projects",
           "grid-project",
-          "animate-pulse-fast"
+          "animate-pulse-fast",
+          "cookie-policy-h1",
+          "cookie-policy-p",
+          "cky-audit-table-element",
+          "cky-banner-element"
         ]
       }
     ]
