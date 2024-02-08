@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SubHero from "@/components/common/SubHero";
 import LottieIcon from "@/components/common/LottieIcon";
 import CookieIcon from "@/assets/icons/animated-cookies.min.json";
@@ -59,12 +58,9 @@ export default function page() {
         </div>
         <h5 className="mt-8 text-lg">Types of Cookies we use</h5>
         <div className="cky-audit-table-element"></div>
-        <Link
-          href="/!#"
-          className="cky-banner-element my-8 flex w-max items-center justify-center gap-5 rounded-md bg-green px-6 py-3 text-xl capitalize text-white transition-all duration-200 hover:bg-green-dark hover:shadow sm:px-8 sm:text-lg"
-        >
+        <button className="cky-banner-element my-8 flex w-max items-center justify-center gap-5 rounded-md bg-green px-6 py-3 text-xl capitalize text-white transition-all duration-200 hover:bg-green-dark hover:shadow sm:px-8 sm:text-lg">
           Manage your consent
-        </Link>
+        </button>
         <div className="mt-8 flex flex-col gap-4">
           <p>
             You can change your cookie preferences any time by clicking the
