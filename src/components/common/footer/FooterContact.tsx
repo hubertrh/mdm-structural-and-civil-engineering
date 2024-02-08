@@ -27,7 +27,7 @@ export default function FooterContact({ companyDetails }: footerContactProps) {
         </a>
         <a
           className="underline underline-offset-4 transition-all duration-300 hover:text-green-dark hover:underline-offset-8"
-          href={`${companyDetails.phone.replace(/\s/g, "")}`}
+          href={`tel:${companyDetails.phone.replace(/\s/g, "")}`}
         >
           {companyDetails.phone}
         </a>
