@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   getInitialProjects,
   getMoreProjects,
@@ -11,17 +12,24 @@ export function useProjectsPagination() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMoreLoading, setIsMoreLoading] = useState(false);
   const [hasMoreProjects, setHasMoreProjects] = useState(false);
+  const searchParams = useSearchParams();
 
-  const fetchInitialProjects = async () => {
-    const initialProjects = await getInitialProjects();
+  const fetchInitialProjects = async (category?: string) => {
+    const initialProjects = await getInitialProjects(category);
     setProjects(initialProjects);
     setIsLoading(false);
     setHasMoreProjects(initialProjects.length >= 10);
   };
 
   useEffect(() => {
-    fetchInitialProjects();
-  }, []);
+    const category = searchParams.get("category");
+
+    if (!category) {
+      fetchInitialProjects();
+    } else {
+      fetchInitialProjects(category);
+    }
+  }, [searchParams]);
 
   const loadMoreProjects = useCallback(async () => {
     if (isMoreLoading || !hasMoreProjects) return;

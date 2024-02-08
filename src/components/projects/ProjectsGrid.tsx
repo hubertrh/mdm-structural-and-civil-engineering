@@ -31,8 +31,18 @@ export default function ProjectsGrid() {
 
   // Render ProjectsGrid or Skeleton based on loading state
   return (
-    <div className="mx-auto w-[85vw] max-w-4xl py-4 md:w-[90vw] md:py-24">
+    <div className="mx-auto w-[85vw] max-w-4xl pb-6 md:w-[90vw]">
       {isLoading && <ProjectsGridSkeleton />}
+
+      {!isLoading && projects.length === 0 && (
+        <div className="my-12 flex items-center justify-center md:mx-20">
+          <div className="grow border-t border-gray-400"></div>
+          <span className="px-4 text-sm uppercase text-gray-400">
+            No projects in this category
+          </span>
+          <div className="grow border-t border-gray-400"></div>
+        </div>
+      )}
 
       {!isLoading && (
         <div className="flex flex-col">
@@ -78,6 +88,17 @@ export default function ProjectsGrid() {
           })}
 
           {isMoreLoading && <ProjectsGridSkeleton />}
+
+          {!isMoreLoading && projects.length > 0 && (
+            <div className="mx-20 my-12 flex items-center justify-center">
+              <div className="grow border-t border-gray-400"></div>
+              <span className="px-4 text-sm uppercase text-gray-400">
+                End of results
+              </span>
+              <div className="grow border-t border-gray-400"></div>
+            </div>
+          )}
+
           <div ref={sentinelRef} className="h-1" />
         </div>
       )}

@@ -1,12 +1,24 @@
 import { createClient, groq } from "next-sanity";
 import clientConfig from "@/sanity/utils/clientConfig";
 import { Project } from "@/types/groqGetters/project.type";
+import { ProjectCategory } from "@/types/groqGetters/projectCategory.type";
 
 const sanityClient = createClient(clientConfig);
 
-export async function getInitialProjects(): Promise<Project[]> {
+export async function getProjectCategories(): Promise<ProjectCategory[]> {
   const query = groq`
-  *[_type == "project"] | order(completionDate desc, name, _id) [0...10] {
+  *[_type == "category"][].title`;
+
+  return sanityClient.fetch(query);
+}
+export async function getInitialProjects(
+  categoryTitle?: string,
+): Promise<Project[]> {
+  const categoryFilter = categoryTitle
+    ? `&& category->title == $categoryTitle`
+    : "";
+  const query = groq`
+  *[_type == "project" ${categoryFilter}] | order(completionDate desc, name, _id) [0...10] {
     _id,
     name,
     "slug": slug.current,
@@ -22,23 +34,29 @@ export async function getInitialProjects(): Promise<Project[]> {
     }
   }`;
 
-  return sanityClient.fetch(query);
+  const params = categoryTitle ? { categoryTitle } : {};
+
+  return sanityClient.fetch(query, params);
 }
 
 export async function getMoreProjects(
   lastCompletionDate: string,
   lastName: string,
   lastId: string,
+  categoryTitle?: string,
 ): Promise<Project[]> {
+  const categoryFilter = categoryTitle
+    ? `&& category->title == $categoryTitle`
+    : "";
   const query = groq`
   *[_type == "project" && (
     completionDate < $lastCompletionDate ||
-      completionDate == $lastCompletionDate && (
-        name > $lastName ||
-        name == $lastName && _id > $lastId
-      )
-    )]
-    | order(completionDate desc, name, _id) [0...5] {
+    completionDate == $lastCompletionDate && (
+      name > $lastName ||
+      name == $lastName && _id > $lastId
+    )
+  ) ${categoryFilter}]
+  | order(completionDate desc, name, _id) [0...5] {
     _id,
     name,
     "slug": slug.current,
@@ -54,7 +72,14 @@ export async function getMoreProjects(
     },
   }`;
 
-  return sanityClient.fetch(query, { lastCompletionDate, lastName, lastId });
+  const params = {
+    lastCompletionDate,
+    lastName,
+    lastId,
+    ...(categoryTitle && { categoryTitle }),
+  };
+
+  return sanityClient.fetch(query, params);
 }
 
 export async function getProject(slug: string): Promise<Project> {
