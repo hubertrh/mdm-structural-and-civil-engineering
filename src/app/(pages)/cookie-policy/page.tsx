@@ -1,15 +1,13 @@
 import SubHero from "@/components/common/SubHero";
-import LottieIcon from "@/components/common/LottieIcon";
 import CookieIcon from "@/assets/icons/animated-cookies.min.json";
+import CornerIcon from "@/components/policies/CornerIcon";
 
 export default function page() {
   return (
     <>
       <SubHero variant="cookie policy" />
       <section className="relative mx-auto w-[85vw] max-w-4xl py-12 text-justify md:w-[90vw]">
-        <div className="absolute right-0 top-8 ">
-          <LottieIcon icon={CookieIcon} duration={1950} sizeInRem={8} />
-        </div>
+        <CornerIcon icon={CookieIcon} duration={1950} />
         <h1 className="cookie-policy-h1 mb-4 text-lg text-black-200 sm:text-2xl">
           Cookie Policy
         </h1>
