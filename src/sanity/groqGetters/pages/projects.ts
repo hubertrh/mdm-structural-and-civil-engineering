@@ -1,11 +1,10 @@
 import { createClient, groq } from "next-sanity";
 import clientConfig from "@/sanity/utils/clientConfig";
 import { Project } from "@/types/groqGetters/project.type";
-import { ProjectCategory } from "@/types/groqGetters/projectCategory.type";
 
 const sanityClient = createClient(clientConfig);
 
-export async function getProjectCategories(): Promise<ProjectCategory[]> {
+export async function getProjectCategories(): Promise<string[]> {
   const query = groq`
   *[_type == "category"][].title`;
 

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback } from "react";
-import { ProjectCategory } from "@/types/groqGetters/projectCategory.type";
 
 type CategoryFilterProps = {
   categories: string[];
