@@ -15,6 +15,7 @@ export function useProjectsPagination() {
   const searchParams = useSearchParams();
 
   const fetchInitialProjects = async (category?: string) => {
+    setIsLoading(true);
     const initialProjects = await getInitialProjects(category);
     setProjects(initialProjects);
     setIsLoading(false);
