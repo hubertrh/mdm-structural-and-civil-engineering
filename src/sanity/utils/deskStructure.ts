@@ -3,9 +3,6 @@
 import { StructureBuilder } from "sanity/structure";
 
 export const deskStructure = (S: StructureBuilder) =>
-  // S.list()
-  //   .title("Base")
-  //   .items([...S.documentTypeListItems().reverse()]);
   S.list()
     .title("Base")
     .items([
