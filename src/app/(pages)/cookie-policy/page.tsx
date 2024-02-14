@@ -1,16 +1,13 @@
-import Link from "next/link";
 import SubHero from "@/components/common/SubHero";
-import LottieIcon from "@/components/common/LottieIcon";
 import CookieIcon from "@/assets/icons/animated-cookies.min.json";
+import CornerIcon from "@/components/policies/CornerIcon";
 
 export default function page() {
   return (
     <>
       <SubHero variant="cookie policy" />
       <section className="relative mx-auto w-[85vw] max-w-4xl py-12 text-justify md:w-[90vw]">
-        <div className="absolute right-0 top-8 ">
-          <LottieIcon icon={CookieIcon} duration={1950} sizeInRem={8} />
-        </div>
+        <CornerIcon icon={CookieIcon} duration={1950} />
         <h1 className="cookie-policy-h1 mb-4 text-lg text-black-200 sm:text-2xl">
           Cookie Policy
         </h1>
@@ -59,12 +56,9 @@ export default function page() {
         </div>
         <h5 className="mt-8 text-lg">Types of Cookies we use</h5>
         <div className="cky-audit-table-element"></div>
-        <Link
-          href="/!#"
-          className="cky-banner-element my-8 flex w-max items-center justify-center gap-5 rounded-md bg-green px-6 py-3 text-xl capitalize text-white transition-all duration-200 hover:bg-green-dark hover:shadow sm:px-8 sm:text-lg"
-        >
+        <button className="cky-banner-element my-8 flex w-max items-center justify-center gap-5 rounded-md bg-green px-6 py-3 text-xl capitalize text-white transition-all duration-200 hover:bg-green-dark hover:shadow sm:px-8 sm:text-lg">
           Manage your consent
-        </Link>
+        </button>
         <div className="mt-8 flex flex-col gap-4">
           <p>
             You can change your cookie preferences any time by clicking the

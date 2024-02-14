@@ -1,11 +1,14 @@
 import SubHero from "@/components/common/SubHero";
-import ProjectsGrid from "@/components/projects/ProjectsGrid";
+import { getProjectCategories } from "@/sanity/groqGetters/pages/projects";
+import ProjectsSection from "@/components/projects/ProjectsSection";
 
 export default async function page() {
+  const categories = await getProjectCategories();
+
   return (
     <>
       <SubHero variant="projects" />
-      <ProjectsGrid />
+      <ProjectsSection categories={categories} />
     </>
   );
 }
