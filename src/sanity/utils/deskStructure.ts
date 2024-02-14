@@ -1,81 +1,52 @@
-// @ts-nocheck
-
 import { StructureBuilder } from "sanity/structure";
+
+const singletonDocuments = {
+  companyInfo: {
+    title: "Company Information",
+    documentId: "465a4104-59be-4551-b9f8-724c32761bad",
+    schemaType: "companyInfo",
+    description: "Company Information across all the pages",
+  },
+  homePage: {
+    title: "Home Page",
+    documentId: "54ba75db-6294-43b9-933b-2ac7b0e9ec1d",
+    schemaType: "homePage",
+    description: "Homepage content",
+  },
+  servicesPage: {
+    title: "Services Page",
+    documentId: "5970fea5-61b7-4d44-a1e6-0ee7068cbb98",
+    schemaType: "servicesPage",
+    description: "Services Page content",
+  },
+  aboutPage: {
+    title: "About Page",
+    documentId: "8ba7dffb-6c12-4e0a-92d4-4be15508c966",
+    schemaType: "aboutPage",
+    description: "About Page content",
+  },
+  contactPage: {
+    title: "Contact Page",
+    documentId: "3ae4e81d-2ba7-4dac-ab2f-d822f66e6184",
+    schemaType: "contactPage",
+    description: "Contact Page content",
+  },
+};
 
 export const deskStructure = (S: StructureBuilder) =>
   S.list()
     .title("Base")
     .items([
-      S.listItem()
-        .title("Company Information")
-        .child(
-          S.document()
-            .title("Company Information across all the pages")
-            .schemaType("companyInfo")
-            .documentId("465a4104-59be-4551-b9f8-724c32761bad"),
-          S.documentTypeListItems().filter(
-            (listItem) =>
-              !["465a4104-59be-4551-b9f8-724c32761bad"].includes(
-                listItem.getId(),
-              ),
+      ...Object.values(singletonDocuments).map((doc) =>
+        S.listItem()
+          .title(doc.title)
+          .child(
+            S.document()
+              .title(doc.description)
+              .schemaType(doc.schemaType)
+              .documentId(doc.documentId),
           ),
-        ),
-      S.listItem()
-        .title("Homepage")
-        .child(
-          S.document()
-            .title("Homepage content")
-            .schemaType("homePage")
-            .documentId("54ba75db-6294-43b9-933b-2ac7b0e9ec1d"),
-          S.documentTypeListItems().filter(
-            (listItem) =>
-              !["54ba75db-6294-43b9-933b-2ac7b0e9ec1d"].includes(
-                listItem.getId(),
-              ),
-          ),
-        ),
-      S.listItem()
-        .title("Services Page")
-        .child(
-          S.document()
-            .title("Services Page content")
-            .schemaType("servicesPage")
-            .documentId("5970fea5-61b7-4d44-a1e6-0ee7068cbb98"),
-          S.documentTypeListItems().filter(
-            (listItem) =>
-              !["5970fea5-61b7-4d44-a1e6-0ee7068cbb98"].includes(
-                listItem.getId(),
-              ),
-          ),
-        ),
-      S.listItem()
-        .title("About Page")
-        .child(
-          S.document()
-            .title("About Page content")
-            .schemaType("aboutPage")
-            .documentId("8ba7dffb-6c12-4e0a-92d4-4be15508c966"),
-          S.documentTypeListItems().filter(
-            (listItem) =>
-              !["8ba7dffb-6c12-4e0a-92d4-4be15508c966"].includes(
-                listItem.getId(),
-              ),
-          ),
-        ),
-      S.listItem()
-        .title("Contact Page")
-        .child(
-          S.document()
-            .title("Contact Page content")
-            .schemaType("contactPage")
-            .documentId("3ae4e81d-2ba7-4dac-ab2f-d822f66e6184"),
-          S.documentTypeListItems().filter(
-            (listItem) =>
-              !["3ae4e81d-2ba7-4dac-ab2f-d822f66e6184"].includes(
-                listItem.getId(),
-              ),
-          ),
-        ),
+      ),
       S.listItem()
         .title("Projects Page")
         .child(
@@ -92,4 +63,16 @@ export const deskStructure = (S: StructureBuilder) =>
                 ),
             ]),
         ),
+      ...S.documentTypeListItems().filter(
+        (listItem) =>
+          ![
+            "companyInfo",
+            "homePage",
+            "servicesPage",
+            "aboutPage",
+            "contactPage",
+            "project",
+            "category",
+          ].includes(listItem.getId() ?? ""),
+      ),
     ]);
