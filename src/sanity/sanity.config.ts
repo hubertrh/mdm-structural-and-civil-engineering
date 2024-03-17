@@ -3,6 +3,7 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import schemas from "./schemas";
 import { deskStructure } from "./utils/deskStructure";
+import SanityLogo from "@/components/sanity/SanityLogo";
 
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
@@ -20,6 +21,7 @@ const config = defineConfig({
   projectId: "4vbs99s3",
   dataset: "production",
   title: "MDM Structural and Civil Engineering",
+  icon: SanityLogo,
   apiVersion: "2022-03-07",
   basePath: "/admin",
 
