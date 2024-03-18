@@ -25,6 +25,7 @@ The website's design is intentionally straightforward, **adhering to specific gu
 - **Content Management:** Integrated Sanity CMS enabling easy content updates and management.
 - **Mapbox GL:** Implemented to provide interactive and customizable maps, enhancing the visualization of company's location.
 - **CookieYes:** A GDPR-compliant cookie consent solution, ensuring the website meets legal requirements in the UK for user consent management and privacy protection.
+- **Sentry.io:** Integrated for real-time error tracking and performance monitoring, ensuring the website operates smoothly and efficiently.
 
 ## Development Setup
 
