@@ -13,6 +13,8 @@ export type Project = {
     metadata: {
       lqip: ImageAsset["metadata"]["lqip"];
       aspectRatio: ImageAsset["metadata"]["aspectRatio"];
+      width: ImageAsset["metadata"]["width"];
+      height: ImageAsset["metadata"]["height"];
     };
   }[];
 };

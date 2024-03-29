@@ -1,6 +1,7 @@
-import { defineConfig } from "sanity";
+import { defineConfig, isDev } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
+import { vercelDeployTool } from "sanity-plugin-vercel-deploy";
 import schemas from "./schemas";
 import { deskStructure } from "./utils/deskStructure";
 import SanityLogo from "@/components/sanity/SanityLogo";
@@ -29,7 +30,8 @@ const config = defineConfig({
     structureTool({
       structure: deskStructure,
     }),
-    visionTool(),
+    vercelDeployTool(),
+    ...(isDev ? [visionTool()] : []),
   ],
 
   schema: {

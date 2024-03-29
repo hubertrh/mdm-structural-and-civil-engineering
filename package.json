@@ -23,7 +23,9 @@
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^3.28.0",
-    "sharp": "^0.32.6"
+    "sanity-plugin-vercel-deploy": "^3.3.4",
+    "sharp": "^0.32.6",
+    "yet-another-react-lightbox": "^3.17.1"
   },
   "devDependencies": {
     "@types/mapbox-gl": "^2.7.19",
