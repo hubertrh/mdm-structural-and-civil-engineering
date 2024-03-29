@@ -95,7 +95,9 @@ export async function getProject(slug: string): Promise<Project> {
       url,
       metadata {
         lqip,
-        "aspectRatio": dimensions.aspectRatio
+        "aspectRatio": dimensions.aspectRatio,
+        "width": dimensions.width,
+        "height": dimensions.height,
       }
     }
   }`;

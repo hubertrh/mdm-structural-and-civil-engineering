@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getProject } from "@/sanity/groqGetters/pages/projects";
+import ProjectImagesGrid from "@/components/projects/ProjectImagesGrid";
 
 type ProjectProps = {
   params: { project: string };
@@ -64,26 +65,7 @@ export default async function Project({ params }: ProjectProps) {
             </p>
           ))}
         </div>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {project.images.map((image, index) => (
-            <div
-              className={`relative aspect-video w-full md:!aspect-square`}
-              style={{ aspectRatio: `${image.metadata.aspectRatio}/1` }}
-              key={index}
-            >
-              <Image
-                className="w-full object-contain md:object-cover"
-                src={image.url}
-                alt={`${project.name} — image ${index + 1}`}
-                fill
-                priority
-                sizes="(min-width: 768px) 30vw, 95vw"
-                placeholder="blur"
-                blurDataURL={image.metadata.lqip}
-              />
-            </div>
-          ))}
-        </div>
+        <ProjectImagesGrid images={project.images} projectName={project.name} />
       </div>
     </section>
   );
