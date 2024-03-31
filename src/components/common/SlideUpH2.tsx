@@ -20,7 +20,7 @@ const AnimatedWord = ({
   isInView: boolean;
 }) => {
   return (
-    <span className="relative overflow-hidden" key={index}>
+    <span className="relative" key={index}>
       <motion.span
         className="block opacity-0"
         custom={index}
@@ -61,7 +61,6 @@ export default function SlideUpH2({ headingText, justify }: SlideUpH2Props) {
   return (
     <h2 className="flex flex-col gap-y-1" ref={container}>
       {textLines.map((line, lineIndex) => (
-        // <span className="flex flex-wrap justify-center gap-x-1" key={lineIndex}>
         <span
           key={lineIndex}
           className={`flex flex-wrap gap-x-1 ${justifyClass}`}
