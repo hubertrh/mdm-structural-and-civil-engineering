@@ -6,31 +6,31 @@ const singletonDocuments = {
     documentId: "465a4104-59be-4551-b9f8-724c32761bad",
     schemaType: "companyInfo",
     description:
-      "Company Information across all the pages. Remember to RE-DEPLOY after changes.",
+      "Company Information across all the pages. Re-deployment required.",
   },
   homePage: {
     title: "Home Page",
     documentId: "54ba75db-6294-43b9-933b-2ac7b0e9ec1d",
     schemaType: "homePage",
-    description: "Homepage content. Remember to RE-DEPLOY after changes.",
+    description: "Homepage content. Re-deployment required.",
   },
   servicesPage: {
     title: "Services Page",
     documentId: "5970fea5-61b7-4d44-a1e6-0ee7068cbb98",
     schemaType: "servicesPage",
-    description: "Services Page content. Remember to RE-DEPLOY after changes.",
+    description: "Services Page content. Re-deployment required.",
   },
   aboutPage: {
     title: "About Page",
     documentId: "8ba7dffb-6c12-4e0a-92d4-4be15508c966",
     schemaType: "aboutPage",
-    description: "About Page content. Remember to RE-DEPLOY after changes.",
+    description: "About Page content. Re-deployment required.",
   },
   contactPage: {
     title: "Contact Page",
     documentId: "3ae4e81d-2ba7-4dac-ab2f-d822f66e6184",
     schemaType: "contactPage",
-    description: "Contact Page content. Remember to RE-DEPLOY after changes.",
+    description: "Contact Page content. Re-deployment required.",
   },
 };
 
