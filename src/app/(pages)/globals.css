@@ -69,7 +69,12 @@
     text-shadow: -3px 3px 0px #597355;
 
     @media (max-width: 639px) {
-      text-shadow: -2px 2px 0px #597355;
+      text-shadow:
+        0 1px #597355,
+        -1px 0 #597355,
+        -1px 2px #597355,
+        -2px 1px #597355,
+        2px 2px 2px rgba(206, 89, 55, 0);
     }
   }
 
@@ -77,44 +82,21 @@
     text-shadow: -2px 2px 0px #597355;
 
     @media (max-width: 639px) {
-      text-shadow: -1px 1px 0px #597355;
-    }
-  }
-
-  .subhero h1 {
-    @media (max-width: 639px) {
       text-shadow:
-        4px 4px 32px #00233e,
-        -4px 4px 32px #00233e,
-        4px -4px 32px #00233e,
-        -4px -4px 32px #00233e,
-        4px 0px 32px #00233e,
-        -4px 0px 32px #00233e,
-        0px 4px 32px #00233e,
-        0px -4px 32px #00233e,
-        4px 4px 32px #00233e,
-        -4px 4px 32px #00233e,
-        4px -4px 32px #00233e,
-        -4px -4px 32px #00233e,
-        4px 0px 32px #00233e,
-        -4px 0px 32px #00233e,
-        0px 4px 32px #00233e,
-        0px -4px 32px #00233e,
-        4px 4px 32px #00233e,
-        -4px 4px 32px #00233e,
-        4px -4px 32px #00233e,
-        -4px -4px 32px #00233e,
-        4px 0px 32px #00233e,
-        -4px 0px 32px #00233e,
-        0px 4px 32px #00233e,
-        0px -4px 32px #00233e;
+        0 1px #597355,
+        -1px 0 #597355,
+        -1px 2px #597355,
+        -2px 1px #597355,
+        -2px 3px #597355,
+        -3px 2px #597355,
+        2px 2px 2px rgba(206, 89, 55, 0);
     }
   }
 
   .hero-gradient {
     background: linear-gradient(
       230deg,
-      rgba(0, 37, 92, 0.81) -6.07%,
+      rgba(0, 37, 92, 0.85) -6.07%,
       rgba(136, 136, 136, 0) 101.04%,
       rgba(136, 136, 136, 0) 140.74%
     );

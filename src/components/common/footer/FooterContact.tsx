@@ -51,9 +51,9 @@ export default function FooterContact({ companyDetails }: footerContactProps) {
               {companyDetails.address.replace(/ /g, "\u00A0")}
             </a>
           </div>
-          <div className="mt-1">
+          <a className="mt-1" href={companyDetails.googleMapsLink}>
             <LottieIcon icon={NewCardIcon} duration={1000} sizeInRem={1} />
-          </div>
+          </a>
         </div>
       </AnimationControlContext.Provider>
     </div>

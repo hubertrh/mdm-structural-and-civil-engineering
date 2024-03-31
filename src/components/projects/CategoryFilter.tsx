@@ -28,11 +28,13 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
   );
 
   return (
-    <nav className="mb-6 mt-12 flex items-center justify-center gap-6">
+    <nav className="mb-6 mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
       <Link
         href={"/projects?" + createQueryString("All")}
-        className={`mr-8 uppercase ${
-          currentCategory === "All" ? "font-bold text-green-dark" : ""
+        className={`mr-10 uppercase ${
+          currentCategory === "All"
+            ? "font-bold text-green-dark"
+            : "hover:font-medium"
         }`}
       >
         ALL
@@ -42,7 +44,9 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
           key={category}
           href={"/projects?" + createQueryString(category)}
           className={`uppercase ${
-            currentCategory === category ? "font-bold text-green-dark" : ""
+            currentCategory === category
+              ? "font-bold text-green-dark"
+              : "hover:font-medium"
           }`}
         >
           {category}

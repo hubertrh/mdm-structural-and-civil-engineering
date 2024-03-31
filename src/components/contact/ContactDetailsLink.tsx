@@ -61,6 +61,8 @@ export default function ContactDetailsLink({
         href={variantData.href}
         className="flex items-center gap-6 transition-all duration-300 hover:text-green-dark"
         onMouseEnter={() => animationControlRef.current.startAnimation()}
+        target={variant === "address" ? "_blank" : undefined}
+        rel={variant === "address" ? "noopener noreferrer" : undefined}
       >
         <LottieIcon
           icon={variantData.icon}
