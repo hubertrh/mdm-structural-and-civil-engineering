@@ -16,3 +16,14 @@ export type ServicesCards = {
     };
   };
 }[];
+
+export type DomainsCards = {
+  name: string;
+  shortDescription: string;
+  image: {
+    url: ImageAsset["url"];
+    metadata: {
+      lqip: ImageAsset["metadata"]["lqip"];
+    };
+  };
+}[];
