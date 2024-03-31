@@ -5,11 +5,13 @@ import ServicesCards from "@/components/services/ServicesCards";
 import {
   getServicesPageInfo,
   getServicesCards,
+  getDomainsCards,
 } from "@/sanity/groqGetters/pages/services";
 
 export default async function page() {
   const sectionContent = await getServicesPageInfo();
   const servicesCards = await getServicesCards();
+  const projectDomains = await getDomainsCards();
 
   return (
     <>
@@ -21,7 +23,7 @@ export default async function page() {
           textAlign="center"
         />
         <ServicesCards cards={servicesCards} />
-        <ProjectDomains />
+        <ProjectDomains cards={projectDomains} />
       </div>
     </>
   );

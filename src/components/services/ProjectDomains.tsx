@@ -4,36 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { scaleUp } from "@/utils/animationVariants";
+import { DomainsCards } from "@/types/groqGetters/servicesPage.type";
 
-const domains = [
-  {
-    title: "Residential Edifices",
-    description: "From cozy homes to sprawling estates",
-    src: "/images/services/domains/residential.png",
-  },
-  {
-    title: "Commercial Spaces",
-    description: "Crafting structural marvels for business endeavors",
-    src: "/images/services/domains/commercial.png",
-  },
-  {
-    title: "Industrial Facilities",
-    description: "Engineering robustness at scale",
-    src: "/images/services/domains/industrial.png",
-  },
-  {
-    title: "Infrastructure Initiatives",
-    description: "Building the backbone of modern life",
-    src: "/images/services/domains/infrastructure.png",
-  },
-  {
-    title: "Historic Preservation",
-    description: "Honoring the past, fortifying for the future",
-    src: "/images/services/domains/historic.png",
-  },
-];
+type DomainsCardsProps = {
+  cards: DomainsCards;
+};
 
-export default function ProjectDomains() {
+export default function ProjectDomains({ cards }: DomainsCardsProps) {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
@@ -42,29 +19,29 @@ export default function ProjectDomains() {
         <span>Project&nbsp;Domains</span> <span>We&nbsp;Excel&nbsp;by</span>
       </h2>
       <div className="relative flex w-full flex-col">
-        {domains.map((domain, index) => {
+        {cards.map((domain, index) => {
           return (
             <div
               key={index}
               className={`grid-domains relative border-gray-400 py-5 ${
-                index !== domains.length - 1 ? "border-b" : ""
+                index !== cards.length - 1 ? "border-b" : ""
               }`}
               onMouseEnter={() => setModal({ active: true, index: index })}
               onMouseLeave={() => setModal({ active: false, index: index })}
             >
               <div className="flex flex-col justify-center gap-2 py-5 text-sm sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
-                <p className="text-2xl">{domain.title}</p>
-                <p className="h-auto sm:h-[2rem]">{domain.description}</p>
+                <p className="text-2xl">{domain.name}</p>
+                <p className="h-auto sm:h-[2rem]">{domain.shortDescription}</p>
               </div>
               <div className="relative my-auto aspect-square w-full md:hidden">
                 <Image
-                  src={domain.src}
-                  alt={domain.title}
+                  src={domain.image.url}
+                  alt={domain.name}
                   fill
                   priority
                   sizes="40vw"
-                  // TODO: Add blur after implementing Sanity CMS
-                  // placeholder="blur"
+                  placeholder="blur"
+                  blurDataURL={domain.image.metadata.lqip}
                 />
               </div>
             </div>
@@ -81,18 +58,18 @@ export default function ProjectDomains() {
             className="aspect-square w-full transition-all duration-400 ease-out"
             style={{ translate: `0 ${modal.index * -20}%` }}
           >
-            {domains.map((domain, index) => {
+            {cards.map((domain, index) => {
               return (
                 <div key={index} className="relative aspect-square w-full">
                   <Image
                     className="w-full"
-                    src={domain.src}
-                    alt={domain.title}
+                    src={domain.image.url}
+                    alt={domain.name}
                     fill
                     priority
                     sizes="40vw"
-                    // TODO: Add blur after implementing Sanity CMS
-                    // placeholder="blur"
+                    placeholder="blur"
+                    blurDataURL={domain.image.metadata.lqip}
                   />
                 </div>
               );
