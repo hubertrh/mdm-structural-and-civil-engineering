@@ -5,10 +5,10 @@ import { useSearchParams } from "next/navigation";
 import LottieIcon from "../common/LottieIcon";
 import ServicesCard from "./ServicesCard";
 import SliderNavIcon from "@/assets/icons/animated-button-right-arrow-green-dark.json";
-import { ServicesCards } from "@/types/groqGetters/servicesPage.type";
+import { ServicesCards as ServicesCardsType } from "@/types/groqGetters/servicesPage.type";
 
 type ServicesCardsProps = {
-  cards: ServicesCards;
+  cards: ServicesCardsType;
 };
 
 export default function ServicesCards({ cards }: ServicesCardsProps) {
