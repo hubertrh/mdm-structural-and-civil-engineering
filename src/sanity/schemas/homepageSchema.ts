@@ -98,7 +98,7 @@ const homepageSchema = {
                 },
                 {
                   name: "image",
-                  title: "Image",
+                  title: "Image (Aspect Ratio: 3:2)",
                   type: "image",
                   validation: (Rule: Rule) => Rule.required(),
                 },
