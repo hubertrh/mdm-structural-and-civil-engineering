@@ -30,7 +30,9 @@ const sectionContent = {
 export default function GuidingPillars() {
   return (
     <div className="flex flex-col gap-9">
-      <h3 className="text-center text-lg sm:text-2xl">Our Guiding Pillars</h3>
+      <h3 className="text-center text-xl font-medium sm:text-2xl sm:font-normal">
+        Our Guiding Pillars
+      </h3>
       <div className="flex w-min flex-col items-center justify-between p-4 xl:flex-row">
         {Object.entries(sectionContent).map(
           ([key, { title, description, icon, duration }], index) => (
