@@ -18,14 +18,14 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
     position !== 1 ? setPosition(position + 1) : null;
 
   return (
-    <section className="grid place-items-center gap-14 md:gap-6">
-      <h2 className="max-w-[80vw] text-center text-2xl sm:text-[1.6rem]">
+    <section className="grid place-items-center gap-12 md:gap-6">
+      <h2 className="max-w-[80vw] text-center text-2xl font-medium sm:text-[1.6rem] md:font-normal">
         <span>Our&nbsp;Role&nbsp;in&nbsp;Building</span>{" "}
         <span>Resilient&nbsp;Structures</span>
       </h2>
       <div className="relative flex w-[85vw] max-w-6xl items-center justify-center overflow-x-clip md:w-[90vw]">
         <div
-          className="translate-reset flex w-max flex-col gap-20 transition-all duration-500 ease-out md:flex-row md:gap-0"
+          className="translate-reset flex w-max flex-col gap-28 transition-all duration-500 ease-out md:flex-row md:gap-0"
           style={{ translate: `${position * 33.33}%` }}
         >
           {cards.map((service, index) => {

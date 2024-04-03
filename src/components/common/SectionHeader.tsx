@@ -20,7 +20,7 @@ export default function SectionHeader({
     >
       <h2
         className={`pb-4 text-center text-black-200
-      ${weight === "light" ? "text-lg sm:text-2xl" : "text-xl sm:text-3xl"}
+      ${weight === "light" ? "text-lg sm:text-2xl" : "text-2xl sm:text-3xl"}
       `}
       >
         {title}

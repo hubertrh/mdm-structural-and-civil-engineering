@@ -28,7 +28,8 @@
           "cookie-policy-h1",
           "cookie-policy-p",
           "cky-audit-table-element",
-          "cky-banner-element"
+          "cky-banner-element",
+          "subhero-text"
         ]
       }
     ]
