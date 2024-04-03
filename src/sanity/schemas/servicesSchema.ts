@@ -72,7 +72,7 @@ const servicesSchema = {
             },
             {
               name: "image",
-              title: "Image",
+              title: "Image (Aspect Ratio: 1:1)",
               type: "image",
               validation: (Rule: Rule) => Rule.required(),
             },

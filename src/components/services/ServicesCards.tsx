@@ -1,24 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import LottieIcon from "../common/LottieIcon";
 import ServicesCard from "./ServicesCard";
 import SliderNavIcon from "@/assets/icons/animated-button-right-arrow-green-dark.json";
-import { ServicesCards } from "@/types/groqGetters/servicesPage.type";
+import { ServicesCards as ServicesCardsType } from "@/types/groqGetters/servicesPage.type";
 
 type ServicesCardsProps = {
-  cards: ServicesCards;
+  cards: ServicesCardsType;
 };
 
 export default function ServicesCards({ cards }: ServicesCardsProps) {
   const [position, setPosition] = useState(1);
+  const searchParams = useSearchParams();
+  const cardsRef = useRef<HTMLElement | null>(null);
+
   const nextPosition = () =>
     position !== -1 ? setPosition(position - 1) : null;
   const prevPosition = () =>
     position !== 1 ? setPosition(position + 1) : null;
 
+  useEffect(() => {
+    const cardIndex = searchParams.get("card");
+    if (cardIndex && cardsRef.current) {
+      cardsRef.current.scrollIntoView({ behavior: "smooth" });
+      const index = parseInt(cardIndex, 10);
+      setPosition((index - 1) * -1);
+    }
+  }, [searchParams]);
+
   return (
-    <section className="grid place-items-center gap-12 md:gap-6">
+    <section ref={cardsRef} className="grid place-items-center gap-12 md:gap-6">
       <h2 className="max-w-[80vw] text-center text-2xl font-medium sm:text-[1.6rem] md:font-normal">
         <span>Our&nbsp;Role&nbsp;in&nbsp;Building</span>{" "}
         <span>Resilient&nbsp;Structures</span>
@@ -47,7 +60,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
         >
           {position < 1 ? (
             <>
-              <div className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+              <div className="absolute left-1/2 top-1/2 size-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
               <button className="rotate-90 rounded-full">
                 <LottieIcon
                   icon={SliderNavIcon}
@@ -64,7 +77,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
         >
           {position > -1 ? (
             <>
-              <div className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+              <div className="absolute left-1/2 top-1/2 size-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
               <button className="-rotate-90 rounded-full">
                 <LottieIcon
                   icon={SliderNavIcon}

@@ -61,7 +61,7 @@ export default function SecondaryBtn({
         onMouseEnter={handleMouseEnter}
       >
         <p className="text-lg text-blue-dark sm:text-base">{text}</p>
-        <div ref={container} className="relative h-[20px] w-[20px]" />
+        <div ref={container} className="relative size-[20px] " />
       </button>
     );
   };

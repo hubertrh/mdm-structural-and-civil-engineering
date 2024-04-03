@@ -30,7 +30,7 @@ export default function Mapbox({ token }: MapboxProps) {
   return (
     <div
       id="mapbox-container"
-      className="aspect-square h-[22rem] w-[22rem] scale-90 overflow-hidden rounded-full xs:h-96 xs:w-96 sm:scale-100"
+      className="aspect-square size-[22rem] scale-90 overflow-hidden rounded-full xs:size-96 sm:scale-100"
     />
   );
 }

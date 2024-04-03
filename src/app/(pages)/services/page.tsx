@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ProjectDomains from "@/components/services/ProjectDomains";
@@ -7,6 +8,8 @@ import {
   getServicesCards,
   getDomainsCards,
 } from "@/sanity/groqGetters/pages/services";
+import Services from "@/components/home/services/Services";
+import ServicesCardsSkeleton from "@/components/services/ServicesCardsSkeleton";
 
 export default async function page() {
   const sectionContent = await getServicesPageInfo();
@@ -22,7 +25,9 @@ export default async function page() {
           description={sectionContent.paragraphs}
           textAlign="center"
         />
-        <ServicesCards cards={servicesCards} />
+        <Suspense fallback={<ServicesCardsSkeleton />}>
+          <ServicesCards cards={servicesCards} />
+        </Suspense>
         <ProjectDomains cards={projectDomains} />
       </div>
     </>
