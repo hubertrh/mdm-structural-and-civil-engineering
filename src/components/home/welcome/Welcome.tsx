@@ -1,4 +1,4 @@
-import SlideUpH2 from "@/components/common/SlideUpH2";
+import SlideUpH2 from "@/components/common/SlideUpH3";
 import { getHomepageWelcomeText } from "@/sanity/groqGetters/pages/home";
 
 export default async function Welcome() {

@@ -65,7 +65,7 @@
     @apply relative py-4 duration-300 ease-out before:transition-transform before:duration-300 before:ease-out hover:px-3 hover:text-green-dark;
   }
 
-  .hero-text h2 {
+  .hero-text h3 {
     text-shadow: -3px 3px 0px #597355;
 
     @media (max-width: 639px) {
@@ -77,7 +77,7 @@
     }
   }
 
-  .hero-text h3 {
+  .hero-text h2 {
     text-shadow: -2px 2px 0px #597355;
 
     @media (max-width: 639px) {
