@@ -16,7 +16,7 @@ export default function ProjectThumbnail({
       <Image
         className="w-full object-cover"
         src={imgURL}
-        alt={projectTitle}
+        alt={`${projectTitle} project thumbnail`}
         fill={true}
         sizes="100vw"
         placeholder="blur"
