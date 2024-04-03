@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ProjectDomains from "@/components/services/ProjectDomains";
@@ -22,7 +23,9 @@ export default async function page() {
           description={sectionContent.paragraphs}
           textAlign="center"
         />
-        <ServicesCards cards={servicesCards} />
+        <Suspense>
+          <ServicesCards cards={servicesCards} />
+        </Suspense>
         <ProjectDomains cards={projectDomains} />
       </div>
     </>

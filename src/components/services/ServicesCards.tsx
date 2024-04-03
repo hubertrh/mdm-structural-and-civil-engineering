@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import LottieIcon from "../common/LottieIcon";
 import ServicesCard from "./ServicesCard";
 import SliderNavIcon from "@/assets/icons/animated-button-right-arrow-green-dark.json";
@@ -12,13 +13,29 @@ type ServicesCardsProps = {
 
 export default function ServicesCards({ cards }: ServicesCardsProps) {
   const [position, setPosition] = useState(1);
+  const searchParams = useSearchParams();
+  const cardsRef = useRef<HTMLElement | null>(null);
+
   const nextPosition = () =>
     position !== -1 ? setPosition(position - 1) : null;
   const prevPosition = () =>
     position !== 1 ? setPosition(position + 1) : null;
 
+  useEffect(() => {
+    const cardIndex = searchParams.get("card");
+    if (cardIndex && cardsRef.current) {
+      cardsRef.current.scrollIntoView({ behavior: "smooth" });
+      const index = parseInt(cardIndex, 10);
+      setPosition((index - 1) * -1);
+    }
+  }, [searchParams]);
+
   return (
-    <section className="grid place-items-center gap-12 md:gap-6">
+    <section
+      ref={cardsRef}
+      id="cards"
+      className="grid place-items-center gap-12 md:gap-6"
+    >
       <h2 className="max-w-[80vw] text-center text-2xl font-medium sm:text-[1.6rem] md:font-normal">
         <span>Our&nbsp;Role&nbsp;in&nbsp;Building</span>{" "}
         <span>Resilient&nbsp;Structures</span>

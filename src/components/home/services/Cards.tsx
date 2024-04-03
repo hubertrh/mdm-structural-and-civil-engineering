@@ -8,7 +8,7 @@ export default async function Cards() {
   return (
     <div className="flex w-min flex-col items-center justify-between gap-10 p-4 xl:flex-row">
       {cards.map((card, index) => (
-        <Link key={index} href={"/services"}>
+        <Link key={index} href={`/services?card=${index}`}>
           <Card
             imgURL={card.image.url}
             blurDataURL={card.image.metadata.lqip}
