@@ -31,11 +31,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
   }, [searchParams]);
 
   return (
-    <section
-      ref={cardsRef}
-      id="cards"
-      className="grid place-items-center gap-12 md:gap-6"
-    >
+    <section ref={cardsRef} className="grid place-items-center gap-12 md:gap-6">
       <h2 className="max-w-[80vw] text-center text-2xl font-medium sm:text-[1.6rem] md:font-normal">
         <span>Our&nbsp;Role&nbsp;in&nbsp;Building</span>{" "}
         <span>Resilient&nbsp;Structures</span>

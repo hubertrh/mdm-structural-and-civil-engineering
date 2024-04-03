@@ -8,6 +8,8 @@ import {
   getServicesCards,
   getDomainsCards,
 } from "@/sanity/groqGetters/pages/services";
+import Services from "@/components/home/services/Services";
+import ServicesCardsSkeleton from "@/components/services/ServicesCardsSkeleton";
 
 export default async function page() {
   const sectionContent = await getServicesPageInfo();
@@ -23,7 +25,7 @@ export default async function page() {
           description={sectionContent.paragraphs}
           textAlign="center"
         />
-        <Suspense>
+        <Suspense fallback={<ServicesCardsSkeleton />}>
           <ServicesCards cards={servicesCards} />
         </Suspense>
         <ProjectDomains cards={projectDomains} />
