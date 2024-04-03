@@ -19,7 +19,7 @@ export default function NavMobile({
   return (
     <div className="flex w-[70%] flex-col gap-6 text-2xl">
       <p className="text-sm uppercase text-gray-500">Navigation</p>
-      <div className="mb-2 h-[1px] w-full bg-gray-400"></div>
+      <div className="mb-2 h-px w-full bg-gray-400"></div>
       <motion.nav
         className="nav-mobile flex flex-col gap-1 capitalize"
         variants={containerVariants}

@@ -60,7 +60,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
         >
           {position < 1 ? (
             <>
-              <div className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+              <div className="absolute left-1/2 top-1/2 size-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
               <button className="rotate-90 rounded-full">
                 <LottieIcon
                   icon={SliderNavIcon}
@@ -77,7 +77,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
         >
           {position > -1 ? (
             <>
-              <div className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+              <div className="absolute left-1/2 top-1/2 size-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
               <button className="-rotate-90 rounded-full">
                 <LottieIcon
                   icon={SliderNavIcon}

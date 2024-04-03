@@ -31,7 +31,7 @@ export default function ProjectDomains({ cards }: DomainsCardsProps) {
             >
               <div className="flex flex-col justify-center gap-2 py-5 text-sm sm:gap-2 sm:p-6 sm:text-sm md:flex md:gap-4 md:p-10 md:text-base">
                 <p className="text-2xl">{domain.name}</p>
-                <p className="h-auto sm:h-[2rem]">{domain.shortDescription}</p>
+                <p className="h-auto sm:h-8">{domain.shortDescription}</p>
               </div>
               <div className="relative my-auto aspect-square w-full md:hidden">
                 <Image
@@ -52,7 +52,7 @@ export default function ProjectDomains({ cards }: DomainsCardsProps) {
           initial="initial"
           animate={modal.active ? "open" : "closed"}
           style={{ translate: `0 ${modal.index * 100}%` }}
-          className="pointer-events-none absolute right-0 top-0 hidden aspect-square h-[20%] -translate-x-8 flex-col overflow-hidden shadow-xl duration-400 ease-out md:flex"
+          className="pointer-events-none absolute right-0 top-0 hidden aspect-square h-1/5 -translate-x-8 flex-col overflow-hidden shadow-xl duration-400 ease-out md:flex"
         >
           <div
             className="aspect-square w-full transition-all duration-400 ease-out"

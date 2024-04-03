@@ -27,7 +27,7 @@ export default function HamburgerBtn({
       onClick={onHamburgerClick}
     >
       <div
-        className={`relative z-50 h-6 w-6 ${beforeClasses} ${afterClasses}`}
+        className={`relative z-50 size-6 ${beforeClasses} ${afterClasses}`}
       ></div>
     </button>
   );

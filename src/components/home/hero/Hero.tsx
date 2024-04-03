@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="relative h-screen w-full overflow-hidden xl:max-h-[900px]">
       <div className="hero-gradient absolute inset-0 z-10"></div>
       <Image
-        className="h-[150%] object-cover hue-rotate-[15deg] portrait:object-[65%_50%] landscape:object-[50%_16%]"
+        className="h-[150%] object-cover hue-rotate-15 portrait:object-[65%_50%] landscape:object-[50%_16%]"
         src={heroImage}
         alt="Hero image"
         placeholder="blur"

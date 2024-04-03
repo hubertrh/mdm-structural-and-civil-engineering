@@ -81,7 +81,7 @@ export default function ProjectsGrid() {
                   <p className="text-xl xs:text-[1.4rem] md:text-2xl">
                     {project.name}
                   </p>
-                  <p className="h-auto text-gray-500 sm:h-[2rem]">{`${formattedLocation}\u2002|\u2002${project.category}\u2002|\u2002${formattedDate}`}</p>
+                  <p className="h-auto text-gray-500 sm:h-8">{`${formattedLocation}\u2002|\u2002${project.category}\u2002|\u2002${formattedDate}`}</p>
                 </div>
               </Link>
             );
