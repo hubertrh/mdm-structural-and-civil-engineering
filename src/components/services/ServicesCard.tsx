@@ -30,12 +30,12 @@ export default function ServicesCard({
             blurDataURL={blurDataURL}
           />
         </div>
-        <div className="mb-2 flex h-auto flex-col justify-center gap-4 p-6">
+        <div className="mb-5 flex h-auto flex-col justify-center gap-4 p-3 md:mb-2 md:p-6">
           <p className="text-2xl">{title}</p>
           <p className="leading-relaxed">{shortDescription}</p>
         </div>
       </div>
-      <div className="flex w-full flex-col items-center justify-center gap-4 border-b-[1.18px] border-blue px-6 py-8 text-justify leading-relaxed text-black-300 md:h-full md:px-10 md:py-8 md:text-center">
+      <div className="flex w-full flex-col items-center justify-center gap-3 border-b-[1.18px] border-blue p-4 text-justify leading-relaxed text-black-300 md:h-full md:px-10 md:py-8 md:text-center">
         {description.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
