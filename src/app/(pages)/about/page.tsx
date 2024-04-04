@@ -1,9 +1,14 @@
+import { Metadata } from "next";
 import AboutCards from "@/components/about/aboutCards";
 import PrimaryBtn from "@/components/common/PrimaryBtn";
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ContactIcon from "@/assets/icons/animated-contact.min.json";
 import { getAboutPage } from "@/sanity/groqGetters/pages/about";
+
+export const metadata: Metadata = {
+  title: "About Us",
+};
 
 export default async function page() {
   const sectionContent = await getAboutPage();

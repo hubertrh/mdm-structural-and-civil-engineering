@@ -31,7 +31,10 @@ const agencyFB = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MDM Structural and Civil Engineering",
+  title: {
+    template: "%s | MDM",
+    default: "MDM Structural and Civil Engineering",
+  },
   description:
     "MDM Engineering: London-based experts in structural design, committed to safety, innovation, and sustainable building solutions. Transforming the city's skyline since 2017.",
 };
