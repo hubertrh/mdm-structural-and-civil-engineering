@@ -1,11 +1,27 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getProject } from "@/sanity/groqGetters/pages/projects";
 import ProjectImagesGrid from "@/components/projects/ProjectImagesGrid";
 
+type MetadataProps = {
+  params: { project: string };
+};
+
 type ProjectProps = {
   params: { project: string };
 };
+
+export async function generateMetadata({
+  params,
+}: MetadataProps): Promise<Metadata> {
+  const slug = params.project;
+  const project = await getProject(slug);
+
+  return {
+    title: project.name,
+  };
+}
 
 export default async function Project({ params }: ProjectProps) {
   const slug = params.project;
