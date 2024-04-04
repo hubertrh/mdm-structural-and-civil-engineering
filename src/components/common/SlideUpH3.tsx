@@ -59,7 +59,7 @@ export default function SlideUpH2({ headingText, justify }: SlideUpH2Props) {
   const justifyClass = justify === "end" ? "justify-end" : "justify-center";
 
   return (
-    <h2 className="flex flex-col gap-y-1" ref={container}>
+    <h3 className="flex flex-col gap-y-1" ref={container}>
       {textLines.map((line, lineIndex) => (
         <span
           key={lineIndex}
@@ -68,6 +68,6 @@ export default function SlideUpH2({ headingText, justify }: SlideUpH2Props) {
           {renderAnimatedLine(line, lineIndex)}
         </span>
       ))}
-    </h2>
+    </h3>
   );
 }

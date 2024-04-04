@@ -1,9 +1,14 @@
+import { Metadata } from "next";
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
 import ContactDetailsLink from "@/components/contact/ContactDetailsLink";
 import Mapbox from "@/components/contact/Mapbox";
 import { getCompanyDetails } from "@/sanity/groqGetters/getCompanyDetails";
 import { getContactPage } from "@/sanity/groqGetters/pages/contact";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 let mapboxToken: string;
 

@@ -1,6 +1,11 @@
+import { Metadata } from "next";
 import SubHero from "@/components/common/SubHero";
 import CookieIcon from "@/assets/icons/animated-cookies.min.json";
 import CornerIcon from "@/components/policies/CornerIcon";
+
+export const metadata: Metadata = {
+  title: "Cookie Policy",
+};
 
 export default function page() {
   return (

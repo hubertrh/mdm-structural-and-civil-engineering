@@ -51,7 +51,11 @@ export default function FooterContact({ companyDetails }: footerContactProps) {
               {companyDetails.address.replace(/ /g, "\u00A0")}
             </a>
           </div>
-          <a className="mt-1" href={companyDetails.googleMapsLink}>
+          <a
+            className="mt-1"
+            href={companyDetails.googleMapsLink}
+            aria-label="View our location on Google Maps. Opens in a new tab."
+          >
             <LottieIcon icon={NewCardIcon} duration={1000} sizeInRem={1} />
           </a>
         </div>

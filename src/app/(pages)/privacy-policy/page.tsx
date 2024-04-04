@@ -1,9 +1,14 @@
+import { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
 import SubHero from "@/components/common/SubHero";
 import PolicyIcon from "@/assets/icons/animated-privacy.min.json";
 import CornerIcon from "@/components/policies/CornerIcon";
 import { getCompanyDetails } from "@/sanity/groqGetters/getCompanyDetails";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+};
 
 export default async function page() {
   const companyDetails = await getCompanyDetails();

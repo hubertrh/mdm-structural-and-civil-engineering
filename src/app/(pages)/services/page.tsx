@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Suspense } from "react";
 import SectionHeader from "@/components/common/SectionHeader";
 import SubHero from "@/components/common/SubHero";
@@ -8,8 +9,11 @@ import {
   getServicesCards,
   getDomainsCards,
 } from "@/sanity/groqGetters/pages/services";
-import Services from "@/components/home/services/Services";
 import ServicesCardsSkeleton from "@/components/services/ServicesCardsSkeleton";
+
+export const metadata: Metadata = {
+  title: "Services",
+};
 
 export default async function page() {
   const sectionContent = await getServicesPageInfo();
