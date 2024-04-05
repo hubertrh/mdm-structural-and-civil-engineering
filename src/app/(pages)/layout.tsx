@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   description:
     "MDM Engineering: London experts in structural design, committed to safety, innovation, and sustainable building. Transforming the city's skyline since 2017.",
   metadataBase: new URL(
-    `https://${process.env.VERCEL_URL || `localhost:${process.env.PORT || "3000"}`}`,
+    "https://mdm-structural-and-civil-engineering.vercel.app/",
   ),
   alternates: {
     canonical: "/",
