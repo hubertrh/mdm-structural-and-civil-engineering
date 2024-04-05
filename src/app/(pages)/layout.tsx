@@ -36,7 +36,13 @@ export const metadata: Metadata = {
     default: "MDM Structural and Civil Engineering",
   },
   description:
-    "MDM Engineering: London-based experts in structural design, committed to safety, innovation, and sustainable building solutions. Transforming the city's skyline since 2017.",
+    "MDM Engineering: London experts in structural design, committed to safety, innovation, and sustainable building. Transforming the city's skyline since 2017.",
+  metadataBase: new URL(
+    `https://${process.env.VERCEL_URL || "localhost:3000"}`,
+  ),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
