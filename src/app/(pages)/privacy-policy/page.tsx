@@ -17,7 +17,7 @@ export default async function page() {
   return (
     <>
       <SubHero variant="privacy policy" />
-      <section className="relative mx-auto w-[85vw] max-w-4xl py-12 text-justify md:w-[90vw]">
+      <section className="relative mx-auto w-[85vw] max-w-4xl py-24 text-justify md:w-[90vw]">
         <CornerIcon icon={PolicyIcon} duration={1450} />
         <h1 className="cookie-policy-h1 mb-4 text-lg text-black-200 sm:text-2xl">
           Privacy Policy
