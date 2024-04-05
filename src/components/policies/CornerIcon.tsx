@@ -20,7 +20,7 @@ export default function CornerIcon({ icon, duration }: CornerIconProps) {
   }, []);
 
   return (
-    <div className="absolute right-0 top-8 ">
+    <div className="absolute right-0 top-20 ">
       <AnimationControlContext.Provider value={animationControlRef.current}>
         <LottieIcon icon={icon} duration={duration} sizeInRem={8} />
       </AnimationControlContext.Provider>
