@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 type ServicesCardProps = {
+  id: number;
   title: string;
   shortDescription: string;
   description: string[];
@@ -9,6 +10,7 @@ type ServicesCardProps = {
 };
 
 export default function ServicesCard({
+  id,
   title,
   shortDescription,
   description,
@@ -16,7 +18,10 @@ export default function ServicesCard({
   blurDataURL,
 }: ServicesCardProps) {
   return (
-    <div className="flex w-full max-w-3xl flex-col justify-between bg-background-blue/50 sm:w-[30rem] md:mx-4 md:w-[45rem] md:scale-[85%] lg:scale-90">
+    <div
+      className="flex w-full max-w-3xl flex-col justify-between bg-background-blue/50 sm:w-[30rem] md:mx-4 md:w-[45rem] md:scale-[85%] lg:scale-90"
+      id={`services-card-${id}`}
+    >
       <div className="grid-services-cards relative w-full border-y-[1.5px] border-blue bg-white/70">
         <div className="relative aspect-square h-full max-w-full">
           <Image

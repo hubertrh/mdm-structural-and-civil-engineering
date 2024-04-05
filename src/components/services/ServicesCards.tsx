@@ -23,10 +23,25 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
 
   useEffect(() => {
     const cardIndex = searchParams.get("card");
-    if (cardIndex && cardsRef.current) {
-      cardsRef.current.scrollIntoView({ behavior: "smooth" });
+    if (cardIndex) {
       const index = parseInt(cardIndex, 10);
-      setPosition((index - 1) * -1);
+
+      if (window.innerWidth < 768) {
+        // Mobile-specific logic
+        const cardId = `services-card-${index}`;
+        const cardElement = document.getElementById(cardId);
+
+        if (cardElement) {
+          cardElement.scrollIntoView({ behavior: "smooth" });
+          setPosition((index - 1) * -1);
+        }
+      } else {
+        // Desktop-specific logic
+        if (cardsRef.current) {
+          cardsRef.current.scrollIntoView({ behavior: "smooth" });
+          setPosition((index - 1) * -1);
+        }
+      }
     }
   }, [searchParams]);
 
@@ -45,6 +60,7 @@ export default function ServicesCards({ cards }: ServicesCardsProps) {
             return (
               <ServicesCard
                 key={index}
+                id={index}
                 title={service.title}
                 shortDescription={service.shortDescription}
                 description={service.paragraphs}
