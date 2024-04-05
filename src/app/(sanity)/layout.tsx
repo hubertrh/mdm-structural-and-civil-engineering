@@ -1,4 +1,6 @@
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "MDM Sanity Studio",
   description: "MDM Sanity Studio",
 };
@@ -8,9 +10,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body style={{ margin: 0 }}>{children}</body>
-    </html>
-  );
+  return <>{children}</>;
 }
