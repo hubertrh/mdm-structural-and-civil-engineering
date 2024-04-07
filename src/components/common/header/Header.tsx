@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import FullLogo from "../FullLogo";
 import Nav from "./Nav";
+import { CompanyDetails } from "@/types/groqGetters/companyDetails.type";
 
 type ScrollTriggerConfig = {
   trigger: string;
@@ -22,7 +23,11 @@ type AnimationProperties = {
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Header() {
+type HeaderProps = {
+  companyDetails: CompanyDetails;
+};
+
+export default function Header({ companyDetails }: HeaderProps) {
   useEffect(() => {
     function animateElement<T extends AnimationProperties>(
       selector: string,
@@ -53,7 +58,7 @@ export default function Header() {
         <Link href="/">
           <FullLogo />
         </Link>
-        <Nav />
+        <Nav companyDetails={companyDetails} />
       </div>
     </header>
   );

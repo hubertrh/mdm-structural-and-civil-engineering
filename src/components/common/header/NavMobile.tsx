@@ -40,7 +40,12 @@ export default function NavMobile({
                   : ""
               }`}
             >
-              <Link href={link.href}>{link.name}</Link>
+              <Link
+                className={`${isHamburgerOpen ? "" : "hidden"}`}
+                href={link.href}
+              >
+                {link.name}
+              </Link>
             </motion.div>
           );
         })}

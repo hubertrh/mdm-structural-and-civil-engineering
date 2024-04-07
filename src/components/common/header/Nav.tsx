@@ -5,8 +5,13 @@ import { usePathname } from "next/navigation";
 import NavDesktop from "../NavDesktop";
 import MenuSidebar from "./MenuSidebar";
 import HamburgerBtn from "./HamburgerBtn";
+import { CompanyDetails } from "@/types/groqGetters/companyDetails.type";
 
-export default function Nav() {
+type NavProps = {
+  companyDetails: CompanyDetails;
+};
+
+export default function Nav({ companyDetails }: NavProps) {
   const pathname = usePathname();
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
@@ -33,6 +38,7 @@ export default function Nav() {
         pathname={pathname}
         isHamburgerOpen={isHamburgerOpen}
         setIsHamburgerOpen={setIsHamburgerOpen}
+        companyDetails={companyDetails}
       />
     </div>
   );

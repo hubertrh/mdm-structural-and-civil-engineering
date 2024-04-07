@@ -25,10 +25,14 @@ export default function HamburgerBtn({
       id="hamburger-btn"
       className={`z-50 mx-3 p-2 lg:hidden`}
       onClick={onHamburgerClick}
+      aria-expanded={isHamburgerOpen}
+      aria-controls="sidebar-menu" // Ensure this ID matches the ID of the sidebar menu
+      aria-label={isHamburgerOpen ? "Close menu" : "Open menu"}
     >
       <div
         className={`relative z-50 size-6 ${beforeClasses} ${afterClasses}`}
-      ></div>
+        aria-hidden="true"
+      />
     </button>
   );
 }
