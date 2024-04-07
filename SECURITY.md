@@ -6,7 +6,7 @@ The security of this software is taken seriously. Should a security vulnerabilit
 
 ### How to Report a Security Vulnerability
 
-To report a security issue, please email [valid-chord.03@icloud.com](mailto:valid-chord.03@icloud.com). Your efforts in responsibly disclosing your findings are highly appreciated, and an acknowledgment of the emailed report will be sent within 48 hours.
+To report a security issue, please contact MDM Structural and Civil Engineering by email or phone, which can be found on the website. Your efforts in responsibly disclosing your findings are highly appreciated, and an acknowledgment of the emailed report will be sent within 48 hours.
 
 ### Security Vulnerability Response
 
