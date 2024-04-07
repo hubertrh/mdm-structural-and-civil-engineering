@@ -1,17 +1,20 @@
 import NavMobile from "./NavMobile";
 import SidebarContact from "./SidebarContact";
 import { NavLinks } from "@/types/NavLinks.type";
+import { CompanyDetails } from "@/types/groqGetters/companyDetails.type";
 
 export default function MenuSidebar({
   navLinks,
   pathname,
   isHamburgerOpen,
   setIsHamburgerOpen,
+  companyDetails,
 }: {
   navLinks: NavLinks;
   pathname: string;
   isHamburgerOpen: boolean;
   setIsHamburgerOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  companyDetails: CompanyDetails;
 }) {
   const closeMenu = () => {
     setIsHamburgerOpen(false);
@@ -40,7 +43,10 @@ export default function MenuSidebar({
           isHamburgerOpen={isHamburgerOpen}
           closeMenu={closeMenu}
         />
-        <SidebarContact isHamburgerOpen={isHamburgerOpen} />
+        <SidebarContact
+          isHamburgerOpen={isHamburgerOpen}
+          companyDetails={companyDetails}
+        />
       </div>
     </>
   );
