@@ -29,6 +29,7 @@ export default function MenuSidebar({
 
       {/* Menu */}
       <div
+        id="sidebar-menu"
         className={`fixed right-0 top-0 grid h-dvh w-screen max-w-lg place-items-center bg-background-blue pt-12 transition-transform duration-300 ease-out ${
           isHamburgerOpen ? "" : "translate-x-full"
         }`}
@@ -39,7 +40,7 @@ export default function MenuSidebar({
           isHamburgerOpen={isHamburgerOpen}
           closeMenu={closeMenu}
         />
-        <SidebarContact />
+        <SidebarContact isHamburgerOpen={isHamburgerOpen} />
       </div>
     </>
   );
