@@ -102,13 +102,23 @@ npm run start
    - Test responsive design at different screen sizes
    - Verify navigation between pages works
 
-3. **Network-Restricted Environment Testing**:
+3. **Network-Restricted Environment Testing** (Current environment status):
 
-   - If Sanity CMS access fails, expect 500 errors
-   - Font fallbacks should work (system fonts instead of Montserrat)
-   - Core HTML structure should render even without CMS content
+   - **Expected Result**: HTTP 500 status with 12+ second response time
+   - **Font Behavior**: Google Fonts fail but fallback works ("Failed to download `Montserrat` from Google Fonts. Using fallback font instead")
+   - **CMS Behavior**: Multiple Sanity API errors for homepage content (company info, hero, services, etc.)
+   - **Server Logs**: Shows "Internal error: Error: Request error while attempting to reach https://4vbs99s3.apicdn.sanity.io"
+   - **Note**: This is expected behavior in restricted networks - the app requires CMS access to function
 
-4. **Code Quality Validation**:
+4. **Sanity Studio Access**:
+   ```bash
+   # Access admin panel (when network allows)
+   # Navigate to http://localhost:3000/admin
+   ```
+   - **Expected Result**: Will also fail in restricted networks
+   - **Purpose**: Content management interface for MDM team
+
+5. **Code Quality Validation**:
    ```bash
    npm run lint
    ```
@@ -169,16 +179,33 @@ src/
 
 ### Network-Related Issues
 
-**Problem**: npm install fails with Sentry CLI download error
+**Problem**: npm install fails with Sentry CLI download error  
 **Solution**: Use `npm ci --ignore-scripts`
 
-**Problem**: Development server shows 500 errors
-**Cause**: Cannot reach Sanity CMS APIs (4vbs99s3.apicdn.sanity.io)
-**Solution**: Requires network access to Sanity. No local fallback available.
+**Problem**: Development server shows 500 errors  
+**Cause**: Cannot reach Sanity CMS APIs (4vbs99s3.apicdn.sanity.io)  
+**Solution**: This is expected in restricted networks. App requires CMS data to function.
 
-**Problem**: Build fails with Google Fonts error
-**Cause**: Cannot reach fonts.googleapis.com
-**Solution**: Expected in restricted environments. Use development server instead.
+**Problem**: Build fails with Google Fonts error  
+**Cause**: Cannot reach fonts.googleapis.com  
+**Solution**: Expected in restricted environments. Use development server for testing instead.
+
+**Problem**: "Failed to download Montserrat from Google Fonts"  
+**Solution**: Normal in restricted networks. System fonts used as fallback.
+
+### Development Issues
+
+**Problem**: TypeScript errors after schema changes  
+**Solution**: Update types in `src/types/` to match Sanity schema changes
+
+**Problem**: Tailwind classes not working  
+**Solution**: Check `tailwind.config.ts` for custom configurations and whitelist
+
+**Problem**: Pages not updating after changes  
+**Solution**: Restart dev server if hot reload fails
+
+**Problem**: Linting fails with prettier conflicts  
+**Solution**: Run `npx prettier --write .` before `npm run lint`
 
 ### Content Updates
 
@@ -197,6 +224,55 @@ No special environment variables required for basic development. Sentry configur
 - Bundle analysis available through Next.js built-in tools
 
 ## Development Best Practices
+
+### Complete Workflow Example
+**Scenario**: A coding agent needs to make changes and test them
+
+```bash
+# 1. Fresh setup (if needed)
+npm ci --ignore-scripts
+
+# 2. Start development environment  
+npm run dev
+
+# 3. Make code changes to components/pages
+
+# 4. Validate changes
+npm run lint
+
+# 5. Format code
+npx prettier --write .
+
+# 6. Test manually at http://localhost:3000
+# Note: Expect 500 errors in restricted networks
+```
+
+### Common Development Scenarios
+
+**Adding New React Component**:
+- Create in `src/components/` following existing structure
+- Use TypeScript (.tsx extension)
+- Import required types from `src/types/`
+- Follow Tailwind CSS utility patterns
+- Test responsive behavior
+
+**Modifying Existing Pages**:
+- Page components in `src/app/(pages)/`
+- Layout changes affect `src/app/layout.tsx`
+- Test font loading and fallback behavior
+- Verify metadata and SEO updates
+
+**Updating Styles**:
+- Prefer Tailwind utilities over custom CSS
+- Custom colors defined in `tailwind.config.ts`
+- Test across mobile/tablet/desktop breakpoints
+- Check design system consistency
+
+**Content Schema Changes**:
+- Modify schemas in `src/sanity/schemas/`
+- Update corresponding TypeScript types
+- Test in Sanity Studio (when network allows)
+- Consider data migration needs
 
 ### Before Making Changes
 
