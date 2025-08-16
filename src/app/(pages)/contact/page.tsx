@@ -10,13 +10,7 @@ export const metadata: Metadata = {
   title: "Contact",
 };
 
-let mapboxToken: string;
-
-if (typeof process.env.MAPBOX_ACCESS_TOKEN === "string") {
-  mapboxToken = process.env.MAPBOX_ACCESS_TOKEN;
-} else {
-  console.error("MAPBOX_ACCESS_TOKEN is not set");
-}
+const mapboxToken = process.env.MAPBOX_ACCESS_TOKEN || "";
 
 export default async function page() {
   const sectionContent = await getContactPage();
